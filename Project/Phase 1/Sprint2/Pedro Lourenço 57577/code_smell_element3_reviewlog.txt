@@ -1,0 +1,7 @@
+Reviwer - Pedro Caldeirão - 57945
+Review of code_smell_element 3
+
+The code smell is well identified.
+There's only two things to mention, a typo in the code location section, as it should be following not folloying and specify
+what's the purpose of the smaller object factories, eventhough in this case it's implicit that it would take off some responsabilities
+in the Object factory class.

@@ -1,0 +1,4 @@
+Reviewer - Pedro Caldeirão - 57945
+
+Crawler is not a method, is a constructor.
+Missing exact code refactorization.

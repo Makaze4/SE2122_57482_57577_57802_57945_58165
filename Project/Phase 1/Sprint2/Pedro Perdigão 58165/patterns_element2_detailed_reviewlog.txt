@@ -1,0 +1,4 @@
+Reviwer - Pedro Caldeirão - 57945
+Review of design pattern 2 (Strategy) 
+
+Although the design pattern is well identified, the introduction and justification should improve.

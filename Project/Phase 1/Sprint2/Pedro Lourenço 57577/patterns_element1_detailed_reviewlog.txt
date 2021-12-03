@@ -1,0 +1,4 @@
+Reviewer - Pedro Caldeirão - 57945
+Review of design pattern 1 (Template method)
+
+The design pattern is well identified, nothing else to add.

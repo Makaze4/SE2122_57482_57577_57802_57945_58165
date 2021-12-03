@@ -1,0 +1,4 @@
+Review by Pedro Perdigão - 58165
+
+Justification section is missing.
+In DatabaseCitationKeyPattern subclass, method getLastLevelCitationKeyPattern(EntryType entryType) is missing.

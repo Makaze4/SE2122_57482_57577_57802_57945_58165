@@ -1,0 +1,4 @@
+Review by Pedro Lourenço 57577
+
+The pattern is well identified. The only thing that could be corrected is in the section
+"Justification" (line 1). It should be "EXTRENALFileTypes" and not "EXTRENAKFileTypes".

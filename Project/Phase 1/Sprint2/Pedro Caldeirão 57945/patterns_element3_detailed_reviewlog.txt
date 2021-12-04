@@ -1,0 +1,6 @@
+Review by Pedro Perdigão - 58165
+
+UML structure diagram is missing.
+Should indicate the source path.
+In the section "Code Location" is only identified the method that notifies/updates the observers, missing the variable that stores the collection of observers,
+the methods that add and remove observers, and the observer class.

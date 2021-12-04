@@ -1,0 +1,5 @@
+Review by Pedro Lourenço 57577
+
+The data file with collected metrics is missing.
+The report explain the collected metrics and the potencial problems are identified.
+The relations between metrics and code smells aren't identified.

@@ -1,0 +1,5 @@
+Review by Pedro Caldeirão - 57945
+
+The code smell is well indentified.
+Explanation of the code smell is missing
+Exact code refactoring is missing

@@ -1,0 +1,5 @@
+Review by Pedro Lourenço 57577
+
+The pattern is well identified.
+However, the source path should've been indicated.
+In the beggining of the text could've been written a small explanation about this pattern.

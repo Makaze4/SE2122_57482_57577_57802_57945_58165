@@ -1,0 +1,5 @@
+Review by Pedro Lourenço 57577
+
+The code smell is well identified and the refractoring proposal is good.
+The only problem is that the class to be identified is "MainTableNameFormatPreferences" and
+not "MainTableFormatPreferences" as is said in the source path.

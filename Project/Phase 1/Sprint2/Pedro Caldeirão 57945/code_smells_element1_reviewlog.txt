@@ -1,0 +1,4 @@
+Review by Pedro Pedrigão - 58165
+
+The code smell is well identified and explained.
+The only thing wrong is the number of paramenters, thats 9 intead of 10 and 11(like is said in the justification section and refactoring proposal section, respectively).

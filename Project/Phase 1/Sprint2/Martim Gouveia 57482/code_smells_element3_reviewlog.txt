@@ -1,0 +1,5 @@
+Review by Pedro Perdigão - 58165
+
+The code smell is well identified and explained.
+The code snippet is missing, as well as the code at the refatoring proposal.
+The document could be more structured.

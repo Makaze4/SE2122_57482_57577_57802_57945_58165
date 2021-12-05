@@ -1,4 +1,0 @@
-Review by Pedro Perdigão - 58165
-
-UML structure diagram is missing.
-Missing a "to" in the justification section ("Then, we use it TO create all kinds of  JAXElement< Text>.").

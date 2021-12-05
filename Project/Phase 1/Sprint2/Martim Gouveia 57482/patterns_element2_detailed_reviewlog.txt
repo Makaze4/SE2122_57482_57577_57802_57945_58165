@@ -1,0 +1,3 @@
+Review by Pedro Lourenço 57577
+
+The pattern is well identified, but the description of the pattern is missing.

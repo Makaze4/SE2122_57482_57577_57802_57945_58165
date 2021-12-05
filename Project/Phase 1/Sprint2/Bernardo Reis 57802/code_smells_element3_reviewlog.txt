@@ -1,0 +1,4 @@
+Review by Pedro Perdigão - 58165
+
+The code smell is well identified and well explain, although the refactoring proposal should
+include a code section, exemplifying what should be done.

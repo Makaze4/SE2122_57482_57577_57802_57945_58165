@@ -1,11 +1,5 @@
 Use case diagram by Pedro Lourenço
 
-Use case: Search for unlinked local files
-ID:0
-Description: The user change the requirements and execute the search
-Main actor: User
-Secondary actors: System
-
 User case: Write Directory
 ID: 1
 Description: The User writes the directory

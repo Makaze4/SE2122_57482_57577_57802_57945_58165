@@ -1,0 +1,31 @@
+Use case: Entry Editor
+ID: 0
+Main actor: User
+Secondary actor: N/A
+
+The user can activate various options, like:
+ -Open editor when a new entry is created
+ -Show BibTeX source by default
+ -Show 'Related Articles' tab
+	In this option if this one is activated a new one show up name by: Accept recommendations from Mr.DLib
+ -Show 'LaTeX Citations' tab
+ -Show validation messages
+ -Allows integers in 'edition' field in BibTeX mode
+ 
+Use case: Autocompletion
+ID:1
+Main actor: User
+Secondary actor: N/A
+
+The user can activate the option:
+ -Use autocompletion
+	When this option is avtivated three sections shows up:
+	-Affected fields (A text box that can be filled with the "Affected fields");
+	-Name format - a section when the user can select one of three following options:
+		-Autocomplete names in 'Firstname Lastname' format only
+		-Autocomplete names in 'Lastname, Firstname' format only
+		-Autocomplete names in both formats
+	-First names - a section when the user can select one of three following options:
+		-Use abbreviated firstname whenever possible
+		-Use full firstname whenever possible
+		-Use abbreviatedand full  firstname

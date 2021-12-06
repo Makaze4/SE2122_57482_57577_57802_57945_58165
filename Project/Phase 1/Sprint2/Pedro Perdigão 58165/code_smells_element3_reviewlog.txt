@@ -1,0 +1,6 @@
+Reviwer - Bernardo Reis - 57802
+
+Review of Duplicated code - Code smells element 3 made by Pedro Perdigão 58165
+
+This code smell is well identified, it has a good justification and the refactoring proposal is appropriate for the problem.
+The only thing to mention, is the code snippet it's well explained but could have a little code example.

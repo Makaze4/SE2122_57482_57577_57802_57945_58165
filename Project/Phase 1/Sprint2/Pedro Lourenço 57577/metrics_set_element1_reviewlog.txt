@@ -1,0 +1,4 @@
+Review by Pedro Perdigão - 58165
+
+Collect data metrics and potencial code smells well identified, although the explanation of Dcy and Dpt metrics should be improved.
+

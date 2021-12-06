@@ -1,0 +1,7 @@
+Reviwer - Bernardo Reis - 57802
+
+Review of Data Class - Code smells element 1 made by Pedro Lourenço 57577
+
+This code smell is well identified, it has all the necessary sections for a good identification of the code smell(Code Snippet, Code location, Justification and refactoring proposal).
+The refactoring proposal description is well explained, and it is appropriate for the problem.
+

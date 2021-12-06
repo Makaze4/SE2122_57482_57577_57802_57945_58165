@@ -1,4 +1,6 @@
-Reviwer - Pedro Caldeirão - 57945
-Review of design pattern 2 (Strategy) 
+Reviwer - Bernardo Reis - 57802
 
-Although the design pattern is well identified, the introduction and justification should improve.
+Review of Strategy Pattern - Pattern element 2 made by Pedro Perdigão 58165
+
+This pattern is well identified, all the sections are well explained.
+The justification is sufficient to understand the identification of this pattern.

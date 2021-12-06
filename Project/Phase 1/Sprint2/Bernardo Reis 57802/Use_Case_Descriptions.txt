@@ -1,0 +1,232 @@
+Use case diagram description by Bernardo Reis 57802
+
+                        Library Properties
+
+
+
+Diagram General, Override default file directories and Library protection
+
+
+Use case: Library encoding
+ID: 1
+Description : The user chooses a library encoding
+Main actors: User
+Secondary actors: N/A
+
+Use case: Library encoding - UTF-8
+ID: 2
+Description : An example of what the user can choose for library encoding
+Main actors: User
+Secondary actors: N/A
+
+Use case: Library encoding - Big5
+ID: 3
+Description : An example of what the user can choose for library encoding
+Main actors: User
+Secondary actors: N/A
+
+Use case: Library encoding - GBK
+ID: 4
+Description : An example of what the user can choose for library encoding
+Main actors: User
+Secondary actors: N/A
+
+Use case: Library mode
+ID: 5
+Description : The user chooses a library mode
+Main actors: User
+Secondary actors: N/A
+
+Use case: Library mode - BibTex
+ID: 6
+Description : The user chooses BibTex for library mode
+Main actors: User
+Secondary actors: N/A
+
+Use case: Library mode - biblatex
+ID: 7
+Description : The user chooses biblatex for library mode
+Main actors: User
+Secondary actors: N/A
+
+Use case: General File Directory - Browse
+ID: 8
+Description : The user browses a new file directory for General File Directory
+Main actors: User
+Secondary actors: N/A
+
+Use case: General File Directory - Textbox
+ID: 9
+Description : The user writes a new file directory for General File Directory
+Main actors: User
+Secondary actors: N/A
+
+Use case: User-specific file directory - Browse
+ID: 10
+Description : The user browses a new file directory for User-specific file directory
+Main actors: User
+Secondary actors: N/A
+
+Use case: User-specific file directory - Write
+ID: 11
+Description : The user writes a new file directory for User-specific file directory
+Main actors: User
+Secondary actors: N/A
+
+Use case: Latex file directory - Browse
+ID: 12
+Description : The user browses a new file directory for Latex file directory
+Main actors: User
+Secondary actors: N/A
+
+Use case: Latex file directory - Write
+ID: 13
+Description : The user writes a new file directory for Latex file directory
+Main actors: User
+Secondary actors: N/A
+
+Use case: Refuse to save library before external changes have been reviewed
+ID: 14
+Description : The user decides to check box (activate or deactivate) the option.
+Main actors: User
+Secondary actors: N/A
+
+
+
+Diagram Save sort order
+
+Use case: order - Keep original order
+ID: 15
+Description : The user decides if he wants to keep the original order
+Main actors: User
+Secondary actors: N/A
+
+Use case: order - Use current table sort order
+ID: 16
+Description : The user decides if he wants to use current table sort order
+Main actors: User
+Secondary actors: N/A
+
+Use case: order - Use specified order
+ID: 17
+Description : The user decides if he wants to use specified order
+Main actors: User
+Secondary actors: N/A
+
+Use case: order - Use specified order - move up
+ID: 18
+Description : The user moves up the selected type in the order
+Main actors: User
+Secondary actors: N/A
+
+Use case: order - Use specified order - move down
+ID: 19
+Description : The user moves down the selected type in the order
+Main actors: User
+Secondary actors: N/A
+
+Use case: order - Use specified order - add type
+ID: 20
+Description : The user adds a new type
+Main actors: User
+Secondary actors: N/A
+
+Use case: order - Use specified order - remove type
+ID: 21
+Description : The user removes a type
+Main actors: User
+Secondary actors: N/A
+
+Use case: order - Use specified order - Descending
+ID: 22
+Description : The user chooses the general sort order of the line
+Main actors: User
+Secondary actors: N/A
+
+Use case: order - Use specified order - Choose type
+ID: 23
+Description : The user chooses a new type to add
+Main actors: User
+Secondary actors: N/A
+
+Use case: order - Use specified order - Choose type - author
+ID: 24
+Description : An example of a type to add
+Main actors: User
+Secondary actors: N/A
+
+Use case: order - Use specified order - Choose type - Title
+ID: 25
+Description : An example of a type to add
+Main actors: User
+Secondary actors: N/A
+
+
+
+Diagram Save actions
+
+Use case: Enable field formatters
+ID: 26
+Description : The user chooses if he wants to enable or disable the field formatters
+Main actors: User
+Secondary actors: N/A
+
+Use case: Enable field formatters - Reset to recommended
+ID: 27
+Description : The user resets field formatters to recommended
+Main actors: User
+Secondary actors: N/A
+
+Use case: Enable field formatters - Remove all
+ID: 28
+Description : The user removes all the field formatters
+Main actors: User
+Secondary actors: N/A
+
+Use case: Enable field formatters - Add
+ID: 29
+Description : The user adds new field formatter
+Main actors: User
+Secondary actors: N/A
+
+Use case: Enable field formatters - Remove
+ID: 30
+Description : The user removes the selected field formatter
+Main actors: User
+Secondary actors: N/A
+
+Use case: Enable field formatters - Chose Formatter name
+ID: 31
+Description : The user chooses a new formatter name
+Main actors: User
+Secondary actors: N/A
+
+Use case: Enable field formatters - Chose Formatter name - Clear
+ID: 32
+Description : An example of a formatter name
+Main actors: User
+Secondary actors: N/A
+
+Use case: Enable field formatters - Chose Formatter name - Capitalize
+ID: 33
+Description : An example of a formatter name
+Main actors: User
+Secondary actors: N/A
+
+Use case: Enable field formatters - Chose Field name
+ID: 34
+Description : The user chooses a new field name
+Main actors: User
+Secondary actors: N/A
+
+Use case: Enable field formatters - Chose Field name - Abstract
+ID: 35
+Description : An example of a field name
+Main actors: User
+Secondary actors: N/A
+
+Use case: Enable field formatters - Chose Field name - Annote
+ID: 36
+Description : An example of a field name
+Main actors: User
+Secondary actors: N/A

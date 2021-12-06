@@ -1,0 +1,4 @@
+Review by Martim Gouveia - 57482
+
+Collected metrics and potential problems are well identified.
+Possible code smells related to the metrics are also mentioned.

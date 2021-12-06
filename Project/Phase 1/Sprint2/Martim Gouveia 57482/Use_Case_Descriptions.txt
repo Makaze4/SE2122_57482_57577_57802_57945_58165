@@ -1,0 +1,28 @@
+Use case diagram description by Martim Gouveia 57482
+
+Use case: Libraries
+ID: 0
+Main Actor: User
+Secondary Actor: N/A
+Description: The user can do many actions to manage the libraries:
+    -New Library creates a new library.
+    -Open Library opens an existing library.
+    -Save library saves the current library.
+    -Close library closes the current library.
+
+Use case: Entries
+ID: 1
+Main Actor: User
+Secondary Actor: N/A
+Description: The user can do many actions to manage or edit the entries:
+    Managing entries:
+        -New entry creates a new entry (there is also an option to create an article).
+        -Delete entry deletes an entry.
+    Edit Entry:
+        Read Status Action:
+            -Clear clears the status.
+            -Set Read sets the status to read.
+            -Set Skimmed sets the status to skimmed.
+        Rank Action:
+            -Clear clears the status.
+            -Set(1, 2, 3, 4, 5) sets the rank.

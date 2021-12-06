@@ -1,19 +1,121 @@
 Use case diagram by Pedro Lourenço
 
 Use case: Search for unlinked local files
-ID:1
-Description: The user pick the requirements and execute the search
+ID:0
+Description: The user change the requirements and execute the search
 Main actor: User
 Secondary actors: System
 
-Use case: Chose when was the last edit
-ID:2
-Description: The user choose when was the last edited
+User case: Write Directory
+ID: 1
+Description: The User writes the directory
 Main actor: User
 Secondary actors: None
 
 Use case: Choose type file
-ID:3
+ID: 2
 Description: The user choose the file of the type to search
 Main actor: User
 Secondary actors: None
+
+Use case: Any file
+ID: 3
+Description: One of the types of files the user can choose to search
+Main actor: User
+Secondary actors: None
+
+Use case: PDF file
+ID: 4
+Description: One of the types (PDF) of files the user can choose to search
+Main actor: User
+Secondary actors: None
+
+Use case: Bibtex library file
+ID: 5
+Description: One of the types (Bibtex library) of files the user can choose to search
+Main actor: User
+Secondary actors: None
+
+Use case: Chose when was the last edit
+ID: 6
+Description: The user choose when was the last edited
+Main actor: User
+Secondary actors: None
+
+Use case: All time
+ID: 7
+Description: One of the time limits (All time) the user can choose for the last edit
+Main actor: User
+Secondary actors: None
+
+Use case: Last Year
+ID: 8
+Description: One of the time limits (Last Year) the user can choose for the last edit
+Main actor: User
+Secondary actors: None
+
+Use case: Last Month
+ID: 9
+Description: One of the time limits (Last Month) the user can choose for the last edit
+Main actor: User
+Secondary actors: None
+
+Use case: Last Week
+ID: 10
+Description: One of the time limits (Last Week) the user can choose for the last edit
+Main actor: User
+Secondary actors: None
+
+Use case: Last Day
+ID: 11
+Description: One of the time limits (Last Day) the user can choose for the last edit
+Main actor: User
+Secondary actors: None
+
+Use case: Sort by
+ID: 12
+Description: The user choose how the search is sorted
+Main actor: User
+Secondary actors: None
+
+Use case: Newest first
+ID: 13
+Description: sort the search starting for the newest file
+Main actor: User
+Secondary actors: None
+
+Use case: Oldest first
+ID: 14
+Description: sort the search starting for the oldest file
+Main actor: User
+Secondary actors: None
+
+Use case: Default
+ID: 15
+Description: sort the search by the normal order
+Main actor: User
+Secondary actors: None
+
+Use case: Search
+ID: 16
+Description: The user initiates the search
+Main actor: User
+Secondary actors: System
+
+Use case: Show search results
+ID: 17
+Description: The system show the results after the user initiates the search
+Main actor: System
+Secondary actors: User
+
+Use case: Export
+ID: 18
+Description: The system export the data after the user initiates the search
+Main actor: System
+Secondary actors: User
+
+Use case: Import
+ID: 19
+Description: The system import the data after the user initiates the search
+Main actor: System
+Secondary actors: User

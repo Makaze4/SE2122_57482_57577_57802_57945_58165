@@ -1,0 +1,7 @@
+Review by Bernardo Reis - 57802
+
+Review of Factory Pattern - Patterns element 3 made by Martim Gouveia 57482.
+
+This pattern is well identified, the document has all the sections combined(Code snippet, justification, Code location) but it's still easy to understand.
+The document could have a UML structure explaining the Factory pattern, but it is not necessary.
+

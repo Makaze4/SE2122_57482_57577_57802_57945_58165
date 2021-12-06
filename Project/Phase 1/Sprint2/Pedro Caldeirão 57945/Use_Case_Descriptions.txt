@@ -1,0 +1,59 @@
+Use case: General
+ID: 1
+Description : The user generates a new key for imported entries
+Main actors: User
+Secondary actors: N/A
+
+Use case: Custom DOI URL
+ID: 2
+Description : The user uses a custom DOI base URL for article access
+Main actors: User
+Secondary actors: DOI base
+
+Use case: Export sort order
+ID: 3
+Description: The user chooses the order for the export
+Main actors: User
+Secondary actors: N/A
+
+Use case: Export sort order - Specified - MoveUp
+ID: 4
+Description: The user moves the selected line up the order of the export
+Main actors: User
+Secondary actors: N/A
+
+Use case: Export sort order - Specified - MoveDown
+ID: 5
+Description: The user moves the selected line down the order of the export
+Main actors: User
+Secondary actors: N/A
+
+Use case: Export sort order - Specified - Remove
+ID: 6
+Description: The user removes the line from the export order
+Main actors: User
+Secondary actors: N/A
+
+Use case: Export sort order - Specified - Descending
+ID: 7
+Description: The user chooses the general sort order of the line
+Main actors: User
+Secondary actors: N/A
+
+Use case: Export sort order - Specified - Add line
+ID: 8
+Description: The user adds a new line for the order of the export
+Main actors: User
+Secondary actors: N/A
+
+Use case: Export sort order - Specified - OrderList
+ID: 9
+Description: The user chooses a type from a list of values for the selected line
+Main actors: User
+Secondary actors: N/A
+
+Use case: Remote service
+ID: 10
+Description: The user sends pdf files and raw citation strings to an online service to determine Metadata
+Main actors: User
+Secondary actors: Grobid

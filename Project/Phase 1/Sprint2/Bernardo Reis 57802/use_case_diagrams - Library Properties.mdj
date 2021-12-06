@@ -6988,11 +6988,11 @@
 												"$ref": "AAAAAAF9kTFguCcs4H8="
 											},
 											"font": "Arial;13;1",
-											"left": 1018.5,
+											"left": 1021,
 											"top": 1570,
-											"width": 132,
+											"width": 143,
 											"height": 13,
-											"text": "Reset to recomended"
+											"text": "Reset to recommended"
 										},
 										{
 											"_type": "LabelView",
@@ -7019,9 +7019,9 @@
 										}
 									],
 									"font": "Arial;13;0",
-									"left": 1013.5,
+									"left": 1016,
 									"top": 1563,
-									"width": 142.20263671875,
+									"width": 153.76171875,
 									"height": 25,
 									"stereotypeLabel": {
 										"$ref": "AAAAAAF9kTFguCct4wY="
@@ -7111,7 +7111,7 @@
 							"containerChangeable": true,
 							"left": 984,
 							"top": 1552,
-							"width": 201,
+							"width": 217,
 							"height": 48,
 							"nameCompartment": {
 								"$ref": "AAAAAAF9kTFguCcs4H8="
@@ -15568,7 +15568,7 @@
 					"_parent": {
 						"$ref": "AAAAAAF9kOlwzkVQ8jM="
 					},
-					"name": "Reset to recomended",
+					"name": "Reset to recommended",
 					"ownedElements": [
 						{
 							"_type": "UMLDependency",

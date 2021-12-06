@@ -1,4 +1,5 @@
-Use case Entry Editor
+Use case: Entry Editor
+ID: 0
 Main actor: User
 Secondary actor: N/A
 
@@ -11,7 +12,8 @@ The user can activate various options, like:
  -Show validation messages
  -Allows integers in 'edition' field in BibTeX mode
  
-Use case Autocompletion
+Use case: Autocompletion
+ID:1
 Main actor: User
 Secondary actor: N/A
 

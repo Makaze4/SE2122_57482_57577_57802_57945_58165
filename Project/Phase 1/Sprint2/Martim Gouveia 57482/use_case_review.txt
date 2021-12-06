@@ -1,0 +1,7 @@
+Reviwer - Bernardo Reis - 57802
+
+Review on Use case diagram and Use case descriptions made by Martim Gouveia 57482
+
+The Use case diagram is well structured and divided.
+The Use case descriptions referring to the diagram are all coherent and well made.
+Briefly every part made in the Use case is well done

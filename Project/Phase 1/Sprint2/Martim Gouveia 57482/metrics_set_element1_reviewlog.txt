@@ -1,0 +1,4 @@
+Review by Pedro Caldeirao - 57945
+
+Collect metrics and potential problems are identified.
+Relation to code smells is missing.

@@ -1,0 +1,4 @@
+Review by Pedro Perdigão - 58165
+
+The use case diagram is well made and defined.
+The description, the use case with ID 0 shoulf not exist.

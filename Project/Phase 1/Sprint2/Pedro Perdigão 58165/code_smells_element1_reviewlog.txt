@@ -1,0 +1,6 @@
+Reviwer - Bernardo Reis - 57802
+
+Review of Primitive obsession - Code smells element 1 made by Pedro Perdigão 58165
+
+This code smell is well identified, it has a good introduction and code snippet. The refactoring proposal is appropriate.
+The justification is enough to explain the code smell.

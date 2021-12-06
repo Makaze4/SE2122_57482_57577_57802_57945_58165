@@ -1,0 +1,5 @@
+Reviwer - Pedro Caldeirão - 57945
+
+The use case diagram is well made.
+The use case descriptions are correct.
+Nothing else to add.

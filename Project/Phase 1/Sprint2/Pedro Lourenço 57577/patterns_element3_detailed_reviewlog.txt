@@ -1,6 +1,6 @@
 Review by Bernardo Reis - 57802
 
-Review of Strategy Pattern - Patterns element 3 made by Pedro Lourenço 57577
+Review of Strategy Pattern - Patterns element 3 made by Pedro Lourenço 57577.
 
 This pattern is well identified, the code snippet it is easy to understand. This element has all the necessary sections for a good pattern identification.
 The justification is sufficient to understand the identification of this pattern.

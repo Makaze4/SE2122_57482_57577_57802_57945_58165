@@ -1,31 +1,101 @@
-Use case: Entry Editor
+Use case: Open editor when a new entry is created
 ID: 0
-Main actor: User
-Secondary actor: N/A
+Description : Button that when activated open editor when a new entry is created
+Main actors: User
+Secondary actors: N/A
 
-The user can activate various options, like:
- -Open editor when a new entry is created
- -Show BibTeX source by default
- -Show 'Related Articles' tab
-	In this option if this one is activated a new one show up name by: Accept recommendations from Mr.DLib
- -Show 'LaTeX Citations' tab
- -Show validation messages
- -Allows integers in 'edition' field in BibTeX mode
- 
-Use case: Autocompletion
-ID:1
-Main actor: User
-Secondary actor: N/A
+Use case: Show BibTeX source by default
+ID: 1
+Description : Button that when activated show BibTeX source by default
+Main actors: User
+Secondary actors: N/A
 
-The user can activate the option:
- -Use autocompletion
-	When this option is avtivated three sections shows up:
-	-Affected fields (A text box that can be filled with the "Affected fields");
-	-Name format - a section when the user can select one of three following options:
-		-Autocomplete names in 'Firstname Lastname' format only
-		-Autocomplete names in 'Lastname, Firstname' format only
-		-Autocomplete names in both formats
-	-First names - a section when the user can select one of three following options:
-		-Use abbreviated firstname whenever possible
-		-Use full firstname whenever possible
-		-Use abbreviatedand full  firstname
+Use case: Show 'Related Articles' tab
+ID: 2
+Description: Button that when activated show 'Related Articles' tab
+Main actors: User
+Secondary actors: N/A
+
+Use case: Show 'Related Articles' tab - Accept recommendations from Mr.DLib
+ID: 3
+Description: Button that depends on the use case (ID 2) when activated accept recommendations from Mr.DLib
+Main actors: User
+Secondary actors: N/A
+
+Use case: Show 'LaTeX Citations' tab
+ID: 4
+Description: Button that when activated show 'LaTeX Citations' tab
+Main actors: User
+Secondary actors: N/A
+
+Use case: Show validation messages
+ID: 5
+Description: Button that when activated show validation messages
+Main actors: User
+Secondary actors: N/A
+
+Use case: Allows integers in 'edition' field in BibTeX mode
+ID: 6
+Description: Button that when activated allows integers in 'edition' field in BibTeX mode
+Main actors: User
+Secondary actors: N/A
+
+Use case: Use autocompletion
+ID: 7
+Description: Button that when activated enables use autocompletion
+Main actors: User
+Secondary actors: N/A
+
+Use case: Use autocompletion - Affected fields
+ID: 8
+Description: Textbox that depends on the use case (ID 7) that when activated the user can write the fields to be affected
+Main actors: User
+Secondary actors: N/A
+
+Use case: Use autocompletion - Name format
+ID: 9
+Description: depends on the use case (ID 7) that when activated the user can choose on of the name formats 
+Main actors: User
+Secondary actors: N/A
+
+Use case: Use autocompletion - Name format - Autocomplete names in 'Firstname Lastname' format only
+ID: 10
+Description: The user choose autocomplete names in 'Firstname Lastname' format only 
+Main actors: User
+Secondary actors: N/A
+
+Use case: Use autocompletion - Name format - Autocomplete names in 'Lastname, Firstname' format only
+ID: 11
+Description: The user choose autocomplete names in 'Lastname, Firstname' format only 
+Main actors: User
+Secondary actors: N/A
+
+Use case: Use autocompletion - Name format - Autocomplete names in both formats
+ID: 12
+Description: The user choose autocomplete names in both formats 
+Main actors: User
+Secondary actors: N/A
+
+Use case: Use autocompletion - First names
+ID: 13
+Description: depends on the use case (ID 7) that when activated the user can choose on of the first names
+Main actors: User
+Secondary actors: N/A
+
+Use case: Use autocompletion - First names - Use abbreviated firstname whenever possible
+ID: 14
+Description: The user choose use abbreviated firstname whenever possible
+Main actors: User
+Secondary actors: N/A
+
+Use case: Use autocompletion - First names - Use full firstname whenever possible
+ID: 15
+Description: The user choose use full firstname whenever possible
+Main actors: User
+Secondary actors: N/A
+
+Use case: Use autocompletion - First names - use abbreviatedand full  firstname
+ID: 16
+Description: The user choose use abbreviatedand full  firstname
+Main actors: User
+Secondary actors: N/A

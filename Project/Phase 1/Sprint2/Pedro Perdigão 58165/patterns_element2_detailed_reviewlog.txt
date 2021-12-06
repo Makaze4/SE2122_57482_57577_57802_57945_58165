@@ -1,0 +1,6 @@
+Reviwer - Bernardo Reis - 57802
+
+Review of Strategy Pattern - Pattern element 2 made by Pedro Perdigão 58165
+
+This pattern is well identified, all the sections are well explained.
+The justification is sufficient to understand the identification of this pattern.

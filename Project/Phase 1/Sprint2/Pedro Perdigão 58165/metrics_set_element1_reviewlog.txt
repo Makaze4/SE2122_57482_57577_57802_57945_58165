@@ -1,0 +1,7 @@
+Reviwer - Bernardo Reis - 57802
+
+Review of Lines of Code metrics- Metrics set element 1 made by Pedro Perdigão 58165
+
+Collected data and the explanation of the three metrics is presented.
+The brief explanation in the introduction is well explained and all the metrics are presented.
+Pedro presented a good explanation on using metrics to find code smells and a good interconnection of these same metrics with the code smells found by co-workers.

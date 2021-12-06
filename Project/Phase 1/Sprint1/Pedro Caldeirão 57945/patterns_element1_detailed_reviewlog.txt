@@ -1,0 +1,5 @@
+Reviewed by Martim Gouveia 57482
+Review of patterns_element1
+
+The pattern is well identified but the source path is missing.
+There are also a few typos on the justification and a blank page at the end.

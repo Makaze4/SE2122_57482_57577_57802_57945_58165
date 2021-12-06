@@ -1,0 +1,4 @@
+Reviewed by Martim Gouveia 57482
+Review of code_smells_element2
+
+The code smell is well identified, but there's a small typo on the first line of the refactoring proposal "an" instead of "na".

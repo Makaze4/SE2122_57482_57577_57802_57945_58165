@@ -1,0 +1,5 @@
+Reviewed by Martim Gouveia 57482
+Review of code_smells_element2
+
+I believe the divergent class code smell is referring to large class that is doing too many tasks and should be split up into multiple smaller classes.
+There is a code smell present in the code, but it looks more like a lazy class code smell or a speculative generality code smell.

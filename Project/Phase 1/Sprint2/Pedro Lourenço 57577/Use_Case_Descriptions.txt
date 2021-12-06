@@ -1,0 +1,19 @@
+Use case diagram by Pedro Lourenço
+
+Use case: Search for unlinked local files
+ID:1
+Description: The user pick the requirements and execute the search
+Main actor: User
+Secondary actors: System
+
+Use case: Chose when was the last edit
+ID:2
+Description: The user choose when was the last edited
+Main actor: User
+Secondary actors: None
+
+Use case: Choose type file
+ID:3
+Description: The user choose the file of the type to search
+Main actor: User
+Secondary actors: None

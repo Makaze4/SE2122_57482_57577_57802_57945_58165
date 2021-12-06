@@ -1,12 +1,12 @@
 Use case: Open editor when a new entry is created
 ID: 0
-Description : Button that when activated open editor when a new entry is created
+Description: Button that when activated open editor when a new entry is created
 Main actors: User
 Secondary actors: N/A
 
 Use case: Show BibTeX source by default
 ID: 1
-Description : Button that when activated show BibTeX source by default
+Description: Button that when activated show BibTeX source by default
 Main actors: User
 Secondary actors: N/A
 
@@ -21,6 +21,10 @@ ID: 3
 Description: Button that depends on the use case (ID 2) when activated accept recommendations from Mr.DLib
 Main actors: User
 Secondary actors: N/A
+
+
+
+
 
 Use case: Show 'LaTeX Citations' tab
 ID: 4
@@ -54,48 +58,48 @@ Secondary actors: N/A
 
 Use case: Use autocompletion - Name format
 ID: 9
-Description: depends on the use case (ID 7) that when activated the user can choose on of the name formats 
+Description: depends on the use case (ID 7) that when activated the user can choose one of the name formats 
 Main actors: User
 Secondary actors: N/A
 
 Use case: Use autocompletion - Name format - Autocomplete names in 'Firstname Lastname' format only
 ID: 10
-Description: The user choose autocomplete names in 'Firstname Lastname' format only 
+Description: The user chooses autocomplete names in 'Firstname Lastname' format only 
 Main actors: User
 Secondary actors: N/A
 
 Use case: Use autocompletion - Name format - Autocomplete names in 'Lastname, Firstname' format only
 ID: 11
-Description: The user choose autocomplete names in 'Lastname, Firstname' format only 
+Description: The user chooses autocomplete names in 'Lastname, Firstname' format only 
 Main actors: User
 Secondary actors: N/A
 
 Use case: Use autocompletion - Name format - Autocomplete names in both formats
 ID: 12
-Description: The user choose autocomplete names in both formats 
+Description: The user chooses autocomplete names in both formats 
 Main actors: User
 Secondary actors: N/A
 
 Use case: Use autocompletion - First names
 ID: 13
-Description: depends on the use case (ID 7) that when activated the user can choose on of the first names
+Description: depends on the use case (ID 7) that when activated the user can choose one of the first names
 Main actors: User
 Secondary actors: N/A
 
 Use case: Use autocompletion - First names - Use abbreviated firstname whenever possible
 ID: 14
-Description: The user choose use abbreviated firstname whenever possible
+Description: The user chooses to use abbreviated firstname whenever possible
 Main actors: User
 Secondary actors: N/A
 
 Use case: Use autocompletion - First names - Use full firstname whenever possible
 ID: 15
-Description: The user choose use full firstname whenever possible
+Description: The user chooses to use full firstname whenever possible
 Main actors: User
 Secondary actors: N/A
 
-Use case: Use autocompletion - First names - use abbreviatedand full  firstname
+Use case: Use autocompletion - First names - use abbreviatedand full firstname
 ID: 16
-Description: The user choose use abbreviatedand full  firstname
+Description: The user chooses use abbreviatedand full firstname
 Main actors: User
 Secondary actors: N/A

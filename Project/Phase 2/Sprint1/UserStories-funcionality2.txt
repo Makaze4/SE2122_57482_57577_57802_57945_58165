@@ -14,5 +14,7 @@ As a user I want to list the authors by number of articles to know who are the m
 
 As a user I want to list the topics that the authors worked about beacause I want to know the author preferences.
 
+As a user I want to see with how many different nationalities the author has collaborated with
+because I want to know how well known the author is internationally.
 
 

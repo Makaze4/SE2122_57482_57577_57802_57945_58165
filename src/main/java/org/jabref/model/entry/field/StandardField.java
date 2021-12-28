@@ -123,6 +123,7 @@ public enum StandardField implements Field {
     SWHID("swhid"),
     TITLE("title"),
     TITLEADDON("titleaddon"),
+    TOPIC("topic"),
     TRANSLATOR("translator", FieldProperty.PERSON_NAMES),
     TYPE("type", FieldProperty.TYPE),
     URI("uri", "URI"),

@@ -226,7 +226,7 @@ public class BibDatabase {
      * @param toBeDeleted Entries to delete
      */
     public synchronized void removeEntries(List<BibEntry> toBeDeleted) {
-        List<String> yau = getEditorsRelatedToAuthor("Joao Leite");
+        List<String> yau = getJournalsRelatedToAuthor("Joao Leite");
         removeEntries(toBeDeleted, EntriesEventSource.LOCAL);
     }
 
@@ -643,7 +643,9 @@ public class BibDatabase {
         return newLineSeparator;
     }
 
-    public List<String> getEditorsRelatedToAuthor(String author) {
+
+    //Author usr story methods
+    public List<String> getJournalsRelatedToAuthor(String author) {
         List<String> editors = new LinkedList<>();
 
         for(BibEntry entry: entries){
@@ -656,5 +658,9 @@ public class BibDatabase {
         System.out.println(editors);
         return editors;
     }
+
+
+
+
 
 }

@@ -802,6 +802,7 @@ public class BibDatabase {
         return allAuthors.get(index);
     }
 
+    //get all the authors by nacionality
     public List<String> getAuthorsNacionality(String nacionality) {
         List<String> allAuthors = new LinkedList<>();
         for(BibEntry entry: entries){
@@ -816,7 +817,7 @@ public class BibDatabase {
         }
         return allAuthors;
     }
-
+    //gets all the topics by author
     public List<String> getTopicsByAuthor(String author) {
         List<String> allTopics = new LinkedList<>();
         for(BibEntry entry : entries) {

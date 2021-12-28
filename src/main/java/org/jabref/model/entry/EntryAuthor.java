@@ -10,8 +10,8 @@ public class EntryAuthor {
 
     public EntryAuthor(String authorName, String authorNationality){
         this.authorName = authorName;
-        Random r = new Random(2);
-        if(r.nextInt() == 0){
+        Random r = new Random();
+        if(r.nextInt(2) == 0){
             this.authorNationality = "Portugal";
         }
         else{

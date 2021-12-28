@@ -690,6 +690,7 @@ public class JabRefFrame extends BorderPane {
         Menu tools = new Menu(Localization.lang("Tools"));
         Menu options = new Menu(Localization.lang("Options"));
         Menu help = new Menu(Localization.lang("Help"));
+        Menu ola = new Menu(Localization.lang("Olaola"));
 
         file.getItems().addAll(
                 factory.createMenuItem(StandardActions.NEW_LIBRARY, new NewDatabaseAction(this, prefs)),
@@ -901,6 +902,33 @@ public class JabRefFrame extends BorderPane {
                 factory.createMenuItem(StandardActions.ABOUT, new AboutAction())
         );
 
+        ola.getItems().addAll(
+                factory.createMenuItem(StandardActions.HELP, HelpAction.getMainHelpPageCommand()),
+                factory.createMenuItem(StandardActions.OPEN_FORUM, new OpenBrowserAction("http://discourse.jabref.org/")),
+
+                new SeparatorMenuItem(),
+
+                factory.createMenuItem(StandardActions.ERROR_CONSOLE, new ErrorConsoleAction()),
+
+                new SeparatorMenuItem(),
+
+                factory.createMenuItem(StandardActions.DONATE, new OpenBrowserAction("https://donations.jabref.org")),
+                factory.createMenuItem(StandardActions.SEARCH_FOR_UPDATES, new SearchForUpdateAction(Globals.BUILD_INFO, prefs.getVersionPreferences(), dialogService, Globals.TASK_EXECUTOR)),
+                factory.createSubMenu(StandardActions.WEB_MENU,
+                        factory.createMenuItem(StandardActions.OPEN_WEBPAGE, new OpenBrowserAction("https://jabref.org/")),
+                        factory.createMenuItem(StandardActions.OPEN_BLOG, new OpenBrowserAction("https://blog.jabref.org/")),
+                        factory.createMenuItem(StandardActions.OPEN_FACEBOOK, new OpenBrowserAction("https://www.facebook.com/JabRef/")),
+                        factory.createMenuItem(StandardActions.OPEN_TWITTER, new OpenBrowserAction("https://twitter.com/jabref_org")),
+                        factory.createMenuItem(StandardActions.OPEN_GITHUB, new OpenBrowserAction("https://github.com/JabRef/jabref")),
+
+                        new SeparatorMenuItem(),
+
+                        factory.createMenuItem(StandardActions.OPEN_DEV_VERSION_LINK, new OpenBrowserAction("https://builds.jabref.org/master/")),
+                        factory.createMenuItem(StandardActions.OPEN_CHANGELOG, new OpenBrowserAction("https://github.com/JabRef/jabref/blob/master/CHANGELOG.md"))
+                ),
+                factory.createMenuItem(StandardActions.ABOUT, new AboutAction())
+        );
+
         // @formatter:on
         MenuBar menu = new MenuBar();
         menu.getStyleClass().add("mainMenu");
@@ -913,7 +941,8 @@ public class JabRefFrame extends BorderPane {
                 tools,
                 view,
                 options,
-                help);
+                help,
+                ola);
         menu.setUseSystemMenuBar(true);
         return menu;
     }

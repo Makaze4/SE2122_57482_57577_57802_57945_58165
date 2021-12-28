@@ -8,7 +8,7 @@ public class EntryAuthor {
 
     public EntryAuthor(String authorName, String authorNationality){
         this.authorName = authorName;
-        this.authorNationality = authorNationality;
+        this.authorNationality = "Portugal";
     }
 
     public String getAuthorName(){

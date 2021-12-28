@@ -644,7 +644,8 @@ public class BibDatabase {
     }
 
 
-    // Author usr story methods
+    // Author user story methods
+    //Get Journals related to a specific author
     public List<String> getEditorsRelatedToAuthor(String author) {
         List<String> editors = new LinkedList<>();
 
@@ -657,6 +658,21 @@ public class BibDatabase {
         }
         System.out.println(editors);
         return editors;
+    }
+
+    // Articles published by an author about a certain topic in a time period
+    public List<String> getAuthorArticlesTopicInPeriod(String author, String topic, int year1, int year2){
+
+        List<String> articles = new LinkedList<>();
+
+        for(BibEntry entry: entries){
+            Map<Field, String> map = entry.getFieldMap();
+            int year = Integer.parseInt(map.get(StandardField.YEAR));
+            if(map.get(StandardField.AUTHOR).contains(author) && map.get(StandardField.TOPIC).equals(topic) && year >= year1 && year <= year2){
+                articles.add(map.get(StandardField.TITLE));
+            }
+        }
+        return articles;
     }
 
     public String getAuthorWithMorePublish(String journal) {

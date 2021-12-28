@@ -533,8 +533,8 @@ public class BibEntry implements Cloneable {
                 authorList.add(new EntryAuthor(s, "Portugal"));//TODO implementar nacionalidade
             }
         }
-        System.out.println("1");
-        getAuthors();
+        //System.out.println("1");
+        //getAuthors();
         fields.forEach(this::setField);
     }
 
@@ -580,8 +580,8 @@ public class BibEntry implements Cloneable {
         } else {
             eventBus.post(new FieldChangedEvent(change, eventSource));
         }
-        System.out.println("2");
-        getAuthors();
+        //System.out.println("2");
+        //getAuthors();
         return Optional.of(change);
     }
 
@@ -600,8 +600,8 @@ public class BibEntry implements Cloneable {
                 authorList.add(new EntryAuthor(s, "Portugal"));//TODO implementar nacionalidade
             }
         }
-        System.out.println("3");
-        getAuthors();
+        //System.out.println("3");
+        //getAuthors();
         return setField(field, value, EntriesEventSource.LOCAL);
     }
 

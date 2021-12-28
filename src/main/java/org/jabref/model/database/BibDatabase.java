@@ -226,7 +226,7 @@ public class BibDatabase {
      * @param toBeDeleted Entries to delete
      */
     public synchronized void removeEntries(List<BibEntry> toBeDeleted) {
-        List<String> yau = getEditorsRelatedToAuthor("Joao Leite");
+        //List<String> yau = getEditorsRelatedToAuthor("Joao Leite");
         removeEntries(toBeDeleted, EntriesEventSource.LOCAL);
     }
 

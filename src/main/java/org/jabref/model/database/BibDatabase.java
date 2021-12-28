@@ -10,6 +10,7 @@ import java.util.stream.Collectors;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 
+import javafx.util.Pair;
 import org.apache.lucene.analysis.standard.StandardAnalyzer;
 import org.jabref.model.database.event.EntriesAddedEvent;
 import org.jabref.model.database.event.EntriesRemovedEvent;
@@ -700,6 +701,37 @@ public class BibDatabase {
             }
         }
         return commonArticles;
+    }
+
+    //Get the author with th most published articles in any journal
+    public String getMostActiveAuthor(){
+        List<Pair<String, Integer>> authorList = new LinkedList<>();
+
+        for(BibEntry entry: entries){
+            String[] entryAuthorList = entry.getFieldMap().get(StandardField.AUTHOR).split(" and ");
+            for(String s: entryAuthorList){
+                boolean found = false;
+                for(Pair<String, Integer> p: authorList){
+                    if(p.getKey().equals(s)){
+                        p = new Pair<>(p.getKey(), p.getValue()+1);
+                        found = true;
+                        break;
+                    }
+                }
+                if(!found){
+                    authorList.add(new Pair<>(s, 1));
+                }
+            }
+        }
+
+        int author = 0;
+        for(int i = 1; i<authorList.size(); i++){
+            if(authorList.get(i).getValue() > authorList.get(0).getValue()){
+                author = i;
+            }
+        }
+
+        return authorList.get(author).getKey();
     }
 
 

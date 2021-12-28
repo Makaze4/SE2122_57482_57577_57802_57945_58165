@@ -51,7 +51,9 @@ public class AuthorInformationTab extends FieldsEditorTab {
         Set<Field> fields = new LinkedHashSet<>();
         if (entryType.isPresent()) {
             for (OrFields orFields : entryType.get().getRequiredFields()) {
-                fields.addAll(orFields);
+                if(orFields.getDisplayName().equals("Author")){
+                    fields.addAll(orFields);
+                }
             }
             // Add the edit field for Bibtex-key.
             fields.add(InternalField.KEY_FIELD);

@@ -13,13 +13,12 @@ import org.jabref.model.database.BibDatabaseContext;
 import org.jabref.model.entry.BibEntry;
 import org.jabref.model.entry.BibEntryType;
 import org.jabref.model.entry.BibEntryTypesManager;
-import org.jabref.model.entry.field.Field;
-import org.jabref.model.entry.field.InternalField;
-import org.jabref.model.entry.field.OrFields;
+import org.jabref.model.entry.field.*;
 import org.jabref.preferences.PreferencesService;
 
 import javax.swing.undo.UndoManager;
 import java.util.LinkedHashSet;
+import java.util.Map;
 import java.util.Optional;
 import java.util.Set;
 
@@ -49,18 +48,22 @@ public class AuthorInformationTab extends FieldsEditorTab {
     protected Set<Field> determineFieldsToShow(BibEntry entry) {
         Optional<BibEntryType> entryType = entryTypesManager.enrich(entry.getType(), databaseContext.getMode());
         Set<Field> fields = new LinkedHashSet<>();
-        if (entryType.isPresent()) {
-            for (OrFields orFields : entryType.get().getRequiredFields()) {
-                if(orFields.getDisplayName().equals("Author")){
-                    fields.addAll(orFields);
-                }
+        Map<Field, String> mapaEntries = entry.getFieldMap();
+
+        if(mapaEntries.containsKey(StandardField.AUTHOR)){
+            String st = mapaEntries.get(StandardField.AUTHOR);
+            String[] authors = mapaEntries.get(StandardField.AUTHOR).split(" and ");
+            LinkedHashSet<Field> lf = new LinkedHashSet<Field>();
+
+            for (int i =0 ; i< authors.length; i++){
+                String nomeF = "author " + (i+1);
+                Field f = new UnknownField(nomeF);
+                entry.setField(f,authors[i]);
+                lf.add(f);
             }
-            // Add the edit field for Bibtex-key.
-            fields.add(InternalField.KEY_FIELD);
-        } else {
-            // Entry type unknown -> treat all fields as required
-            fields.addAll(entry.getFields());
+            fields.addAll(lf);
         }
+
         return fields;
     }
 }

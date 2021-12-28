@@ -207,14 +207,14 @@ public class BibDatabase {
     }
 
     public synchronized void removeEntry(BibEntry bibEntry) {
-        Set<Field> yau = bibEntry.getFields();
+        //Set<Field> yau = bibEntry.getFields();
 
         removeEntries(Collections.singletonList(bibEntry));
     }
 
     public synchronized void removeEntry(BibEntry bibEntry, EntriesEventSource eventSource) {
 
-        Set<Field> yau = bibEntry.getFields();
+        //Set<Field> yau = bibEntry.getFields();
         removeEntries(Collections.singletonList(bibEntry), eventSource);
     }
 
@@ -850,5 +850,42 @@ public class BibDatabase {
             }
         }
         return allTopics;
+    }
+
+    //get the time period there were more articles written
+    public String getTimePeriodWithMostArticles(String journal){
+        List<String> decada = new LinkedList<>();
+        List<Integer> numberOfRepetitions  = new LinkedList<>();
+
+        for(BibEntry entry: entries){
+            Map<Field, String> map = entry.getFieldMap();
+            if(map.get(StandardField.JOURNAL) != null){
+                if(map.get(StandardField.JOURNAL).equals(journal)){
+                    String yearS = map.get(StandardField.YEAR);
+                    String decS = yearS.substring(0,3);
+                    decS = decS + 0;
+                    if (decada.contains(decS)){
+                        int i =decada.indexOf(decS);
+                        int rep = numberOfRepetitions.get(i);
+                        numberOfRepetitions.add(i,rep+1);
+                    }
+                    else{
+                        decada.add(decS);
+                        numberOfRepetitions.add(1);
+                    }
+                }
+            }
+        }
+        int high = -1;
+        for(int nrep : numberOfRepetitions){
+            if (nrep > high){
+                high = nrep;
+            }
+        }
+        String decfinal = decada.get(numberOfRepetitions.indexOf(high));
+        System.out.println("Decada " + decfinal );
+        String auxDec = decfinal.substring(2);
+        int auxDecInt = Integer.parseInt(auxDec);
+        return "Decada " + decfinal + " - " + (auxDecInt+10);
     }
 }

@@ -734,6 +734,26 @@ public class BibDatabase {
         return authorList.get(author).getKey();
     }
 
+    //Get the number of different nationalities an author has worked with
+    public int getNumberOfNationalities(String author){
+        List<String> natList = new LinkedList<>();
+
+        for(BibEntry entry: entries){
+            if(entry.getFieldMap().get(StandardField.AUTHOR).contains(author)){
+                List<EntryAuthor> authorList = entry.getAuthors();
+
+                for(EntryAuthor a: authorList){
+                    if(!a.getAuthorName().equals(author)){
+                        if(!natList.contains(a.getAuthorNationality())){
+                            natList.add(a.getAuthorNationality());
+                        }
+                    }
+                }
+            }
+        }
+        return natList.size();
+    }
+
 
     //Journal user story methods
 

@@ -675,6 +675,36 @@ public class BibDatabase {
         return articles;
     }
 
+    //Get everyone a specific author has worked with and the articles they have in common
+    public Map<String, List<String>> getCommonArticles(String author){
+        Map<String, List<String>> commonArticles = new HashMap<>();
+
+        for(BibEntry entry: entries){
+            Map<Field, String> map = entry.getFieldMap();
+            if(map.get(StandardField.AUTHOR).contains(author)){
+
+                String[] authors = map.get(StandardField.AUTHOR).split(" and ");
+
+                for(String a: authors){
+                    if(!a.equals(author)){
+                        if(commonArticles.get(a) == null){
+                            List<String> articles = new LinkedList<>();
+                            articles.add(map.get(StandardField.TITLE));
+                            commonArticles.put(a, articles);
+                        }
+                        else{
+                            commonArticles.get(a).add(map.get(StandardField.TITLE));
+                        }
+                    }
+                }
+            }
+        }
+        return commonArticles;
+    }
+
+
+    //Journal user story methods
+
     public String getAuthorWithMorePublish(String journal) {
         List<String> allAuthors = new LinkedList<>();
         List<Integer> numberPublish = new LinkedList<>();

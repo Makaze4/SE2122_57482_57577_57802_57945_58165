@@ -11,7 +11,6 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 
 import javafx.util.Pair;
-import org.apache.lucene.analysis.standard.StandardAnalyzer;
 import org.jabref.model.database.event.EntriesAddedEvent;
 import org.jabref.model.database.event.EntriesRemovedEvent;
 import org.jabref.model.entry.BibEntry;
@@ -23,7 +22,6 @@ import org.jabref.model.entry.event.EntryChangedEvent;
 import org.jabref.model.entry.event.FieldChangedEvent;
 import org.jabref.model.entry.field.Field;
 import org.jabref.model.entry.field.FieldFactory;
-import org.jabref.model.entry.field.FieldProperty;
 import org.jabref.model.entry.field.StandardField;
 import org.jabref.model.strings.StringUtil;
 
@@ -732,6 +730,29 @@ public class BibDatabase {
         }
 
         return authorList.get(author).getKey();
+    }
+
+    //Get the author with th most published articles in any journal
+    public String getbestArticleByJournal(String journal){
+        List<Pair<String, Integer>> articleList = new LinkedList<>();
+        int nCitations = 0; //GET NUMBER OF CITATIONS
+
+        for(BibEntry entry: entries) {
+            Map<Field, String> map = entry.getFieldMap();
+            if(map.get(StandardField.JOURNAL).equals(journal)) {
+                articleList.add(new Pair(map.get(StandardField.TITLE), nCitations));
+            }
+        }
+        if(articleList.isEmpty()) {
+            return "";
+        }
+        Pair<String, Integer> article = articleList.get(0);
+        for(int i = 0; i < articleList.size(); i++) {
+            if(articleList.get(i).getValue() > article.getValue()) {
+                article = articleList.get(i);
+            }
+        }
+        return article.getKey();
     }
 
     //Get the number of different nationalities an author has worked with

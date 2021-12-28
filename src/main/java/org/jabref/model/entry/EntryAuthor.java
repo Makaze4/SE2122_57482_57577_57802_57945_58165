@@ -18,4 +18,8 @@ public class EntryAuthor {
     public String getAuthorNationality(){
        return authorNationality;
     }
+
+    public void setNationality(String authorNationality){
+        this.authorNationality = authorNationality;
+    }
 }

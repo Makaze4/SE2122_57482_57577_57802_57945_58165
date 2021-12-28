@@ -1027,12 +1027,6 @@ public class BibEntry implements Cloneable {
     }
 
     public List<EntryAuthor> getAuthors(){
-        Iterator<EntryAuthor> it = authorList.iterator();
-
-        while(it.hasNext()){
-            System.out.println(it.next().getAuthorName());
-        }
-
         return authorList;
     }
 }

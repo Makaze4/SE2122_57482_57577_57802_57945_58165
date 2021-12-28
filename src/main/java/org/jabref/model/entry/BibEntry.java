@@ -1,15 +1,6 @@
 package org.jabref.model.entry;
 
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Map;
-import java.util.Objects;
-import java.util.Optional;
-import java.util.Set;
+import java.util.*;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.function.BiFunction;
 
@@ -57,6 +48,10 @@ public class BibEntry implements Cloneable {
     public static final EntryType DEFAULT_TYPE = StandardEntryType.Misc;
     private static final Logger LOGGER = LoggerFactory.getLogger(BibEntry.class);
     private final SharedBibEntryData sharedBibEntryData;
+
+
+    //Author list
+    private List<EntryAuthor> authorList = new LinkedList<>();
 
     /**
      * Map to store the words in every field
@@ -531,6 +526,15 @@ public class BibEntry implements Cloneable {
     public void setField(Map<Field, String> fields) {
         Objects.requireNonNull(fields, "fields must not be null");
 
+        if(fields.get(StandardField.AUTHOR) != null){
+            String[] authors = fields.get(StandardField.AUTHOR).split(" and ");
+            authorList.clear();
+            for(String s: authors){
+                authorList.add(new EntryAuthor(s, "Portugal"));//TODO implementar nacionalidade
+            }
+        }
+        System.out.println("1");
+        getAuthors();
         fields.forEach(this::setField);
     }
 
@@ -554,6 +558,12 @@ public class BibEntry implements Cloneable {
         if (value.equals(oldValue)) {
             return Optional.empty();
         }
+        else{
+            if(field == StandardField.AUTHOR){
+                authorList.clear();
+                authorList.add(new EntryAuthor(value, "Portugal"));//TODO implementar nacionalidade
+            }
+        }
 
         changed = true;
 
@@ -566,6 +576,8 @@ public class BibEntry implements Cloneable {
         } else {
             eventBus.post(new FieldChangedEvent(change, eventSource));
         }
+        System.out.println("2");
+        getAuthors();
         return Optional.of(change);
     }
 
@@ -576,6 +588,12 @@ public class BibEntry implements Cloneable {
      * @param value The value to set.
      */
     public Optional<FieldChange> setField(Field field, String value) {
+        if(field == StandardField.AUTHOR){
+            authorList.clear();
+            authorList.add(new EntryAuthor(value, "Portugal"));//TODO implementar nacionalidade
+        }
+        System.out.println("3");
+        getAuthors();
         return setField(field, value, EntriesEventSource.LOCAL);
     }
 
@@ -1008,4 +1026,13 @@ public class BibEntry implements Cloneable {
         entry.setFiles(linkedFiles);
     }
 
+    public List<EntryAuthor> getAuthors(){
+        Iterator<EntryAuthor> it = authorList.iterator();
+
+        while(it.hasNext()){
+            System.out.println(it.next().getAuthorName());
+        }
+
+        return authorList;
+    }
 }

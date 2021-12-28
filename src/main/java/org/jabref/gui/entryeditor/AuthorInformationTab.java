@@ -22,7 +22,7 @@ import java.util.Map;
 import java.util.Optional;
 import java.util.Set;
 
-public class AuthorInformationTab extends FieldsEditorTab {
+public class AuthorInformationTab extends FieldsEditorTab2 {
     private final BibEntryTypesManager entryTypesManager;
 
     public AuthorInformationTab(BibDatabaseContext databaseContext,

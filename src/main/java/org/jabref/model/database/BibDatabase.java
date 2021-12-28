@@ -775,6 +775,20 @@ public class BibDatabase {
         return natList.size();
     }
 
+    //gets all the topics by author
+    public List<String> getTopicsByAuthor(String author) {
+        List<String> allTopics = new LinkedList<>();
+        for(BibEntry entry : entries) {
+            for(int i = 0; i < entry.getAuthors().size(); i++) {
+                EntryAuthor a = entry.getAuthors().get(i);
+                if(a.getAuthorName().equals(author)) {
+                    allTopics.add("//TODO");
+                }
+            }
+        }
+        return allTopics;
+    }
+
 
     //Journal user story methods
 
@@ -838,19 +852,7 @@ public class BibDatabase {
         }
         return allAuthors;
     }
-    //gets all the topics by author
-    public List<String> getTopicsByAuthor(String author) {
-        List<String> allTopics = new LinkedList<>();
-        for(BibEntry entry : entries) {
-            for(int i = 0; i < entry.getAuthors().size(); i++) {
-                EntryAuthor a = entry.getAuthors().get(i);
-                if(a.getAuthorName().equals(author)) {
-                    allTopics.add("//TODO");
-                }
-            }
-        }
-        return allTopics;
-    }
+
 
     //get the time period there were more articles written
     public String getTimePeriodWithMostArticles(String journal){
@@ -888,4 +890,45 @@ public class BibDatabase {
         int auxDecInt = Integer.parseInt(auxDec);
         return "Decada " + decfinal + " - " + (auxDecInt+10);
     }
+
+    //Get topic rankings
+    public List<String> getTopicRanking(){
+        List<Pair<String, Integer>> topicList = new LinkedList<>();
+
+        for(BibEntry entry: entries){
+            boolean found = false;
+            for(Pair<String, Integer> p: topicList){
+                if(p.getKey().equals(entry.getField(StandardField.TOPIC))){
+                    found = true;
+                    p = new Pair<>(p.getKey(), p.getValue()+1);
+                    break;
+                }
+            }
+            if(!found){
+                topicList.add(new Pair<>(entry.getFieldMap().get(StandardField.TOPIC), 1));
+            }
+        }
+
+        topicList.sort(new ComparatorE());
+
+        List<String> topicRanking = new LinkedList<>();
+
+        for(Pair<String, Integer> p: topicList){
+            topicRanking.add(p.getKey());
+        }
+
+        return topicRanking;
+    }
+
+    class ComparatorE implements java.util.Comparator{
+
+        @Override
+        public int compare(Object o1, Object o2) {
+            int value1 = Integer.parseInt(o1.toString().split("=")[1]);
+            int value2 = Integer.parseInt(o2.toString().split("=")[1]);
+            return value2 - value1;
+        }
+    }
+
+
 }

@@ -2,18 +2,7 @@ package org.jabref.model.database;
 
 import java.math.BigInteger;
 import java.security.SecureRandom;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collection;
-import java.util.Collections;
-import java.util.Comparator;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Map;
-import java.util.Objects;
-import java.util.Optional;
-import java.util.Set;
-import java.util.TreeSet;
+import java.util.*;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.regex.Pattern;
 import java.util.stream.Collectors;
@@ -21,6 +10,7 @@ import java.util.stream.Collectors;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 
+import org.apache.lucene.analysis.standard.StandardAnalyzer;
 import org.jabref.model.database.event.EntriesAddedEvent;
 import org.jabref.model.database.event.EntriesRemovedEvent;
 import org.jabref.model.entry.BibEntry;
@@ -31,6 +21,7 @@ import org.jabref.model.entry.event.EntryChangedEvent;
 import org.jabref.model.entry.event.FieldChangedEvent;
 import org.jabref.model.entry.field.Field;
 import org.jabref.model.entry.field.FieldFactory;
+import org.jabref.model.entry.field.FieldProperty;
 import org.jabref.model.entry.field.StandardField;
 import org.jabref.model.strings.StringUtil;
 
@@ -216,10 +207,15 @@ public class BibDatabase {
     }
 
     public synchronized void removeEntry(BibEntry bibEntry) {
+
+        Set<Field> yau = bibEntry.getFields();
+
         removeEntries(Collections.singletonList(bibEntry));
     }
 
     public synchronized void removeEntry(BibEntry bibEntry, EntriesEventSource eventSource) {
+
+        Set<Field> yau = bibEntry.getFields();
         removeEntries(Collections.singletonList(bibEntry), eventSource);
     }
 
@@ -230,6 +226,7 @@ public class BibDatabase {
      * @param toBeDeleted Entries to delete
      */
     public synchronized void removeEntries(List<BibEntry> toBeDeleted) {
+        List<String> yau = getEditorsRelatedToAuthor("Joao Leite");
         removeEntries(toBeDeleted, EntriesEventSource.LOCAL);
     }
 
@@ -644,6 +641,20 @@ public class BibDatabase {
      */
     public String getNewLineSeparator() {
         return newLineSeparator;
+    }
+
+    public List<String> getEditorsRelatedToAuthor(String author) {
+        List<String> editors = new LinkedList<>();
+
+        for(BibEntry entry: entries){
+            Map<Field, String> mapa = entry.getFieldMap();
+
+            if(mapa.get(StandardField.AUTHOR).contains(author)){
+                editors.add(mapa.get(StandardField.JOURNAL));
+            }
+        }
+        System.out.println(editors);
+        return editors;
     }
 
 }

@@ -1,5 +1,7 @@
 package org.jabref.model.entry;
 
+import java.util.Random;
+
 public class EntryAuthor {
 
     private String authorName;
@@ -8,7 +10,14 @@ public class EntryAuthor {
 
     public EntryAuthor(String authorName, String authorNationality){
         this.authorName = authorName;
-        this.authorNationality = "Portugal";
+        Random r = new Random(2);
+        if(r.nextInt() == 0){
+            this.authorNationality = "Portugal";
+        }
+        else{
+            this.authorNationality = "Spain";
+        }
+
     }
 
     public String getAuthorName(){

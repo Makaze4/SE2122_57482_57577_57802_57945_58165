@@ -643,6 +643,8 @@ public class BibDatabase {
         return newLineSeparator;
     }
 
+
+    // Author usr story methods
     public List<String> getEditorsRelatedToAuthor(String author) {
         List<String> editors = new LinkedList<>();
 
@@ -656,5 +658,7 @@ public class BibDatabase {
         System.out.println(editors);
         return editors;
     }
+
+
 
 }

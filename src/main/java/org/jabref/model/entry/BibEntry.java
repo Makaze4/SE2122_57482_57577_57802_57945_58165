@@ -526,15 +526,8 @@ public class BibEntry implements Cloneable {
     public void setField(Map<Field, String> fields) {
         Objects.requireNonNull(fields, "fields must not be null");
 
-        if(fields.get(StandardField.AUTHOR) != null){
-            String[] authors = fields.get(StandardField.AUTHOR).split(" and ");
-            authorList.clear();
-            for(String s: authors){
-                authorList.add(new EntryAuthor(s, "Portugal"));//TODO implementar nacionalidade
-            }
-        }
-        //System.out.println("1");
-        //getAuthors();
+        updateAuthorListMap(fields);
+
         fields.forEach(this::setField);
     }
 
@@ -559,14 +552,7 @@ public class BibEntry implements Cloneable {
             return Optional.empty();
         }
         else{
-            if(field == StandardField.AUTHOR){
-                authorList.clear();
-
-                String[] authors = value.split(" and ");
-                for(String s: authors){
-                    authorList.add(new EntryAuthor(s, "Portugal"));//TODO implementar nacionalidade
-                }
-            }
+            updateAuthorListField(field, value);
         }
 
         changed = true;
@@ -580,8 +566,7 @@ public class BibEntry implements Cloneable {
         } else {
             eventBus.post(new FieldChangedEvent(change, eventSource));
         }
-        //System.out.println("2");
-        //getAuthors();
+
         return Optional.of(change);
     }
 
@@ -592,16 +577,8 @@ public class BibEntry implements Cloneable {
      * @param value The value to set.
      */
     public Optional<FieldChange> setField(Field field, String value) {
-        if(field == StandardField.AUTHOR){
-            authorList.clear();
+        updateAuthorListField(field, value);
 
-            String[] authors = value.split(" and ");
-            for(String s: authors){
-                authorList.add(new EntryAuthor(s, "Portugal"));//TODO implementar nacionalidade
-            }
-        }
-        //System.out.println("3");
-        //getAuthors();
         return setField(field, value, EntriesEventSource.LOCAL);
     }
 
@@ -1036,5 +1013,27 @@ public class BibEntry implements Cloneable {
 
     public List<EntryAuthor> getAuthors(){
         return authorList;
+    }
+
+    private void updateAuthorListMap(Map<Field, String> fields){
+        if(fields.get(StandardField.AUTHOR) != null){
+            updateAuthorList(fields.get(StandardField.AUTHOR));
+        }
+    }
+
+    private void updateAuthorListField(Field field, String value){
+        if(field == StandardField.AUTHOR){
+            updateAuthorList(value);
+        }
+    }
+
+
+    private void updateAuthorList(String value){
+        authorList.clear();
+
+        String[] authors = value.split(" and ");
+        for(String s: authors){
+            authorList.add(new EntryAuthor(s, "Portugal"));//TODO implementar nacionalidade
+        }
     }
 }

@@ -701,7 +701,7 @@ public class BibDatabase {
         return commonArticles;
     }
 
-    //Get the author with th most published articles in any journal
+    //Get the author with the most published articles in any journal
     public String getMostActiveAuthor(){
         List<Pair<String, Integer>> authorList = new LinkedList<>();
 
@@ -851,4 +851,7 @@ public class BibDatabase {
         }
         return allTopics;
     }
+
+
+
 }

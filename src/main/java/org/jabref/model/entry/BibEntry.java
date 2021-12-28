@@ -561,7 +561,11 @@ public class BibEntry implements Cloneable {
         else{
             if(field == StandardField.AUTHOR){
                 authorList.clear();
-                authorList.add(new EntryAuthor(value, "Portugal"));//TODO implementar nacionalidade
+
+                String[] authors = value.split(" and ");
+                for(String s: authors){
+                    authorList.add(new EntryAuthor(s, "Portugal"));//TODO implementar nacionalidade
+                }
             }
         }
 
@@ -590,7 +594,11 @@ public class BibEntry implements Cloneable {
     public Optional<FieldChange> setField(Field field, String value) {
         if(field == StandardField.AUTHOR){
             authorList.clear();
-            authorList.add(new EntryAuthor(value, "Portugal"));//TODO implementar nacionalidade
+
+            String[] authors = value.split(" and ");
+            for(String s: authors){
+                authorList.add(new EntryAuthor(s, "Portugal"));//TODO implementar nacionalidade
+            }
         }
         System.out.println("3");
         getAuthors();

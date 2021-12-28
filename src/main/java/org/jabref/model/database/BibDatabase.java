@@ -213,7 +213,7 @@ public class BibDatabase {
     }
 
     public synchronized void removeEntry(BibEntry bibEntry, EntriesEventSource eventSource) {
-
+        String yau = getTimePeriodWithMostArticles("jornal1");
         //Set<Field> yau = bibEntry.getFields();
         removeEntries(Collections.singletonList(bibEntry), eventSource);
     }
@@ -225,6 +225,7 @@ public class BibDatabase {
      * @param toBeDeleted Entries to delete
      */
     public synchronized void removeEntries(List<BibEntry> toBeDeleted) {
+        String yau = getTimePeriodWithMostArticles("jornal1");
         //List<String> yau = getEditorsRelatedToAuthor("Joao Leite");
         removeEntries(toBeDeleted, EntriesEventSource.LOCAL);
     }
@@ -882,10 +883,16 @@ public class BibDatabase {
                 high = nrep;
             }
         }
-        String decfinal = decada.get(numberOfRepetitions.indexOf(high));
-        System.out.println("Decada " + decfinal );
-        String auxDec = decfinal.substring(2);
-        int auxDecInt = Integer.parseInt(auxDec);
-        return "Decada " + decfinal + " - " + (auxDecInt+10);
+        String result = "";
+        for (int i = 0; i < numberOfRepetitions.size();i++){
+            if(numberOfRepetitions.get(i) == high){
+                String decfinal = decada.get(i);
+                String auxDec = decfinal.substring(2);
+                int auxDecInt = Integer.parseInt(auxDec);
+                result += "Decada " + decfinal + "-" + (auxDecInt+10) + "  ";
+            }
+        }
+
+        return result;
     }
 }

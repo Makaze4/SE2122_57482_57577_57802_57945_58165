@@ -16,6 +16,7 @@ import org.jabref.model.database.event.EntriesAddedEvent;
 import org.jabref.model.database.event.EntriesRemovedEvent;
 import org.jabref.model.entry.BibEntry;
 import org.jabref.model.entry.BibtexString;
+import org.jabref.model.entry.EntryAuthor;
 import org.jabref.model.entry.Month;
 import org.jabref.model.entry.event.EntriesEventSource;
 import org.jabref.model.entry.event.EntryChangedEvent;
@@ -208,7 +209,6 @@ public class BibDatabase {
     }
 
     public synchronized void removeEntry(BibEntry bibEntry) {
-
         Set<Field> yau = bibEntry.getFields();
 
         removeEntries(Collections.singletonList(bibEntry));
@@ -781,5 +781,23 @@ public class BibDatabase {
         //Falta caso de empate
         return allAuthors.get(index);
     }
+
+    public List<String> getAuthorsNacionality(String nacionality) {
+        List<String> allAuthors = new LinkedList<>();
+
+        for(BibEntry entry: entries){
+            Map<Field, String> map = entry.getFieldMap();
+
+            for(int i = 0; i < entry.getAuthors().size(); i++) {
+                EntryAuthor a = entry.getAuthors().get(i);
+
+                if(a.getAuthorNationality().equals(nacionality)) {
+                    allAuthors.add(a.getAuthorName());
+                }
+            }
+        }
+        return allAuthors;
+    }
+
 
 }

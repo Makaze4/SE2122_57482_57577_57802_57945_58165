@@ -64,7 +64,7 @@ public class BibEntryType implements Comparable<BibEntryType> {
         return Collections.unmodifiableSet(fields);
     }
 
-    public Set<Field> getAllFields() {
+    public LinkedHashSet<Field> getAllFields() {
         return fields.stream().map(BibField::getField).collect(Collectors.toCollection(LinkedHashSet::new));
     }
 

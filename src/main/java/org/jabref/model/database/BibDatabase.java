@@ -226,7 +226,7 @@ public class BibDatabase {
      * @param toBeDeleted Entries to delete
      */
     public synchronized void removeEntries(List<BibEntry> toBeDeleted) {
-        List<String> yau = getJournalsRelatedToAuthor("Joao Leite");
+        List<String> yau = getEditorsRelatedToAuthor("Joao Leite");
         removeEntries(toBeDeleted, EntriesEventSource.LOCAL);
     }
 
@@ -644,8 +644,8 @@ public class BibDatabase {
     }
 
 
-    //Author usr story methods
-    public List<String> getJournalsRelatedToAuthor(String author) {
+    // Author usr story methods
+    public List<String> getEditorsRelatedToAuthor(String author) {
         List<String> editors = new LinkedList<>();
 
         for(BibEntry entry: entries){
@@ -659,8 +659,49 @@ public class BibDatabase {
         return editors;
     }
 
+    public String getAuthorWithMorePublish(String journal) {
+        List<String> allAuthors = new LinkedList<>();
+        List<Integer> numberPublish = new LinkedList<>();
 
+        for(BibEntry entry: entries){
+            Map<Field, String> map = entry.getFieldMap();
 
+            if(map.get(StandardField.JOURNAL).equals(journal)){
+                String[] authors = map.get(StandardField.AUTHOR).split(" and ", 0);
 
+                if(allAuthors.isEmpty()){
+                    for(String author: authors){
+                        allAuthors.add(author);
+                        numberPublish.add(1);
+                    }
+                } else {
+                    for(String author: authors){
+                        int index = allAuthors.indexOf(author);
+
+                        if(index == -1){
+                            allAuthors.add(author);
+                            numberPublish.add(1);
+                        } else{
+                            numberPublish.set(index, numberPublish.get(index) + 1);
+                        }
+                    }
+                }
+            }
+        }
+
+        int heighstNumber = 0;
+        int index = 0;
+
+        for(int i = 0; i < numberPublish.size(); i++){
+            int number = numberPublish.get(i);
+            if(number > heighstNumber){
+                heighstNumber = number;
+                index = i;
+            }
+        }
+
+        //Falta caso de empate
+        return allAuthors.get(index);
+    }
 
 }

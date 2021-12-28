@@ -213,8 +213,6 @@ public class BibDatabase {
     }
 
     public synchronized void removeEntry(BibEntry bibEntry, EntriesEventSource eventSource) {
-        //String yau = getTimePeriodWithMostArticles("jornal1");
-        //Set<Field> yau = bibEntry.getFields();
         removeEntries(Collections.singletonList(bibEntry), eventSource);
     }
 
@@ -225,8 +223,6 @@ public class BibDatabase {
      * @param toBeDeleted Entries to delete
      */
     public synchronized void removeEntries(List<BibEntry> toBeDeleted) {
-        //String yau = getTimePeriodWithMostArticles("jornal1");
-        //List<String> yau = getEditorsRelatedToAuthor("Joao Leite");
         removeEntries(toBeDeleted, EntriesEventSource.LOCAL);
     }
 

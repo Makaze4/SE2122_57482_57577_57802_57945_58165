@@ -13,14 +13,12 @@ import org.jabref.model.database.BibDatabaseContext;
 import org.jabref.model.entry.BibEntry;
 import org.jabref.model.entry.BibEntryType;
 import org.jabref.model.entry.BibEntryTypesManager;
+import org.jabref.model.entry.EntryAuthor;
 import org.jabref.model.entry.field.*;
 import org.jabref.preferences.PreferencesService;
 
 import javax.swing.undo.UndoManager;
-import java.util.LinkedHashSet;
-import java.util.Map;
-import java.util.Optional;
-import java.util.Set;
+import java.util.*;
 
 public class AuthorInformationTab extends FieldsEditorTab2 {
     private final BibEntryTypesManager entryTypesManager;
@@ -36,7 +34,7 @@ public class AuthorInformationTab extends FieldsEditorTab2 {
                                 TaskExecutor taskExecutor,
                                 JournalAbbreviationRepository journalAbbreviationRepository) {
 
-        super(false, databaseContext, suggestionProviders, undoManager, dialogService,
+        super(true, databaseContext, suggestionProviders, undoManager, dialogService,
                 preferences, stateManager, externalFileTypes, taskExecutor, journalAbbreviationRepository);
         this.entryTypesManager = entryTypesManager;
 
@@ -54,12 +52,27 @@ public class AuthorInformationTab extends FieldsEditorTab2 {
             String st = mapaEntries.get(StandardField.AUTHOR);
             String[] authors = mapaEntries.get(StandardField.AUTHOR).split(" and ");
             LinkedHashSet<Field> lf = new LinkedHashSet<Field>();
+            List<EntryAuthor> la = entry.getAuthors();
 
             for (int i =0 ; i< authors.length; i++){
                 String nomeF = "author " + (i+1);
                 Field f = new UnknownField(nomeF);
                 entry.setField(f,authors[i]);
                 lf.add(f);
+            }
+
+            for (int i =0 ; i< authors.length; i++){
+                Field fn = new UnknownField("Author " + (i+1) + " Nationality");
+                for (EntryAuthor author : la ){
+                    if(authors[i].equals(author.getAuthorName())){
+                        if (author.getAuthorNationality() == null){
+                            entry.setField(fn,"");
+                        }else{
+                            entry.setField(fn,author.getAuthorNationality());
+                        }
+                        lf.add(fn);
+                    }
+                }
             }
             fields.addAll(lf);
         }

@@ -975,7 +975,32 @@ public class BibDatabase {
 
             nationalitiesValue.set(i, new Pair(nationalitiesValue.get(i).getKey(), lastvalue));
         }
+
+        if(!nationalitiesValue.isEmpty()) {
+            nationalitiesValue = pairSort(nationalitiesValue);
+        }
+
         return nationalitiesValue;
+    }
+
+    private Pair<String, Integer> getBiggest(List<Pair<String, Integer>> nationalities) {
+        Pair<String, Integer> biggest = nationalities.get(0);
+        for(int i = 0; i < nationalities.size(); i++) {
+           if(nationalities.get(i).getValue() > biggest.getValue()) {
+               biggest = nationalities.get(i);
+           }
+        }
+        return biggest;
+    }
+
+    public List<Pair<String, Integer>> pairSort(List<Pair<String, Integer>> nationalities) {
+        List<Pair<String, Integer>> aux = new LinkedList<>();
+        while(nationalities.size() > 0) {
+            Pair<String, Integer> biggest = getBiggest(nationalities);
+            nationalities.remove(biggest);
+            aux.add(biggest);
+        }
+        return aux;
     }
 
     public String getJournalNacionalitiesPercentages(String journalName) {

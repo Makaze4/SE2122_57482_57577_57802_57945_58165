@@ -13,15 +13,18 @@ import javafx.util.Pair;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class getPercentageOfAuthorsByNationalityTest {
-    BibDatabase database;
+    BibDatabase database1;
+    BibDatabase database2;
 
     BibEntry entry1;
     BibEntry entry2;
     BibEntry entry3;
+    BibEntry entry4;
 
     @BeforeEach
     void setup() {
         List<BibEntry> entryListTest1 = new LinkedList<>();
+        List<BibEntry> entryListTest2 = new LinkedList<>();
 
         entry1 = new BibEntry();
         entry1.setField(StandardField.AUTHOR, "Joao and Pedro");
@@ -41,7 +44,21 @@ public class getPercentageOfAuthorsByNationalityTest {
         entry3.getAuthors().get(0).setNationality("Portugal");
         entryListTest1.add(entry3);
 
-        database = new BibDatabase(entryListTest1);
+        database1 = new BibDatabase(entryListTest1);
+
+        entry4 = new BibEntry();
+        entry4.setField(StandardField.AUTHOR, "Manuel and Diogo and Joao");
+        entry4.getAuthors().get(0).setNationality("Portugal");
+        entry4.getAuthors().get(1).setNationality("Spain");
+        entry4.getAuthors().get(2).setNationality("Portugal");
+        entryListTest1.add(entry4);
+
+        entryListTest2.add(entry1);
+        entryListTest2.add(entry2);
+        entryListTest2.add(entry3);
+        entryListTest2.add(entry4);
+
+        database2 = new BibDatabase(entryListTest2);
     }
 
     @Test
@@ -51,6 +68,16 @@ public class getPercentageOfAuthorsByNationalityTest {
         percentages.add(new Pair("Portugal", 50));
         percentages.add(new Pair("France", 33));
         percentages.add(new Pair("Spain", 16));
-        assertEquals(percentages, database.getPercentageOfAuthorsByNationality(), "-----TEST FAILED----------TEST FAILED----------TEST FAILED-----");
+        assertEquals(percentages, database1.getPercentageOfAuthorsByNationality(), "-----TEST FAILED----------TEST FAILED----------TEST FAILED-----");
+    }
+
+    @Test
+    @DisplayName("Test 2")
+    void test2() {
+        List<Pair<String, Integer>> percentages = new LinkedList<>();
+        percentages.add(new Pair("Portugal", 50));
+        percentages.add(new Pair("France", 33));
+        percentages.add(new Pair("Spain", 16));
+        assertEquals(percentages, database2.getPercentageOfAuthorsByNationality(), "-----TEST FAILED----------TEST FAILED----------TEST FAILED-----");
     }
 }

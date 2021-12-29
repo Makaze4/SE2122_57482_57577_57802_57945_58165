@@ -776,10 +776,11 @@ public class BibDatabase {
     public List<String> getTopicsByAuthor(String author) {
         List<String> allTopics = new LinkedList<>();
         for(BibEntry entry : entries) {
+            Map<Field, String> map = entry.getFieldMap();
             for(int i = 0; i < entry.getAuthors().size(); i++) {
                 EntryAuthor a = entry.getAuthors().get(i);
                 if(a.getAuthorName().equals(author)) {
-                    allTopics.add("//TODO");
+                    allTopics.add(map.get(StandardField.TOPIC));
                 }
             }
         }

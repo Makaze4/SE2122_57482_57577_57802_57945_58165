@@ -923,6 +923,47 @@ public class BibDatabase {
         return topicRanking;
     }
 
+
+    public String getJournalNacionalitiesPercentages(String journalName) {
+        List<BibEntry> entries = getEntries();
+        List<String> journalAuthors = new ArrayList<>();
+        Map<String, Integer> nacionalities = new HashMap<>();
+
+        for(int i = 0; i < entries.size(); i++) {
+            if (entries.get(i).getFieldMap().containsKey(journalName)) {
+                String[] authors = entries.get(i).getFieldMap().get(StandardField.AUTHOR).split(" and ");
+                List<String> authors2 = Arrays.stream(authors).toList();
+                journalAuthors.addAll(authors2);
+            }
+        }
+
+        Set<String> set = new HashSet<>(journalAuthors);
+        journalAuthors.clear();
+        journalAuthors.addAll(set);
+
+        for(int i = 0; i < journalAuthors.size();i++) {
+            if (nacionalities.containsKey(journalAuthors.get(i))){ // get nacionalidade
+                nacionalities.put(journalAuthors.get(i), nacionalities.get(journalAuthors.get(i)) +1);
+            } else {
+                nacionalities.put(journalAuthors.get(i), 1);
+            }
+        }
+
+        List<Pair<String, Integer>> nacionalitiesValue = new ArrayList<>();
+
+        for (String key: nacionalities.keySet()) {
+            nacionalitiesValue.add(new Pair(key, nacionalities.get(key)));
+        }
+
+        String nac = "";
+        for (int i = 0; i < nacionalitiesValue.size();i++) {
+            nacionalitiesValue.set(i, new Pair(nacionalitiesValue.get(i).getKey(), (nacionalitiesValue.get(i).getValue() / journalAuthors.size()) * 100));
+            nac.concat(nacionalitiesValue.get(i).getKey() + ": " + nacionalitiesValue.get(i).getValue().toString() + " % \n");
+        }
+
+        return nac;
+    }
+
     class ComparatorE implements java.util.Comparator{
 
         @Override

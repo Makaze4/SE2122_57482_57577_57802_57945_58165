@@ -7,12 +7,12 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-
 import java.util.LinkedList;
 import java.util.List;
 
-public class getEditorRelatedToAuthorTest {
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
+public class getAuthorArticlesTopicInPeriod {
 
     BibDatabase dataBase;
 

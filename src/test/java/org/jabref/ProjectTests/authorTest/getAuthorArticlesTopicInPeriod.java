@@ -14,7 +14,8 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class getAuthorArticlesTopicInPeriod {
 
-    BibDatabase dataBase;
+    BibDatabase dataBase1;
+    BibDatabase dataBase2;
 
     BibEntry entry1;
     BibEntry entry2;
@@ -22,7 +23,6 @@ public class getAuthorArticlesTopicInPeriod {
     BibEntry entry4;
     BibEntry entry5;
     BibEntry entry6;
-    BibEntry entry7;
 
     @BeforeEach
     void setUp(){
@@ -30,85 +30,92 @@ public class getAuthorArticlesTopicInPeriod {
 
         entry1 = new BibEntry();
         entry1.setField(StandardField.AUTHOR, "Joao");
-        entry1.setField(StandardField.JOURNAL, "journal1");
+        entry1.setField(StandardField.TITLE, "Article1");
+        entry1.setField(StandardField.TOPIC, "Computer Science");
+        entry1.setField(StandardField.YEAR, "2020");
         entryList.add(entry1);
 
         entry2 = new BibEntry();
         entry2.setField(StandardField.AUTHOR, "Joao");
-        entry2.setField(StandardField.JOURNAL, "journal2");
+        entry2.setField(StandardField.TITLE, "Article2");
+        entry2.setField(StandardField.TOPIC, "Computer Science");
+        entry2.setField(StandardField.YEAR, "2018");
         entryList.add(entry2);
 
         entry3 = new BibEntry();
         entry3.setField(StandardField.AUTHOR, "Joao");
-        entry3.setField(StandardField.JOURNAL, "journal3");
+        entry3.setField(StandardField.TITLE, "Article3");
+        entry3.setField(StandardField.TOPIC, "Physics");
+        entry3.setField(StandardField.YEAR, "2019");
         entryList.add(entry3);
 
         entry4 = new BibEntry();
-        entry4.setField(StandardField.AUTHOR, "Tim");
-        entry4.setField(StandardField.JOURNAL, "journal1");
+        entry4.setField(StandardField.AUTHOR, "Joao");
+        entry4.setField(StandardField.TITLE, "Article4");
+        entry4.setField(StandardField.TOPIC, "Computer Science");
+        entry4.setField(StandardField.YEAR, "2014");
         entryList.add(entry4);
 
         entry5 = new BibEntry();
-        entry5.setField(StandardField.AUTHOR, "Miguel");
-        entry5.setField(StandardField.JOURNAL, "journal1");
+        entry5.setField(StandardField.AUTHOR, "Joao");
+        entry5.setField(StandardField.TITLE, "Article5");
+        entry5.setField(StandardField.TOPIC, "Mathematics");
+        entry5.setField(StandardField.YEAR, "2012");
         entryList.add(entry5);
 
         entry6 = new BibEntry();
         entry6.setField(StandardField.AUTHOR, "Miguel");
-        entry6.setField(StandardField.JOURNAL, "journal2");
+        entry6.setField(StandardField.TITLE, "Article6");
+        entry6.setField(StandardField.TOPIC, "Computer Science");
+        entry6.setField(StandardField.YEAR, "2018");
         entryList.add(entry6);
 
-        entry7 = new BibEntry();
-        entry7.setField(StandardField.AUTHOR, "Alexandre");
-        entry7.setField(StandardField.JOURNAL, "journal4");
-        entryList.add(entry7);
 
-
-        dataBase = new BibDatabase(entryList);
+        dataBase1 = new BibDatabase(entryList);
+        dataBase2 = new BibDatabase();
     }
 
     @Test
     @DisplayName("Test 1")
     void test1(){
         List<String> journalList = new LinkedList<>();
-        journalList.add("journal1");
-        journalList.add("journal2");
-        journalList.add("journal3");
-        assertEquals(journalList, dataBase.getEditorsRelatedToAuthor("Joao"), "-----TEST FAILED----------TEST FAILED----------TEST FAILED-----");
+        journalList.add("Article1");
+        journalList.add("Article2");
+        assertEquals(journalList, dataBase1.getAuthorArticlesTopicInPeriod("Joao", "Computer Science", 2018, 2020), "-----TEST FAILED----------TEST FAILED----------TEST FAILED-----");
     }
 
     @Test
     @DisplayName("Test 2")
     void test2(){
         List<String> journalList = new LinkedList<>();
-        journalList.add("journal1");
-        assertEquals(journalList, dataBase.getEditorsRelatedToAuthor("Tim"), "-----TEST FAILED----------TEST FAILED----------TEST FAILED-----");
+        journalList.add("Article1");
+        journalList.add("Article2");
+        journalList.add("Article4");
+        assertEquals(journalList, dataBase1.getAuthorArticlesTopicInPeriod("Joao", "Computer Science", 2014, 2020), "-----TEST FAILED----------TEST FAILED----------TEST FAILED-----");
     }
 
     @Test
     @DisplayName("Test 3")
     void test3(){
         List<String> journalList = new LinkedList<>();
-        journalList.add("journal1");
-        journalList.add("journal2");
-        assertEquals(journalList, dataBase.getEditorsRelatedToAuthor("Miguel"), "-----TEST FAILED----------TEST FAILED----------TEST FAILED-----");
+        journalList.add("Article6");
+        assertEquals(journalList, dataBase1.getAuthorArticlesTopicInPeriod("Miguel", "Computer Science", 2014, 2020), "-----TEST FAILED----------TEST FAILED----------TEST FAILED-----");
     }
 
     @Test
     @DisplayName("Test 4")
     void test4(){
         List<String> journalList = new LinkedList<>();
-        journalList.add("journal1");
-        journalList.add("journal2");
-        assertEquals(journalList, dataBase.getEditorsRelatedToAuthor("Miguel"), "-----TEST FAILED----------TEST FAILED----------TEST FAILED-----");
+        assertEquals(journalList, dataBase1.getAuthorArticlesTopicInPeriod("Miguel", "Computer Science", 2019, 2020), "-----TEST FAILED----------TEST FAILED----------TEST FAILED-----");
     }
 
     @Test
     @DisplayName("Test 5")
     void test5(){
         List<String> journalList = new LinkedList<>();
-        journalList.add("journal4");
-        assertEquals(journalList, dataBase.getEditorsRelatedToAuthor("Alexandre"), "-----TEST FAILED----------TEST FAILED----------TEST FAILED-----");
+        assertEquals(journalList, dataBase2.getAuthorArticlesTopicInPeriod("Miguel", "Computer Science", 2019, 2020), "-----TEST FAILED----------TEST FAILED----------TEST FAILED-----");
     }
+
+
 
 }

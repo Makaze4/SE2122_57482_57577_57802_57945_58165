@@ -89,7 +89,7 @@ public class getJournalNacionalitiesPercentagesTest {
     @Test
     @DisplayName("Test 1")
     void test1(){
-        String sol = "Italia: 16%\nPortugal: 16%\nBrazil: 16%\nFranca: 16%\nEspanha: 16%\nAlemanha: 16%\n")
+        String sol = "Italia: 16%\nPortugal: 16%\nBrazil: 16%\nFranca: 16%\nEspanha: 16%\nAlemanha: 16%\n";
         assertEquals(sol, dataBase.getJournalNacionalitiesPercentages("journal1"), "-----TEST FAILED----------TEST FAILED----------TEST FAILED-----");
     }
 
@@ -103,14 +103,14 @@ public class getJournalNacionalitiesPercentagesTest {
     @Test
     @DisplayName("Test 3")
     void test3(){
-        String sol = "Portugal: 100%\n"
+        String sol = "Portugal: 100%\n";
         assertEquals(sol, dataBase.getJournalNacionalitiesPercentages("journal3"), "-----TEST FAILED----------TEST FAILED----------TEST FAILED-----");
     }
 
     @Test
     @DisplayName("Test 4")
     void test4(){
-        String sol = "Portugal: 40%\nAlemanha: 40%\nBrazil: 20%\n"
+        String sol = "Portugal: 40%\nAlemanha: 40%\nBrazil: 20%\n";
         assertEquals(sol, dataBase.getEditorsRelatedToAuthor("journal4"), "-----TEST FAILED----------TEST FAILED----------TEST FAILED-----");
     }
 

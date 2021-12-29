@@ -866,6 +866,7 @@ public class BibDatabase {
                     if (decada.contains(decS)){
                         int i =decada.indexOf(decS);
                         int rep = numberOfRepetitions.get(i);
+                        numberOfRepetitions.remove(i);
                         numberOfRepetitions.add(i,rep+1);
                     }
                     else{
@@ -885,9 +886,12 @@ public class BibDatabase {
         for (int i = 0; i < numberOfRepetitions.size();i++){
             if(numberOfRepetitions.get(i) == high){
                 String decfinal = decada.get(i);
-                String auxDec = decfinal.substring(2);
-                int auxDecInt = Integer.parseInt(auxDec);
-                result += "Decada " + decfinal + "-" + (auxDecInt+10) + " ";
+                int yearInt = Integer.parseInt(decfinal);
+                yearInt += 10;
+                String yearString = Integer.toString(yearInt);
+                String auxDec = yearString.substring(2);
+
+                result += "Decada " + decfinal + "-" + (auxDec) + " ";
             }
         }
 

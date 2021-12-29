@@ -577,7 +577,7 @@ public class BibEntry implements Cloneable {
      * @param value The value to set.
      */
     public Optional<FieldChange> setField(Field field, String value) {
-        updateAuthorListField(field, value);
+        updateAuthorListField(field, value);//TODO talvez desnecessario
 
         return setField(field, value, EntriesEventSource.LOCAL);
     }

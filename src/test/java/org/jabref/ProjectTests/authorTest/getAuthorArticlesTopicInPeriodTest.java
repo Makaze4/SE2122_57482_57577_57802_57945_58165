@@ -12,7 +12,7 @@ import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-public class getAuthorArticlesTopicInPeriod {
+public class getAuthorArticlesTopicInPeriodTest {
 
     BibDatabase dataBase1;
     BibDatabase dataBase2;

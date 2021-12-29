@@ -1034,13 +1034,13 @@ public class BibEntry implements Cloneable {
             newAuthors.add(s);
         }
 
-
         for(int i = 0; i<authorList.size(); i++){
             if(newAuthors.contains(authorList.get(i).getAuthorName())){
                 newAuthors.remove(authorList.get(i).getAuthorName());
             }
             else{
                 authorList.remove(i);
+                i--;
             }
         }
 

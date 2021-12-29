@@ -15,6 +15,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 public class getPercentageOfAuthorsByNationalityTest {
     BibDatabase database1;
     BibDatabase database2;
+    BibDatabase database3;
 
     BibEntry entry1;
     BibEntry entry2;
@@ -25,6 +26,7 @@ public class getPercentageOfAuthorsByNationalityTest {
     void setup() {
         List<BibEntry> entryListTest1 = new LinkedList<>();
         List<BibEntry> entryListTest2 = new LinkedList<>();
+        List<BibEntry> entryListTest3 = new LinkedList<>();
 
         entry1 = new BibEntry();
         entry1.setField(StandardField.AUTHOR, "Joao and Pedro");
@@ -59,6 +61,7 @@ public class getPercentageOfAuthorsByNationalityTest {
         entryListTest2.add(entry4);
 
         database2 = new BibDatabase(entryListTest2);
+        database3 = new BibDatabase(entryListTest3);
     }
 
     @Test
@@ -79,5 +82,12 @@ public class getPercentageOfAuthorsByNationalityTest {
         percentages.add(new Pair("France", 33));
         percentages.add(new Pair("Spain", 16));
         assertEquals(percentages, database2.getPercentageOfAuthorsByNationality(), "-----TEST FAILED----------TEST FAILED----------TEST FAILED-----");
+    }
+
+    @Test
+    @DisplayName("Test 3")
+    void test3() {
+        List<Pair<String, Integer>> percentages = new LinkedList<>();
+        assertEquals(percentages, database3.getPercentageOfAuthorsByNationality(), "-----TEST FAILED----------TEST FAILED----------TEST FAILED-----");
     }
 }

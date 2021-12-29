@@ -779,7 +779,7 @@ public class BibDatabase {
             Map<Field, String> map = entry.getFieldMap();
             for(int i = 0; i < entry.getAuthors().size(); i++) {
                 EntryAuthor a = entry.getAuthors().get(i);
-                if(a.getAuthorName().equals(author)) {
+                if(a.getAuthorName().equals(author) && !allTopics.contains(map.get(StandardField.TOPIC))) {
                     allTopics.add(map.get(StandardField.TOPIC));
                 }
             }

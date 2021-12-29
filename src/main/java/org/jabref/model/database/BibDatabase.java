@@ -923,7 +923,7 @@ public class BibDatabase {
         return topicRanking;
     }
 
-
+    //List the perentages of authors by nationality
     public List<Pair<String, Integer>> getPercentageOfAuthorsByNationality() {
         List<EntryAuthor> authorList = new LinkedList<>();
         for(BibEntry entry: entries) {

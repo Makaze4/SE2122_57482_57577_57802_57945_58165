@@ -902,9 +902,6 @@ public class JabRefFrame extends BorderPane {
                 factory.createMenuItem(StandardActions.ABOUT, new AboutAction())
         );
 
-        querry.getItems().addAll(
-                factory.createMenuItem(StandardActions.QUERRY1, new AboutAction())
-        );
 
         // @formatter:on
         MenuBar menu = new MenuBar();

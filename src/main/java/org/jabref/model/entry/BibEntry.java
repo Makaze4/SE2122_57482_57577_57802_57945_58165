@@ -1027,11 +1027,26 @@ public class BibEntry implements Cloneable {
 
 
     private void updateAuthorList(String value){
-        authorList.clear();
 
         String[] authors = value.split(" and ");
+        List<String> newAuthors = new LinkedList<>();
         for(String s: authors){
-            authorList.add(new EntryAuthor(s));//TODO implementar nacionalidade
+            newAuthors.add(s);
         }
+
+
+        for(int i = 0; i<authorList.size(); i++){
+            if(newAuthors.contains(authorList.get(i).getAuthorName())){
+                newAuthors.remove(authorList.get(i).getAuthorName());
+            }
+            else{
+                authorList.remove(i);
+            }
+        }
+
+        for(String s: newAuthors){
+            authorList.add(new EntryAuthor(s));
+        }
+
     }
 }

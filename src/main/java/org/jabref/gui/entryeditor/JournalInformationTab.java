@@ -10,6 +10,7 @@ import org.jabref.gui.icon.IconTheme;
 import org.jabref.gui.util.TaskExecutor;
 import org.jabref.logic.journals.JournalAbbreviationRepository;
 import org.jabref.logic.l10n.Localization;
+import org.jabref.model.database.BibDatabase;
 import org.jabref.model.database.BibDatabaseContext;
 import org.jabref.model.entry.BibEntry;
 import org.jabref.model.entry.BibEntryType;
@@ -57,50 +58,11 @@ public class JournalInformationTab extends FieldsEditorTab2 {
 
             Field authorPercentages = new UnknownField("Nacionality percentages ");
 
-            //for para as entrys da database
-            //se tiver o nome do jornal
-            //meter o author name com o split numa lista
-            //começar a contar e fazer as percentagens
-
-            List<BibEntry> entries = databaseContext.getEntries();
-            List<String> journalAuthors = new ArrayList<>();
-            Map<String, Integer> nacionalities = new HashMap<>();
-
-
-            for(int i = 0; i < entries.size(); i++) {
-                if (entries.get(i).getFieldMap().containsKey(s)) {
-                    String[] authors = entries.get(i).getFieldMap().get(StandardField.AUTHOR).split(" and ");
-                    List<String> authors2 = Arrays.stream(authors).toList();
-                    journalAuthors.addAll(authors2);
-                }
-            }
-
-            Set<String> set = new HashSet<>(journalAuthors);
-            journalAuthors.clear();
-            journalAuthors.addAll(set);
-
-            for(int i = 0; i < journalAuthors.size();i++) {
-                if (nacionalities.containsKey(journalAuthors.get(i))){ // get nacionalidade
-                    nacionalities.put(journalAuthors.get(i), nacionalities.get(journalAuthors.get(i)) +1);
-                } else {
-                    nacionalities.put(journalAuthors.get(i), 1);
-                }
-            }
-
-            List<Pair<String, Integer>> nacionalitiesValue = new ArrayList<>();
-
-            for (String key: nacionalities.keySet()) {
-               nacionalitiesValue.add(new Pair(key, nacionalities.get(key)));
-            }
-
-            String nac = "";
-            for (int i = 0; i < nacionalitiesValue.size();i++) {
-                nacionalitiesValue.set(i, new Pair(nacionalitiesValue.get(i).getKey(), (nacionalitiesValue.get(i).getValue() / journalAuthors.size()) * 100));
-                nac.concat(nacionalitiesValue.get(i).getKey() + ": " + nacionalitiesValue.get(i).getValue().toString() + " % \n");
-            }
+            BibDatabase bd = databaseContext.getDatabase();
+            String nac = bd.getJournalNacionalitiesPercentages(s);
 
             entry.setField(authorPercentages, nac);
-
+            fields.add(authorPercentages);
         }
 
 

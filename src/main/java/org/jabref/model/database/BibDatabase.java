@@ -923,6 +923,49 @@ public class BibDatabase {
         return topicRanking;
     }
 
+    //List the perentages of authors by nationality
+    public List<Pair<String, Integer>> getPercentageOfAuthorsByNationality() {
+        List<EntryAuthor> authorList = new LinkedList<>();
+        for(BibEntry entry: entries) {
+            for(int i = 0; i < entry.getAuthors().size(); i++) {
+                EntryAuthor a = entry.getAuthors().get(i);
+                authorList.add(a);
+            }
+        }
+        Set<EntryAuthor> set = new HashSet<>(authorList);
+        authorList.clear();
+        authorList.addAll(set);
+
+        List<String> nationalities = new LinkedList<>();
+        Map<String, Integer> nationalitiesPair = new HashMap<>();
+
+        for(int i = 0; i < authorList.size(); i++) {
+            nationalities.add(authorList.get(i).getAuthorNationality());
+        }
+        for(int i = 0; i < nationalities.size(); i++) {
+            if(nationalitiesPair.containsKey(nationalities.get(i))) {
+                int value = nationalitiesPair.get(nationalities.get(i));
+                nationalitiesPair.put(nationalities.get(i), value + 1);
+            }
+            else {
+                nationalitiesPair.put(nationalities.get(i),1);
+            }
+        }
+
+        List<Pair<String, Integer>> nationalitiesValue = new LinkedList<>();
+
+        for(String key: nationalitiesPair.keySet()) {
+            nationalitiesValue.add(new Pair(key, nationalitiesPair.get(key)));
+        }
+
+        for(int i = 0; i < nationalitiesValue.size(); i++) {
+            int value = nationalitiesValue.get(i).getValue();
+            float newValue = (value/authorList.size())*100;
+
+            nationalitiesValue.set(i, new Pair(nationalitiesValue.get(i).getKey(), newValue));
+        }
+        return nationalitiesValue;
+    }
 
     public String getJournalNacionalitiesPercentages(String journalName) {
         List<BibEntry> entries = getEntries();
@@ -963,6 +1006,8 @@ public class BibDatabase {
 
         return nac;
     }
+
+
 
     class ComparatorE implements java.util.Comparator{
 

@@ -47,8 +47,23 @@ public class AuthorInformationTab extends FieldsEditorTab2 {
         Optional<BibEntryType> entryType = entryTypesManager.enrich(entry.getType(), databaseContext.getMode());
         Set<Field> fields = new LinkedHashSet<>();
         Map<Field, String> mapaEntries = entry.getFieldMap();
+        LinkedHashSet<Field> lf = new LinkedHashSet<Field>();
 
-        if(mapaEntries.containsKey(StandardField.AUTHOR)){
+
+        for(EntryAuthor a: entry.getAuthors()){
+            Field f = new UnknownField(a.getAuthorName() + " nationality:");
+            if(a.getAuthorNationality() == null){
+                entry.setField(f, "");
+            }
+            else{
+                entry.setField(f, a.getAuthorNationality());
+            }
+            fields.add(f);
+        }
+
+
+
+        /*if(mapaEntries.containsKey(StandardField.AUTHOR)){
             String st = mapaEntries.get(StandardField.AUTHOR);
             String[] authors = mapaEntries.get(StandardField.AUTHOR).split(" and ");
             LinkedHashSet<Field> lf = new LinkedHashSet<Field>();
@@ -75,7 +90,7 @@ public class AuthorInformationTab extends FieldsEditorTab2 {
                 }
             }
             fields.addAll(lf);
-        }
+        }*/
 
         return fields;
     }

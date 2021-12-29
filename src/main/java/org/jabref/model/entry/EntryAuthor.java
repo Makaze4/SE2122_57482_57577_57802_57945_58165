@@ -23,7 +23,7 @@ public class EntryAuthor {
     }
 
     public String getAuthorNationality(){
-       return authorNationality;
+        return authorNationality;
     }
 
     public void setNationality(String authorNationality){

@@ -965,9 +965,10 @@ public class BibDatabase {
 
         for(int i = 0; i < nationalitiesValue.size(); i++) {
             int value = nationalitiesValue.get(i).getValue();
-            float newValue = (value/authorList.size())*100;
+            double newValue = (((double)(value))/((double) (authorList.size())))*100;
+            int lastvalue = (int) (newValue);
 
-            nationalitiesValue.set(i, new Pair(nationalitiesValue.get(i).getKey(), newValue));
+            nationalitiesValue.set(i, new Pair(nationalitiesValue.get(i).getKey(), lastvalue));
         }
         return nationalitiesValue;
     }

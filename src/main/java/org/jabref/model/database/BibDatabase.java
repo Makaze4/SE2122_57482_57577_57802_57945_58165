@@ -937,9 +937,14 @@ public class BibDatabase {
                 authorList.add(a);
             }
         }
-        Set<EntryAuthor> set = new HashSet<>(authorList);
-        authorList.clear();
-        authorList.addAll(set);
+
+        for(int i = 0; i < authorList.size(); i++) {
+            for(int j = i+1; j < authorList.size(); j++) {
+                if(authorList.get(i).getAuthorName().equals(authorList.get(j).getAuthorName())) {
+                    authorList.remove(j);
+                }
+            }
+        }
 
         List<String> nationalities = new LinkedList<>();
         Map<String, Integer> nationalitiesPair = new HashMap<>();

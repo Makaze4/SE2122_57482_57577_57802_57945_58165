@@ -1,5 +1,5 @@
 
-package org.jabref.ProjectTests.journalTest;
+package org.jabref.ProjectTests.authorTest;
 
 import org.jabref.model.database.BibDatabase;
 import org.jabref.model.entry.BibEntry;

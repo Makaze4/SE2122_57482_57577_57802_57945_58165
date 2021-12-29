@@ -16,6 +16,7 @@ import org.jabref.logic.integrity.FieldCheckers;
 import org.jabref.logic.integrity.ValueChecker;
 import org.jabref.logic.util.OS;
 import org.jabref.model.entry.BibEntry;
+import org.jabref.model.entry.EntryAuthor;
 import org.jabref.model.entry.field.Field;
 
 import com.tobiasdiez.easybind.EasyObservableValue;
@@ -76,10 +77,12 @@ public class AbstractEditorViewModel extends AbstractViewModel {
                             UndoManager undoManager = JabRefGUI.getMainFrame().getUndoManager();
                             undoManager.addEdit(new UndoableFieldChange(entry, field, oldValue, newValue));
                             System.out.println("Teste: " + newValue);
-                            if(field.getName().contains("Nationality")){
-                                int i = Integer.parseInt(field.getName().split(" ")[1]);
-                                entry.getAuthors().get(i-1).setNationality(newValue);
-                                //entry.getAuthors()
+                            if(field.getName().contains("nationality")){
+                                for(EntryAuthor a: entry.getAuthors()){
+                                    if(a.getAuthorName().equals(field.getName().split(" ")[0])){
+                                        a.setNationality(newValue);
+                                    }
+                                }
                             }
                         }
                     }

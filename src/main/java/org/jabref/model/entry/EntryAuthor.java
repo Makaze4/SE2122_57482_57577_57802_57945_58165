@@ -14,23 +14,19 @@ public class EntryAuthor {
     }
 
     public EntryAuthor(String authorName){
-        System.out.println(authorName + " criado");
         this.authorName = authorName;
         this.authorNationality = "";
     }
 
     public String getAuthorName(){
-        System.out.println(authorName + " - " + authorNationality);
         return authorName;
     }
 
     public String getAuthorNationality(){
-        System.out.println(authorName + " - " + authorNationality);
        return authorNationality;
     }
 
     public void setNationality(String authorNationality){
-        System.out.println("------updated------");
         this.authorNationality = authorNationality;
     }
 }

@@ -887,7 +887,7 @@ public class BibDatabase {
                 String decfinal = decada.get(i);
                 String auxDec = decfinal.substring(2);
                 int auxDecInt = Integer.parseInt(auxDec);
-                result += "Decada " + decfinal + "-" + (auxDecInt+10) + "  ";
+                result += "Decada " + decfinal + "-" + (auxDecInt+10) + " ";
             }
         }
 

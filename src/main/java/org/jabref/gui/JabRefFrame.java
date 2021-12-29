@@ -82,10 +82,7 @@ import org.jabref.gui.externalfiles.AutoLinkFilesAction;
 import org.jabref.gui.externalfiles.DownloadFullTextAction;
 import org.jabref.gui.externalfiles.FindUnlinkedFilesAction;
 import org.jabref.gui.externalfiletype.ExternalFileTypes;
-import org.jabref.gui.help.AboutAction;
-import org.jabref.gui.help.ErrorConsoleAction;
-import org.jabref.gui.help.HelpAction;
-import org.jabref.gui.help.SearchForUpdateAction;
+import org.jabref.gui.help.*;
 import org.jabref.gui.icon.IconTheme;
 import org.jabref.gui.importer.GenerateEntryFromIdDialog;
 import org.jabref.gui.importer.ImportCommand;
@@ -902,6 +899,9 @@ public class JabRefFrame extends BorderPane {
                 factory.createMenuItem(StandardActions.ABOUT, new AboutAction())
         );
 
+        querry.getItems().addAll(
+                factory.createMenuItem(StandardActions.QUERRY1, new QuerryAction())
+        );
 
         // @formatter:on
         MenuBar menu = new MenuBar();

@@ -13,7 +13,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import java.util.LinkedList;
 import java.util.List;
 
-public class getAuthorsNationality {
+public class getAuthorsNationalityTest {
 
     BibDatabase dataBase;
 
@@ -29,18 +29,18 @@ public class getAuthorsNationality {
 
         entry1 = new BibEntry();
         entry1.setField(StandardField.AUTHOR, "Joao");
-        entry1.getAuthors();
+        entry1.getAuthors().get(0).setNationality("Portugal");
         entryList.add(entry1);
-        EntryAuthor a = new EntryAuthor("Joao", "Portugal");
-        a.setNationality("Portugal");
+
         entry2 = new BibEntry();
         entry2.setField(StandardField.AUTHOR, "Diogo");
-        entry2.setField(StandardField.NATIONALITY, "Portugal");
+        entry2.getAuthors().get(0).setNationality("Portugal");
         entryList.add(entry2);
 
         entry3 = new BibEntry();
-        entry3.setField(StandardField.AUTHOR, "Francisco");
-        entry3.setField(StandardField.NATIONALITY, "Spain");
+        entry3.setField(StandardField.AUTHOR, "Francisco and Alexandre");
+        entry3.getAuthors().get(0).setNationality("Spain");
+        entry3.getAuthors().get(1).setNationality("France");
         entryList.add(entry3);
 
         dataBase = new BibDatabase(entryList);
@@ -53,5 +53,20 @@ public class getAuthorsNationality {
         authorList.add("Joao");
         authorList.add("Diogo");
         assertEquals(authorList, dataBase.getAuthorsNacionality("Portugal"), "-----TEST FAILED----------TEST FAILED----------TEST FAILED-----");
+    }
+
+    @Test
+    @DisplayName("Test2")
+    void test2() {
+        List<String> authorList = new LinkedList<>();
+        authorList.add("Alexandre");
+        assertEquals(authorList, dataBase.getAuthorsNacionality("France"), "-----TEST FAILED----------TEST FAILED----------TEST FAILED-----");
+    }
+
+    @Test
+    @DisplayName("Test3")
+    void test3() {
+        List<String> authorList = new LinkedList<>();
+        assertEquals(authorList, dataBase.getAuthorsNacionality("Brazil"), "-----TEST FAILED----------TEST FAILED----------TEST FAILED-----");
     }
 }

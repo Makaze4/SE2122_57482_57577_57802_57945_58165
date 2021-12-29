@@ -24,6 +24,7 @@ public class getTimePeriodWithMostArticlesTests {
     BibEntry entry6;
     BibEntry entry7;
     BibEntry entry8;
+    BibEntry entry9;
 
     @BeforeEach
     void setUp() {
@@ -76,11 +77,11 @@ public class getTimePeriodWithMostArticlesTests {
         entry8.setField(StandardField.JOURNAL, "journal4");
         entryList.add(entry8);
 
-        entry8 = new BibEntry();
-        entry8.setField(StandardField.AUTHOR, "Virtudes");
-        entry8.setField(StandardField.YEAR, "2007");
-        entry8.setField(StandardField.JOURNAL, "journal4");
-        entryList.add(entry8);
+        entry9 = new BibEntry();
+        entry9.setField(StandardField.AUTHOR, "Virtudes");
+        entry9.setField(StandardField.YEAR, "2007");
+        entry9.setField(StandardField.JOURNAL, "journal4");
+        entryList.add(entry9);
 
         dataBase1 = new BibDatabase(entryList);
         dataBase2 = new BibDatabase();

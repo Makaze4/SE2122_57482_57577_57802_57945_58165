@@ -1003,44 +1003,64 @@ public class BibDatabase {
         return aux;
     }
 
-    public String getJournalNacionalitiesPercentages(String journalName) {
+    public List<Pair<String, Integer>> getJournalNacionalitiesPercentages(String journalName) {
         List<BibEntry> entries = getEntries();
-        List<String> journalAuthors = new ArrayList<>();
+        List<EntryAuthor> authorList = new ArrayList<>();
         Map<String, Integer> nacionalities = new HashMap<>();
 
-        for(int i = 0; i < entries.size(); i++) {
-            if (entries.get(i).getFieldMap().containsKey(journalName)) {
-                String[] authors = entries.get(i).getFieldMap().get(StandardField.AUTHOR).split(" and ");
-                List<String> authors2 = Arrays.stream(authors).toList();
-                journalAuthors.addAll(authors2);
+        for(BibEntry entry: entries) {
+            Map<Field, String> map = entry.getFieldMap();
+            if(map.get(StandardField.JOURNAL).equals(journalName)) {
+                for (int i = 0; i < entry.getAuthors().size(); i++) {
+                    EntryAuthor a = entry.getAuthors().get(i);
+                    authorList.add(a);
+                }
             }
         }
 
-        Set<String> set = new HashSet<>(journalAuthors);
-        journalAuthors.clear();
-        journalAuthors.addAll(set);
-
-        for(int i = 0; i < journalAuthors.size();i++) {
-            if (nacionalities.containsKey(journalAuthors.get(i))){ // get nacionalidade
-                nacionalities.put(journalAuthors.get(i), nacionalities.get(journalAuthors.get(i)) +1);
-            } else {
-                nacionalities.put(journalAuthors.get(i), 1);
+        for(int i = 0; i < authorList.size(); i++) {
+            for(int j = i+1; j < authorList.size(); j++) {
+                if(authorList.get(i).getAuthorName().equals(authorList.get(j).getAuthorName())) {
+                    authorList.remove(j);
+                }
             }
         }
 
-        List<Pair<String, Integer>> nacionalitiesValue = new ArrayList<>();
+        List<String> nationalities = new LinkedList<>();
+        Map<String, Integer> nationalitiesPair = new HashMap<>();
 
-        for (String key: nacionalities.keySet()) {
-            nacionalitiesValue.add(new Pair(key, nacionalities.get(key)));
+        for(int i = 0; i < authorList.size(); i++) {
+            nationalities.add(authorList.get(i).getAuthorNationality());
+        }
+        for(int i = 0; i < nationalities.size(); i++) {
+            if(nationalitiesPair.containsKey(nationalities.get(i))) {
+                int value = nationalitiesPair.get(nationalities.get(i));
+                nationalitiesPair.put(nationalities.get(i), value + 1);
+            }
+            else {
+                nationalitiesPair.put(nationalities.get(i),1);
+            }
         }
 
-        String nac = "";
-        for (int i = 0; i < nacionalitiesValue.size();i++) {
-            nacionalitiesValue.set(i, new Pair(nacionalitiesValue.get(i).getKey(), (nacionalitiesValue.get(i).getValue() / journalAuthors.size()) * 100));
-            nac.concat(nacionalitiesValue.get(i).getKey() + ": " + nacionalitiesValue.get(i).getValue().toString() + " % \n");
+        List<Pair<String, Integer>> nationalitiesValue = new LinkedList<>();
+
+        for(String key: nationalitiesPair.keySet()) {
+            nationalitiesValue.add(new Pair(key, nationalitiesPair.get(key)));
         }
 
-        return nac;
+        for(int i = 0; i < nationalitiesValue.size(); i++) {
+            int value = nationalitiesValue.get(i).getValue();
+            double newValue = (((double)(value))/((double) (authorList.size())))*100;
+            int lastvalue = (int) (newValue);
+
+            nationalitiesValue.set(i, new Pair(nationalitiesValue.get(i).getKey(), lastvalue));
+        }
+
+        if(!nationalitiesValue.isEmpty()) {
+            nationalitiesValue = pairSort(nationalitiesValue);
+        }
+
+        return nationalitiesValue;
     }
 
 

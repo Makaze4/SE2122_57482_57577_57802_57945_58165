@@ -76,6 +76,7 @@ public class QuerryActionGraph extends SimpleCommand {
                Random r = new Random();
                int rC = r.nextInt(colorList.size());
                e.setColor(colorList.get(rC));
+               e.setFocussed(true);
                draw.addEdge(e);
             }
         }

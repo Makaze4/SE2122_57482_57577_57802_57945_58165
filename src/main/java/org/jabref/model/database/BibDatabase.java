@@ -735,6 +735,7 @@ public class BibDatabase {
             }
         }
 
+
         return authorList.get(author).getKey();
     }
 
@@ -1008,16 +1009,21 @@ public class BibDatabase {
     public List<Pair<String, Integer>> getJournalNacionalitiesPercentages(String journalName) {
         List<BibEntry> entries = getEntries();
         List<EntryAuthor> authorList = new ArrayList<>();
-        Map<String, Integer> nacionalities = new HashMap<>();
+
 
         for(BibEntry entry: entries) {
             Map<Field, String> map = entry.getFieldMap();
-            if(map.get(StandardField.JOURNAL).equals(journalName)) {
+            String jName = map.get(StandardField.JOURNAL);
+
+            if(jName != null && jName.equals(journalName)) {
                 for (int i = 0; i < entry.getAuthors().size(); i++) {
                     EntryAuthor a = entry.getAuthors().get(i);
                     authorList.add(a);
                 }
             }
+
+
+
         }
 
         for(int i = 0; i < authorList.size(); i++) {
@@ -1032,10 +1038,10 @@ public class BibDatabase {
         Map<String, Integer> nationalitiesPair = new HashMap<>();
 
         for(int i = 0; i < authorList.size(); i++) {
-            nationalities.add(authorList.get(i).getAuthorNationality());
+            nationalities.add(authorList.get(i).getAuthorNationality().toLowerCase());
         }
         for(int i = 0; i < nationalities.size(); i++) {
-            if(nationalitiesPair.containsKey(nationalities.get(i))) {
+            if(nationalitiesPair.containsKey(nationalities.get(i).toLowerCase())) {
                 int value = nationalitiesPair.get(nationalities.get(i));
                 nationalitiesPair.put(nationalities.get(i), value + 1);
             }

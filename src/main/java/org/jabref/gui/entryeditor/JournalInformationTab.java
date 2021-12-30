@@ -85,7 +85,16 @@ public class JournalInformationTab extends FieldsEditorTab2 {
             entry.setField(authorWithMorePublicationsF, author);
             fields.add(authorWithMorePublicationsF);
 
+            Field bestArticleF = new UnknownField("Best article");
+            String title = bd.getbestArticleByJournal(s);
 
+            if(title == null){
+                title = "N/A";
+            }
+
+            entry.setField(bestArticleF, title);
+
+            fields.add(bestArticleF);
         }
 
 

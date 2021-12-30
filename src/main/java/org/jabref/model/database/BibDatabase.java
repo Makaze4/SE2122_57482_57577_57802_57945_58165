@@ -750,7 +750,8 @@ public class BibDatabase {
 
         for(BibEntry entry: entries) {
             Map<Field, String> map = entry.getFieldMap();
-            if(map.get(StandardField.JOURNAL).equals(journal)) {
+            String journalName = map.get(StandardField.JOURNAL);
+            if(journalName != null && map.get(StandardField.NUMBERCITATIONS) != null && journalName.equals(journal)) {
                 articleList.add(new Pair(map.get(StandardField.TITLE), parseInt(map.get(StandardField.NUMBERCITATIONS))));
             }
         }

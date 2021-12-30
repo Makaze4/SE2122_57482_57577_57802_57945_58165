@@ -3314,7 +3314,7 @@
 											"top": 853,
 											"width": 78.7490234375,
 											"height": 13,
-											"text": "BibDatabase"
+											"text": "JabRef"
 										},
 										{
 											"_type": "LabelView",
@@ -4252,7 +4252,7 @@
 					"_parent": {
 						"$ref": "AAAAAAF+C068o9sieVo="
 					},
-					"name": "BibDatabase",
+					"name": "JabRef",
 					"ownedElements": [
 						{
 							"_type": "UMLAssociation",

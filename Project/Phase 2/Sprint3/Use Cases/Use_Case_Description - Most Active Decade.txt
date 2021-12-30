@@ -1,0 +1,19 @@
+Geral use cases were described in another file
+
+Use case: Journal Information
+ID: 0
+Description: Tab that will show us some informations
+Main actors: User
+Secondary actors: None
+
+Use case: Verify if journal exists
+ID: 1
+Description: Verify if journal exists. If not, the Tab do no show up
+Main actors: User
+Secondary actors: None
+
+Use case: Most active decade
+ID: 2
+Description: JabRef shows decade that the journal are inserted in, that is, see which decade has the most articles in this journal
+Main actors: User
+Secondary actors: JabRef

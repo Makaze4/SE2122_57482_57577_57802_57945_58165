@@ -1,5 +1,5 @@
-As a user I want to list the rankings of authors by nacionality
-because I want to see the percentages of auhtors by nacionalities in the jabref database.
+As a user I want to list the rankings of authors by nationality
+because I want to see the percentages of authors by nationalities in the jabref database.
 
 As a user I want to list the articles that the author has published about a certain topic during a time period
 because I want to see the evolution of the articles.
@@ -17,7 +17,7 @@ As a user I want to list the topics that the authors worked about beacause I wan
 As a user I want to see with how many different nationalities the author has collaborated with
 because I want to know how well known the author is internationally.
 
-As a user I want to list all the authors that have a certain nacionality beacause I want to know the authors of this
+As a user I want to list all the authors that have a certain nationality beacause I want to know the authors of this
 nationality
 
 

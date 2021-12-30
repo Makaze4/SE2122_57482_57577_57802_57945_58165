@@ -17,7 +17,7 @@
 					"_parent": {
 						"$ref": "AAAAAAF+C068o9sieVo="
 					},
-					"name": "UseCaseDiagram1",
+					"name": "UseCaseDiagram",
 					"ownedViews": [
 						{
 							"_type": "UMLUseCaseSubjectView",
@@ -3884,7 +3884,7 @@
 											},
 											"visible": false,
 											"font": "Arial;13;0",
-											"left": -240,
+											"left": -256,
 											"top": -144,
 											"height": 13
 										},
@@ -3895,11 +3895,11 @@
 												"$ref": "AAAAAAF+C8zvrTwKhFY="
 											},
 											"font": "Arial;13;1",
-											"left": 485,
+											"left": 477,
 											"top": 807,
 											"width": 423,
 											"height": 13,
-											"text": "Author Name"
+											"text": "Nationality"
 										},
 										{
 											"_type": "LabelView",
@@ -3909,7 +3909,7 @@
 											},
 											"visible": false,
 											"font": "Arial;13;0",
-											"left": -240,
+											"left": -256,
 											"top": -144,
 											"width": 73.67724609375,
 											"height": 13,
@@ -3923,14 +3923,14 @@
 											},
 											"visible": false,
 											"font": "Arial;13;0",
-											"left": -240,
+											"left": -256,
 											"top": -144,
 											"height": 13,
 											"horizontalAlignment": 1
 										}
 									],
 									"font": "Arial;13;0",
-									"left": 480,
+									"left": 472,
 									"top": 800,
 									"width": 433,
 									"height": 25,
@@ -3949,7 +3949,7 @@
 								}
 							],
 							"font": "Arial;13;0",
-							"left": 480,
+							"left": 472,
 							"top": 800,
 							"width": 433,
 							"height": 305,
@@ -8120,7 +8120,7 @@
 					"_parent": {
 						"$ref": "AAAAAAF+C068o9sieVo="
 					},
-					"name": "Author Name"
+					"name": "Nationality"
 				},
 				{
 					"_type": "UMLUseCase",

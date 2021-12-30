@@ -26,5 +26,29 @@ public class QuerryAction3 extends SimpleCommand {
     @Override
     public void execute() {
 
+        final JFrame frame = new JFrame();
+
+        String s = currentLibraryTab.get().getBibDatabaseContext().getDatabase().getMostActiveAuthor();
+
+        frame.setBounds(200,200, 450,300);
+        Container container = frame.getContentPane();
+        container.setLayout(null);
+
+
+        JLabel logo  = new JLabel("Query - Most Active Author");
+        logo.setBounds(10,5,400,20);
+
+        JLabel result  = new JLabel("Result - The most active user is:");
+        result.setBounds(25,40,450,20);
+
+        JLabel str = new JLabel(s);
+        str.setBounds(100,65,450,20);
+
+        container.add(logo);
+        container.add(result);
+        container.add(str);
+
+
+        frame.setVisible(true);
     }
 }

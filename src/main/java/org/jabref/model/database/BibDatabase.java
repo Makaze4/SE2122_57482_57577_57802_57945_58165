@@ -12,6 +12,7 @@ import javafx.collections.ObservableList;
 
 import javafx.util.Pair;
 import org.antlr.v4.runtime.misc.Triple;
+import org.jabref.logic.undo.AddUndoableActionEvent;
 import org.jabref.model.database.event.EntriesAddedEvent;
 import org.jabref.model.database.event.EntriesRemovedEvent;
 import org.jabref.model.entry.BibEntry;
@@ -802,40 +803,42 @@ public class BibDatabase {
     //Journal user story methods
 
     public String getAuthorWithMorePublish(String journal) {
-        Map<String, Integer> allAuthors = new HashMap<>();
+       List<String> allAuthors = new LinkedList<>();
+       List<Integer> numberPublish = new LinkedList<>();
         if(entries.size() == 0) {
             return "";
         }
         for(BibEntry entry : entries) {
             Map<Field, String> map = entry.getFieldMap();
 
-            for(int i = 0; i < entry.getAuthors().size(); i++) {
-                if(map.get(StandardField.JOURNAL).equals(journal)){
-                    EntryAuthor a = entry.getAuthors().get(i);
+            if(map.get(StandardField.JOURNAL).equals(journal)){
+                List<EntryAuthor> authors = entry.getAuthors();
 
-                    if(allAuthors.containsKey(a.getAuthorName())) {
-                        int value = allAuthors.get(a.getAuthorName());
-                        allAuthors.put(a.getAuthorName(), value+1);
-                    }
-                    else {
-                        allAuthors.put(a.getAuthorName(), 1);
-                    }
+                for(EntryAuthor author: authors){
+                    int index = allAuthors.indexOf(author.getAuthorName());
+
+                    if(index == -1) {
+                        allAuthors.add(author.getAuthorName());
+                        numberPublish.add(1);
+                    } else
+                        numberPublish.set(index, numberPublish.get(index) + 1);
                 }
             }
         }
 
-        List<Pair<String, Integer>> list = new LinkedList<>();
-        for(String key: allAuthors.keySet()) {
-            list.add(new Pair(key, allAuthors.get(key)));
-        }
+        List<String> list = new LinkedList<>();
+        int heighstNumber = 0;
 
-        Pair<String, Integer> p = list.get(0);
-        for(int i = 0; i < list.size(); i++) {
-            if(list.get(i).getValue() > p.getValue()) {
-                p = list.get(i);
-            }
+        for(int i = 0; i < numberPublish.size(); i++){
+            int number = numberPublish.get(i);
+            if(number > heighstNumber){
+                heighstNumber = number;
+                list.clear();
+                list.add(allAuthors.get(i));
+            } else if(number == heighstNumber)
+                list.add(allAuthors.get(i));
         }
-        return p.getKey();
+        return list.toString();
     }
 
     //get all the authors by nacionality

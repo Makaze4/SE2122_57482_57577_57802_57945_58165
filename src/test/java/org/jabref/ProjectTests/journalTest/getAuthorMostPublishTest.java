@@ -70,7 +70,7 @@ public class getAuthorMostPublishTest {
         entry7.setField(StandardField.AUTHOR, "Carla");
         entry7.setField(StandardField.JOURNAL, "journal2");
         entryList.add(entry7);
-        //entryList2.add(entry7);
+        entryList2.add(entry7);
 
         entry8 = new BibEntry();
         entry8.setField(StandardField.AUTHOR, "Joao and Carla");
@@ -101,7 +101,7 @@ public class getAuthorMostPublishTest {
     @Test
     @DisplayName("Test 2 - Simple Test")
     void test2() {
-       String expected = "Tim";
+       String expected = "[Tim]";
         String journal = "journal2";
         assertEquals(expected,dataBase2.getAuthorWithMorePublish(journal), "-----TEST FAILED----------TEST FAILED----------TEST FAILED-----");
     }
@@ -109,7 +109,7 @@ public class getAuthorMostPublishTest {
     @Test
     @DisplayName("Test 3 - Complex Test")
     void test3() {
-        String expected = "Andre";
+        String expected = "[Andre]";
         String journal = "journal1";
         assertEquals(expected,dataBase3.getAuthorWithMorePublish(journal), "-----TEST FAILED----------TEST FAILED----------TEST FAILED-----");
     }
@@ -117,7 +117,7 @@ public class getAuthorMostPublishTest {
     @Test
     @DisplayName("Test 4 - Draw Test")
     void test4() {
-        String expected = "Carla";
+        String expected = "[Andre, Carla]";
         String journal = "journal1";
         assertEquals(expected,dataBase4.getAuthorWithMorePublish(journal), "-----TEST FAILED----------TEST FAILED----------TEST FAILED-----");
     }

@@ -1328,11 +1328,11 @@
 												"$ref": "AAAAAAF+C2efReflAyc="
 											},
 											"font": "Arial;13;1",
-											"left": 779,
+											"left": 780.5,
 											"top": 475.5,
-											"width": 211,
+											"width": 218,
 											"height": 13,
-											"text": "Query - Journal Related To Author"
+											"text": "Query - Journals Related To Author"
 										},
 										{
 											"_type": "LabelView",
@@ -1363,9 +1363,9 @@
 										}
 									],
 									"font": "Arial;13;0",
-									"left": 774,
+									"left": 775.5,
 									"top": 468.5,
-									"width": 221.3896484375,
+									"width": 228.61962890625,
 									"height": 25,
 									"stereotypeLabel": {
 										"$ref": "AAAAAAF+C2efRefmOVI="
@@ -1465,7 +1465,7 @@
 							"containerChangeable": true,
 							"left": 728,
 							"top": 464,
-							"width": 313,
+							"width": 323,
 							"height": 35,
 							"nameCompartment": {
 								"$ref": "AAAAAAF+C2efReflAyc="
@@ -2096,7 +2096,7 @@
 									"visible": false,
 									"font": "Arial;13;0",
 									"left": 715,
-									"top": 429,
+									"top": 428,
 									"height": 13,
 									"alpha": 1.5707963267948966,
 									"distance": 15,
@@ -2117,7 +2117,7 @@
 									"visible": null,
 									"font": "Arial;13;0",
 									"left": 715,
-									"top": 444,
+									"top": 443,
 									"height": 13,
 									"alpha": 1.5707963267948966,
 									"distance": 30,
@@ -2138,7 +2138,7 @@
 									"visible": false,
 									"font": "Arial;13;0",
 									"left": 716,
-									"top": 400,
+									"top": 399,
 									"height": 13,
 									"alpha": -1.5707963267948966,
 									"distance": 15,
@@ -2189,7 +2189,7 @@
 									},
 									"visible": false,
 									"font": "Arial;13;0",
-									"left": 701,
+									"left": 702,
 									"top": 454,
 									"height": 13,
 									"alpha": 1.5707963267948966,
@@ -2210,7 +2210,7 @@
 									},
 									"visible": null,
 									"font": "Arial;13;0",
-									"left": 698,
+									"left": 699,
 									"top": 469,
 									"height": 13,
 									"alpha": 1.5707963267948966,
@@ -2231,7 +2231,7 @@
 									},
 									"visible": false,
 									"font": "Arial;13;0",
-									"left": 706,
+									"left": 707,
 									"top": 425,
 									"height": 13,
 									"alpha": -1.5707963267948966,
@@ -2250,7 +2250,7 @@
 								"$ref": "AAAAAAF+C2efRefk7bI="
 							},
 							"lineStyle": 1,
-							"points": "790:463;618:430",
+							"points": "793:463;618:430",
 							"showVisibility": true,
 							"nameLabel": {
 								"$ref": "AAAAAAF+C2q5juofZk8="
@@ -2966,7 +2966,7 @@
 					"_parent": {
 						"$ref": "AAAAAAF+C068o9sieVo="
 					},
-					"name": "Query - Journal Related To Author",
+					"name": "Query - Journals Related To Author",
 					"ownedElements": [
 						{
 							"_type": "UMLGeneralization",

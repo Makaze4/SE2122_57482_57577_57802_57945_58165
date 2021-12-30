@@ -763,7 +763,7 @@ public class BibDatabase {
     }
 
     //Get the number of different nationalities an author has worked with
-    public int getNumberOfNationalities(String author){
+    public List<String> getNumberOfNationalities(String author){
         List<String> natList = new LinkedList<>();
 
         for(BibEntry entry: entries){
@@ -779,7 +779,7 @@ public class BibDatabase {
                 }
             }
         }
-        return natList.size();
+        return natList;
     }
 
     //gets all the topics by author

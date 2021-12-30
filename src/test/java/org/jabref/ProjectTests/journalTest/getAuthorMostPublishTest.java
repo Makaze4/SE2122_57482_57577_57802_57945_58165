@@ -51,36 +51,36 @@ public class getAuthorMostPublishTest {
         entryList.add(entry3);
 
         entry4 = new BibEntry();
-        entry1.setField(StandardField.AUTHOR, "Joao and Andre");
-        entry1.setField(StandardField.JOURNAL, "journal1");
+        entry4.setField(StandardField.AUTHOR, "Joao and Andre");
+        entry4.setField(StandardField.JOURNAL, "journal1");
         entryList2.add(entry4);
 
         entry5 = new BibEntry();
-        entry2.setField(StandardField.AUTHOR, "Andre and Alex");
-        entry2.setField(StandardField.JOURNAL, "journal1");
+        entry5.setField(StandardField.AUTHOR, "Andre and Alex");
+        entry5.setField(StandardField.JOURNAL, "journal1");
         entryList2.add(entry5);
         entryList3.add(entry5);
 
         entry6 = new BibEntry();
-        entry3.setField(StandardField.AUTHOR, "Tim and Alex");
-        entry3.setField(StandardField.JOURNAL, "journal2");
+        entry6.setField(StandardField.AUTHOR, "Tim and Alex");
+        entry6.setField(StandardField.JOURNAL, "journal2");
         entryList.add(entry6);
 
         entry7 = new BibEntry();
-        entry1.setField(StandardField.AUTHOR, "Carla");
-        entry1.setField(StandardField.JOURNAL, "journal2");
+        entry7.setField(StandardField.AUTHOR, "Carla");
+        entry7.setField(StandardField.JOURNAL, "journal2");
         entryList.add(entry7);
         //entryList2.add(entry7);
 
         entry8 = new BibEntry();
-        entry2.setField(StandardField.AUTHOR, "Joao and Carla");
-        entry2.setField(StandardField.JOURNAL, "journal1");
+        entry8.setField(StandardField.AUTHOR, "Joao and Carla");
+        entry8.setField(StandardField.JOURNAL, "journal1");
         entryList2.add(entry8);
         entryList3.add(entry8);
 
         entry9 = new BibEntry();
-        entry3.setField(StandardField.AUTHOR, "Carla and Andre");
-        entry3.setField(StandardField.JOURNAL, "journal1");
+        entry9.setField(StandardField.AUTHOR, "Carla and Andre");
+        entry9.setField(StandardField.JOURNAL, "journal1");
         entryList2.add(entry9);
         entryList3.add(entry9);
 
@@ -101,7 +101,7 @@ public class getAuthorMostPublishTest {
     @Test
     @DisplayName("Test 2 - Simple Test")
     void test2() {
-       String expected = "";
+       String expected = "Tim";
         String journal = "journal2";
         assertEquals(expected,dataBase2.getAuthorWithMorePublish(journal), "-----TEST FAILED----------TEST FAILED----------TEST FAILED-----");
     }
@@ -117,7 +117,7 @@ public class getAuthorMostPublishTest {
     @Test
     @DisplayName("Test 4 - Draw Test")
     void test4() {
-        String expected = "";
+        String expected = "Carla";
         String journal = "journal1";
         assertEquals(expected,dataBase4.getAuthorWithMorePublish(journal), "-----TEST FAILED----------TEST FAILED----------TEST FAILED-----");
     }

@@ -31,14 +31,14 @@ public class QuerryAction5 extends SimpleCommand {
         container.setLayout(null);
 
 
-        JLabel logo  = new JLabel("Query - Common Articles");
+        JLabel logo  = new JLabel("Query - Journals Related To Author");
         logo.setBounds(10,5,400,50);
 
-        JLabel author  = new JLabel("Author");
-        author.setBounds(10,35,100,50);
+        JLabel author  = new JLabel("Author: Inserir");
+        author.setBounds(10,45,100,50);
 
         JTextField text = new JTextField("");
-        text.setBounds(10,70,300,35);
+        text.setBounds(10,80,300,35);
 
         JButton button = new JButton("Confirmar");
         button.setBounds(10,150,100, 40);

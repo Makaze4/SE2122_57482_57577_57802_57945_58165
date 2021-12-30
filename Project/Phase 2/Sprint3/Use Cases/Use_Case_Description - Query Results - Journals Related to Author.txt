@@ -46,7 +46,7 @@ Secondary actors: None
 
 Use case: Confirm --- Message
 ID: 7
-Description: New window that give the answer when the user used the use case(ID7)
+Description: New window that give the answer when the user used the use case(ID6)
 Main actor: User
 Secondary actors: Jabref
 

@@ -83,6 +83,7 @@ import org.jabref.gui.externalfiles.DownloadFullTextAction;
 import org.jabref.gui.externalfiles.FindUnlinkedFilesAction;
 import org.jabref.gui.externalfiletype.ExternalFileTypes;
 import org.jabref.gui.help.*;
+import org.jabref.gui.help.GraphQuery.QuerryActionGraph;
 import org.jabref.gui.icon.IconTheme;
 import org.jabref.gui.importer.GenerateEntryFromIdDialog;
 import org.jabref.gui.importer.ImportCommand;

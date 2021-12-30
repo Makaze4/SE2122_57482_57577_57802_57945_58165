@@ -11,6 +11,7 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 
 import javafx.util.Pair;
+import org.antlr.v4.runtime.misc.Triple;
 import org.jabref.model.database.event.EntriesAddedEvent;
 import org.jabref.model.database.event.EntriesRemovedEvent;
 import org.jabref.model.entry.BibEntry;
@@ -1086,32 +1087,32 @@ public class BibDatabase {
     }
 
 
-    public Map<Integer, Pair<String, List<Integer>>> getRelations(){
-        List<Pair<Integer, String>> authorList = new LinkedList<>();
+    public Map<Integer, Triple<String, String, List<Integer>>> getRelations(){
+        List<Triple<Integer, String, String>> authorList = new LinkedList<>();
 
         int i = 1;
         for(BibEntry entry: entries){
             for(EntryAuthor a: entry.getAuthors()){
                 if(!containsAuthor(authorList, a.getAuthorName())){
-                    authorList.add(new Pair<>(i++, a.getAuthorName()));
+                    authorList.add(new Triple<>(i++, a.getAuthorNationality(), a.getAuthorName()));
                 }
             }
         }
 
-        Map<Integer, Pair<String, List<Integer>>> authorMap = new HashMap<>();
+        Map<Integer, Triple<String, String, List<Integer>>> authorMap = new HashMap<>();
 
-        for(Pair<Integer, String> p: authorList){
-            authorMap.put(p.getKey(), new Pair<>(p.getValue(), new LinkedList<>()));
+        for(Triple<Integer, String, String> p: authorList){
+            authorMap.put(p.a, new Triple<>(p.b, p.c, new LinkedList<>()));
         }
 
-        for(Pair<Integer, String> p: authorList){
+        for(Triple<Integer, String, String> p: authorList){
             for(BibEntry entry: entries){
-                if(entry.getFieldMap().get(StandardField.AUTHOR).contains(p.getValue())){
+                if(entry.getFieldMap().get(StandardField.AUTHOR).contains(p.c)){
                     for(EntryAuthor a: entry.getAuthors()){
-                        if(!a.getAuthorName().equals(p.getValue())){
+                        if(!a.getAuthorName().equals(p.c)){
                             int index = getAuthorIndex(authorList, a.getAuthorName());
-                            if(!authorMap.get(p.getKey()).getValue().contains(index)){
-                                authorMap.get(p.getKey()).getValue().add(index);
+                            if(!authorMap.get(p.a).c.contains(index)){
+                                authorMap.get(p.a).c.add(index);
                             }
                         }
                     }
@@ -1122,19 +1123,19 @@ public class BibDatabase {
         return authorMap;
     }
 
-    private boolean containsAuthor(List<Pair<Integer, String>> authorList, String author){
-        for(Pair<Integer, String> p: authorList){
-            if(p.getValue().equals(author)){
+    private boolean containsAuthor(List<Triple<Integer, String, String>> authorList, String author){
+        for(Triple<Integer, String, String> p: authorList){
+            if(p.c.equals(author)){
                 return true;
             }
         }
         return false;
     }
 
-    private int getAuthorIndex(List<Pair<Integer, String>> authorList, String author){
-        for(Pair<Integer, String> p: authorList){
-            if(p.getValue().equals(author)){
-                return p.getKey();
+    private int getAuthorIndex(List<Triple<Integer, String, String>> authorList, String author){
+        for(Triple<Integer, String, String> p: authorList){
+            if(p.c.equals(author)){
+                return p.a;
             }
         }
         return -1;

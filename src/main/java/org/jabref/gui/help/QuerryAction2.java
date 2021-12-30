@@ -11,7 +11,9 @@ import org.jabref.model.database.BibDatabase;
 
 import javax.swing.*;
 import java.awt.*;
+import java.util.Iterator;
 import java.util.List;
+import java.util.Map.Entry;
 import java.util.Map;
 
 public class QuerryAction2 extends SimpleCommand {
@@ -52,9 +54,17 @@ public class QuerryAction2 extends SimpleCommand {
             @Override
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 String name = text.getText();
-
-                Map<String, List<String>> list = currentLibraryTab.get().getBibDatabaseContext().getDatabase().getCommonArticles(name);
-                String result = list.toString();
+                String result = "";
+                Map<String, List<String>> maplist = currentLibraryTab.get().getBibDatabaseContext().getDatabase().getCommonArticles(name);
+                Iterator<Entry<String,List<String>>> iterator =maplist.entrySet().iterator();
+                while(iterator.hasNext()) {
+                    Entry<String,List<String>> entry = iterator.next();
+                    result += "Name: " + entry.getKey() + "   Articles: ";
+                    for(String t : entry.getValue()){
+                        result += t + ", ";
+                    }
+                    result += "\n";
+                }
                 JOptionPane.showMessageDialog(frame, result);
             }
         });

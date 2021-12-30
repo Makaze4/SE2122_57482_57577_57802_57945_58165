@@ -65,9 +65,6 @@ public class AbstractEditorViewModel extends AbstractViewModel {
                 fieldBinding,
                 newValue -> {
                     if (newValue != null) {
-                        if(newValue.equals("yau")){
-                            System.out.println("yau");
-                        }
                         // Controlsfx uses hardcoded \n for multiline fields, but JabRef stores them in OS Newlines format
                         String oldValue = entry.getField(field).map(value -> value.replace(OS.NEWLINE, "\n").trim()).orElse(null);
                         // Autosave and save action trigger the entry editor to reload the fields, so we have to
@@ -76,7 +73,6 @@ public class AbstractEditorViewModel extends AbstractViewModel {
                             entry.setField(field, newValue);
                             UndoManager undoManager = JabRefGUI.getMainFrame().getUndoManager();
                             undoManager.addEdit(new UndoableFieldChange(entry, field, oldValue, newValue));
-                            System.out.println("Teste: " + newValue);
                             if(field.getName().contains("nationality")){
                                 for(EntryAuthor a: entry.getAuthors()){
                                     if(a.getAuthorName().equals(field.getName().substring(0, field.getName().lastIndexOf("_")))){

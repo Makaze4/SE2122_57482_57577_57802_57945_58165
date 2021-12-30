@@ -688,7 +688,7 @@ public class JabRefFrame extends BorderPane {
         Menu tools = new Menu(Localization.lang("Tools"));
         Menu options = new Menu(Localization.lang("Options"));
         Menu help = new Menu(Localization.lang("Help"));
-        Menu querry = new Menu(Localization.lang("Querry Results"));
+        Menu querry = new Menu(Localization.lang("Query Results"));
 
         file.getItems().addAll(
                 factory.createMenuItem(StandardActions.NEW_LIBRARY, new NewDatabaseAction(this, prefs)),

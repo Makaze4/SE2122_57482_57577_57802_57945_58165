@@ -76,6 +76,14 @@ public class JournalInformationTab extends FieldsEditorTab2 {
             fields.add(decadeF);
 
 
+            Field authorWithMorePublicationsF = new UnknownField("Author with more publications");
+
+            String author = bd.getAuthorWithMorePublish(s);
+
+            author = author.replace("[","");
+            author = author.replace("]","");
+            entry.setField(authorWithMorePublicationsF, author);
+            fields.add(authorWithMorePublicationsF);
 
 
         }

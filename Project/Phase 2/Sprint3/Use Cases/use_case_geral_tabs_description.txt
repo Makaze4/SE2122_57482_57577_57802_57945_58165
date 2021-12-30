@@ -4,7 +4,7 @@ This description is useful for all the use cases that implement this one, preven
 
 User case: Entry
 ID: 1
-Description: The use choose what entry/article he want to check
+Description: The use chooses what entry/article he wants to check
 Main actor: User
 Secondary actors: None
 
@@ -20,7 +20,7 @@ Description: Tab that shows all the information of the author
 Main actor: User
 Secondary actors: None
 
-Use case: Tabs --- Jornal journal
+Use case: Tabs --- Journal Information
 ID: 4
 Description: Tab that shows all the information of the journal
 Main actor: User

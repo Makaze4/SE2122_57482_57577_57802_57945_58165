@@ -1129,7 +1129,7 @@ public class BibDatabase {
 
         for(Triple<Integer, String, String> p: authorList){
             for(BibEntry entry: entries){
-                if(entry.getFieldMap().get(StandardField.AUTHOR).contains(p.c)){
+                if(containsWord(entry.getFieldMap().get(StandardField.AUTHOR), p.c)){
                     for(EntryAuthor a: entry.getAuthors()){
                         if(!a.getAuthorName().equals(p.c)){
                             int index = getAuthorIndex(authorList, a.getAuthorName());
@@ -1143,6 +1143,17 @@ public class BibDatabase {
         }
 
         return authorMap;
+    }
+
+    private boolean containsWord(String a, String b){
+        String[] sList = a.split(" ");
+
+        for(String s: sList){
+            if(s.equals(b)){
+                return true;
+            }
+        }
+        return false;
     }
 
     private boolean containsAuthor(List<Triple<Integer, String, String>> authorList, String author){

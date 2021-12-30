@@ -79,7 +79,7 @@ public class AbstractEditorViewModel extends AbstractViewModel {
                             System.out.println("Teste: " + newValue);
                             if(field.getName().contains("nationality")){
                                 for(EntryAuthor a: entry.getAuthors()){
-                                    if(a.getAuthorName().equals(field.getName().substring(0, field.getName().lastIndexOf(" ")))){
+                                    if(a.getAuthorName().equals(field.getName().substring(0, field.getName().lastIndexOf("_")))){
                                         a.setNationality(newValue);
                                     }
                                 }

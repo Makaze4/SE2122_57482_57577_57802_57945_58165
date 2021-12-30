@@ -49,3 +49,21 @@ ID: 8
 Description: Button when clicked shows the relations between the authors
 Main actor: User
 Secondary actors: None
+
+Use case: Query Results --- Query - Topics by author
+ID: 9
+Description: Button when clicked shows all the topics that a given author has write about
+Main actor: User
+Secondary actors: None
+
+Use case: Query Results --- Query - Show authors with a given nationality
+ID: 10
+Description: Button when clicked shows all the authors of a given nationality
+Main actor: User
+Secondary actors: None
+
+Use case: Query Results ---  Articles by an author about a topic in a time period
+ID: 11
+Description: Button when clicked shows the articles writen by a giving author, about a giving topic in a given time period
+Main actor: User
+Secondary actors: None

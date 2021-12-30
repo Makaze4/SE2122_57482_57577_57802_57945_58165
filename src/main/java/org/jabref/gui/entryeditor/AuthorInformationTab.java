@@ -47,7 +47,7 @@ public class AuthorInformationTab extends FieldsEditorTab2 {
         Set<Field> fields = new LinkedHashSet<>();
 
         for(EntryAuthor a: entry.getAuthors()){
-            Field f = new UnknownField(a.getAuthorName() + " nationality:");
+            Field f = new UnknownField(a.getAuthorName() + "_nationality:");
             if(a.getAuthorNationality() == null){
                 entry.setField(f, "");
             }

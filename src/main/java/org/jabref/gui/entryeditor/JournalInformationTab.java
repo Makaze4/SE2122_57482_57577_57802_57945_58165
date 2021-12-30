@@ -50,12 +50,12 @@ public class JournalInformationTab extends FieldsEditorTab2 {
 
         if (mapaEntries.containsKey(StandardField.JOURNAL)) {
             String s = mapaEntries.get(StandardField.JOURNAL);
-            Field nomeF = new UnknownField("Journal name ");
+            Field nomeF = new UnknownField("Journal_name:");
             entry.setField(nomeF, s);
 
             fields.add(nomeF);
 
-            Field authorPercentages = new UnknownField("Nacionality percentages ");
+            Field authorPercentages = new UnknownField("Nacionality_percentages:");
 
             BibDatabase bd = databaseContext.getDatabase();
             List<Pair<String, Integer>> nac = bd.getJournalNacionalitiesPercentages(s);
@@ -69,14 +69,14 @@ public class JournalInformationTab extends FieldsEditorTab2 {
             entry.setField(authorPercentages, totalNacionalities);
             fields.add(authorPercentages);
 
-            Field decadeF = new UnknownField("Most active decade");
+            Field decadeF = new UnknownField("Most_active_decade:");
             String decade = bd.getTimePeriodWithMostArticles(s);
             entry.setField(decadeF,decade);
 
             fields.add(decadeF);
 
 
-            Field authorWithMorePublicationsF = new UnknownField("Author with more publications");
+            Field authorWithMorePublicationsF = new UnknownField("Authors_with_more_publications:");
 
             String author = bd.getAuthorWithMorePublish(s);
 
@@ -85,7 +85,7 @@ public class JournalInformationTab extends FieldsEditorTab2 {
             entry.setField(authorWithMorePublicationsF, author);
             fields.add(authorWithMorePublicationsF);
 
-            Field bestArticleF = new UnknownField("Best article");
+            Field bestArticleF = new UnknownField("Best_article:");
             String title = bd.getbestArticleByJournal(s);
 
             if(title == null){

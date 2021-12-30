@@ -1,0 +1,19 @@
+Geral use cases were described in another file
+
+Use case: Journal Information
+ID: 0
+Description: Tab that will show us some informations
+Main actors: User
+Secondary actors: None
+
+Use case: Verify if journal exists
+ID: 1
+Description: Verify if journal exists. If not, the Tab do no show up
+Main actors: User
+Secondary actors: None
+
+Use case: Best Article
+ID: 2
+Description: JabRef shows the best article to the user
+Main actors: User
+Secondary actors: JabRef

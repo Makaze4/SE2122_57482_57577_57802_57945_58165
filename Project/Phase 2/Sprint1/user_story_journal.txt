@@ -1,6 +1,6 @@
 As a user I want to see the top authors with more articles on a journal in order to check the most prestigious authors of the journal.
 
-As a user I want to check the rankings of the authors of a certain journal by nacionality in order to collect data for my research about this journal.
+As a user I want to check the rankings of the authors of a certain journal by nationality in order to collect data for my research about this journal.
 
 As a user I want to see the rankings of the most written topics because I want to see what topic the journal focuses on.
 

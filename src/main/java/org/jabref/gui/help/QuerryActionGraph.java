@@ -9,6 +9,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 public class QuerryActionGraph extends SimpleCommand {
 
@@ -26,7 +27,6 @@ public class QuerryActionGraph extends SimpleCommand {
         ArrayList<edge> edges;
 
         public GraphDraw() { //Constructor
-            this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
             nodes = new ArrayList<Node>();
             edges = new ArrayList<edge>();
             width = 30;
@@ -35,7 +35,6 @@ public class QuerryActionGraph extends SimpleCommand {
 
         public GraphDraw(String name) { //Construct with label
             this.setTitle(name);
-            this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
             nodes = new ArrayList<Node>();
             edges = new ArrayList<edge>();
             width = 30;
@@ -100,17 +99,36 @@ public class QuerryActionGraph extends SimpleCommand {
 
     @Override
     public void execute() {
-        GraphDraw frame = new GraphDraw("Test Window");
+        GraphDraw frame = new GraphDraw("Author's relations graph");
 
-        frame.setSize(400,300);
+        frame.setSize(1280,720);
 
         frame.setVisible(true);
+        frame.toFront();
 
-        frame.addNode("a", 50,50);
-        frame.addNode("b", 100,100);
-        frame.addNode("longNode", 200,200);
-        frame.addEdge(0,1);
-        frame.addEdge(0,2);
+        Map<Integer, Pair<String, List<Integer>>> authorMap = currentLibraryTab.get().getDatabase().getRelations();
+
+        for(int i = 1; i<authorMap.size()+1; i++){
+            int j = i-1;
+            int x = (j % 8) +1;
+            int y = (j / 8) +1;
+
+            x = x*150;
+            y = y*150;
+            frame.addNode(authorMap.get(i).getKey(), x,y);
+            System.out.println("x: " + x);
+            System.out.println("y: " + y);
+        }
+
+        for(int i = 1; i<authorMap.size()+1; i++){
+            if(i == 41){
+                System.out.println("yau");
+            }
+            for(Integer integer: authorMap.get(i).getValue()){
+                System.out.println(i + " - " + integer);
+                frame.addEdge(i-1,integer-1);
+            }
+        }
 
     }
 

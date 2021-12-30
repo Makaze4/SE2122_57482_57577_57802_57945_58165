@@ -2096,7 +2096,7 @@
 									"visible": false,
 									"font": "Arial;13;0",
 									"left": 715,
-									"top": 429,
+									"top": 428,
 									"height": 13,
 									"alpha": 1.5707963267948966,
 									"distance": 15,
@@ -2117,7 +2117,7 @@
 									"visible": null,
 									"font": "Arial;13;0",
 									"left": 715,
-									"top": 444,
+									"top": 443,
 									"height": 13,
 									"alpha": 1.5707963267948966,
 									"distance": 30,
@@ -2138,7 +2138,7 @@
 									"visible": false,
 									"font": "Arial;13;0",
 									"left": 716,
-									"top": 400,
+									"top": 399,
 									"height": 13,
 									"alpha": -1.5707963267948966,
 									"distance": 15,
@@ -3578,7 +3578,7 @@
 											"top": 877,
 											"width": 78.7490234375,
 											"height": 13,
-											"text": "BibDatabase"
+											"text": "JabRef"
 										},
 										{
 											"_type": "LabelView",
@@ -4247,7 +4247,7 @@
 					"_parent": {
 						"$ref": "AAAAAAF+C068o9sieVo="
 					},
-					"name": "BibDatabase",
+					"name": "JabRef",
 					"ownedElements": [
 						{
 							"_type": "UMLAssociation",

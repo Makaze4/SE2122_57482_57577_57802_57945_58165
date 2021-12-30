@@ -6,6 +6,7 @@ import java.util.*;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.regex.Pattern;
 import java.util.stream.Collectors;
+import java.lang.Integer;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -31,6 +32,8 @@ import com.google.common.eventbus.EventBus;
 import com.google.common.eventbus.Subscribe;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
+import static java.lang.Integer.parseInt;
 
 /**
  * A bibliography database. This is the "bib" file (or the library stored in a shared SQL database)
@@ -667,7 +670,7 @@ public class BibDatabase {
 
         for(BibEntry entry: entries){
             Map<Field, String> map = entry.getFieldMap();
-            int year = Integer.parseInt(map.get(StandardField.YEAR));
+            int year = parseInt(map.get(StandardField.YEAR));
             if(map.get(StandardField.AUTHOR).contains(author) && map.get(StandardField.TOPIC).equals(topic) && year >= year1 && year <= year2){
                 articles.add(map.get(StandardField.TITLE));
             }
@@ -744,12 +747,11 @@ public class BibDatabase {
     //Get the author with th most published articles in any journal
     public String getbestArticleByJournal(String journal){
         List<Pair<String, Integer>> articleList = new LinkedList<>();
-        int nCitations = 0; //GET NUMBER OF CITATIONS
 
         for(BibEntry entry: entries) {
             Map<Field, String> map = entry.getFieldMap();
             if(map.get(StandardField.JOURNAL).equals(journal)) {
-                articleList.add(new Pair(map.get(StandardField.TITLE), nCitations));
+                articleList.add(new Pair(map.get(StandardField.TITLE), parseInt(map.get(StandardField.NUMBERCITATIONS))));
             }
         }
         if(articleList.isEmpty()) {
@@ -895,7 +897,7 @@ public class BibDatabase {
         for (int i = 0; i < numberOfRepetitions.size();i++){
             if(numberOfRepetitions.get(i) == high){
                 String decfinal = decada.get(i);
-                int yearInt = Integer.parseInt(decfinal);
+                int yearInt = parseInt(decfinal);
                 yearInt += 10;
                 String yearString = Integer.toString(yearInt);
                 String auxDec = yearString.substring(2);
@@ -923,7 +925,7 @@ public class BibDatabase {
                     break;
                 }
             }
-            if(!found){
+            if(!found && entry.getFieldMap().get(StandardField.TOPIC) != null){
                 topicList.add(new Pair<>(entry.getFieldMap().get(StandardField.TOPIC), 1));
             }
         }
@@ -1085,8 +1087,8 @@ public class BibDatabase {
 
         @Override
         public int compare(Object o1, Object o2) {
-            int value1 = Integer.parseInt(o1.toString().split("=")[1]);
-            int value2 = Integer.parseInt(o2.toString().split("=")[1]);
+            int value1 = parseInt(o1.toString().split("=")[1]);
+            int value2 = parseInt(o2.toString().split("=")[1]);
             return value2 - value1;
         }
     }

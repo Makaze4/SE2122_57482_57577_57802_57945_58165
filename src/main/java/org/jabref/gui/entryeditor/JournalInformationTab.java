@@ -68,6 +68,16 @@ public class JournalInformationTab extends FieldsEditorTab2 {
 
             entry.setField(authorPercentages, totalNacionalities);
             fields.add(authorPercentages);
+
+            Field decadeF = new UnknownField("Most active decade");
+            String decade = bd.getTimePeriodWithMostArticles(s);
+            entry.setField(decadeF,decade);
+
+            fields.add(decadeF);
+
+
+
+
         }
 
 

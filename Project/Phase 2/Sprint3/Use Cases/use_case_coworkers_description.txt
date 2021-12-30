@@ -17,7 +17,7 @@ Secondary actors: None
 Use case: Author Name --- Minimize
 ID: 3
 Description: Button when clicked minimizes the window
-Main actor: Userrepeticoes
+Main actor: User
 Secondary actors: None
 
 Use case: Author Name --- Expand

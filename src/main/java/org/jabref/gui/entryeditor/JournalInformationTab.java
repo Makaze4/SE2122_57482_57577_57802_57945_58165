@@ -55,7 +55,7 @@ public class JournalInformationTab extends FieldsEditorTab2 {
 
             fields.add(nomeF);
 
-            Field authorPercentages = new UnknownField("Nacionality_percentages:");
+            Field authorPercentages = new UnknownField("Nationality_percentages:");
 
             BibDatabase bd = databaseContext.getDatabase();
             List<Pair<String, Integer>> nac = bd.getJournalNacionalitiesPercentages(s);

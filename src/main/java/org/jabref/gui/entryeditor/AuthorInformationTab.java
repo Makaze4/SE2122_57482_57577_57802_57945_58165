@@ -34,7 +34,7 @@ public class AuthorInformationTab extends FieldsEditorTab2 {
                                 TaskExecutor taskExecutor,
                                 JournalAbbreviationRepository journalAbbreviationRepository) {
 
-        super(true, databaseContext, suggestionProviders, undoManager, dialogService,
+        super(false, databaseContext, suggestionProviders, undoManager, dialogService,
                 preferences, stateManager, externalFileTypes, taskExecutor, journalAbbreviationRepository);
         this.entryTypesManager = entryTypesManager;
 

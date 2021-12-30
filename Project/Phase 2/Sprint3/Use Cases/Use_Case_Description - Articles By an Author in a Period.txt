@@ -50,32 +50,26 @@ Description: Button when clicked closes the window
 Main actor: User
 Secondary actors: None
 
-Use case: Articles By an Author in a Period --- Insert Author name
-ID: 8
-Description: Textbox where the user can write the name of the author
-Main actor: User
-Secondary actors: None
-
 Use case: Articles By an Author in a Period --- Confirm
-ID: 9
+ID: 8
 Description: Button when clicked shows confirms the name of the author and open a new window with the answer
 Main actor: User
 Secondary actors: None
 
 Use case: Confirm --- Message
-ID: 10
-Description: New window that give the answer when the user used the use case(ID9)
+ID: 9
+Description: New window that give the answer when the user used the use case(ID8)
 Main actor: User
 Secondary actors: Jabref
 
 Use case: Confirm --- Ok
-ID: 11
+ID: 10
 Description: Button that confirm and close the window with the answer
 Main actor: User
 Secondary actors: Jabref
 
 Use case: Confirm --- Close
-ID: 12
+ID: 11
 Description: Button that close the window with the answer
 Main actor: User
 Secondary actors: Jabref

@@ -2859,7 +2859,7 @@
 											"top": 679,
 											"width": 719,
 											"height": 13,
-											"text": "Articles By an Author in a Period"
+											"text": "Articles"
 										},
 										{
 											"_type": "LabelView",
@@ -9500,7 +9500,7 @@
 					"_parent": {
 						"$ref": "AAAAAAF+C068o9sieVo="
 					},
-					"name": "Articles By an Author in a Period"
+					"name": "Articles"
 				},
 				{
 					"_type": "UMLActor",

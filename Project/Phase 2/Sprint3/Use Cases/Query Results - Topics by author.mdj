@@ -2854,9 +2854,9 @@
 											"font": "Arial;13;1",
 											"left": 485,
 											"top": 679,
-											"width": 599,
+											"width": 679,
 											"height": 13,
-											"text": "Show Co-workers Of Authors"
+											"text": "Show topics and author has worked on"
 										},
 										{
 											"_type": "LabelView",
@@ -2889,7 +2889,7 @@
 									"font": "Arial;13;0",
 									"left": 480,
 									"top": 672,
-									"width": 609,
+									"width": 689,
 									"height": 25,
 									"stereotypeLabel": {
 										"$ref": "AAAAAAF+C7VXyC62g2g="
@@ -2908,7 +2908,7 @@
 							"font": "Arial;13;0",
 							"left": 480,
 							"top": 672,
-							"width": 609,
+							"width": 689,
 							"height": 105,
 							"nameCompartment": {
 								"$ref": "AAAAAAF+C7VXyC6115o="
@@ -3590,7 +3590,7 @@
 											},
 											"visible": false,
 											"font": "Arial;13;0",
-											"left": 208,
+											"left": 352,
 											"top": -496,
 											"height": 13
 										},
@@ -3601,7 +3601,7 @@
 												"$ref": "AAAAAAF+C7vi7jQqoQ4="
 											},
 											"font": "Arial;13;1",
-											"left": 921.5,
+											"left": 993.5,
 											"top": 723.5,
 											"width": 126,
 											"height": 13,
@@ -3615,7 +3615,7 @@
 											},
 											"visible": false,
 											"font": "Arial;13;0",
-											"left": 208,
+											"left": 352,
 											"top": -496,
 											"width": 73.67724609375,
 											"height": 13,
@@ -3629,14 +3629,14 @@
 											},
 											"visible": false,
 											"font": "Arial;13;0",
-											"left": 208,
+											"left": 352,
 											"top": -496,
 											"height": 13,
 											"horizontalAlignment": 1
 										}
 									],
 									"font": "Arial;13;0",
-									"left": 916.5,
+									"left": 988.5,
 									"top": 716.5,
 									"width": 136,
 									"height": 25,
@@ -3664,7 +3664,7 @@
 									},
 									"visible": false,
 									"font": "Arial;13;0",
-									"left": 104,
+									"left": 176,
 									"top": -248,
 									"width": 10,
 									"height": 10
@@ -3680,7 +3680,7 @@
 									},
 									"visible": false,
 									"font": "Arial;13;0",
-									"left": 104,
+									"left": 176,
 									"top": -248,
 									"width": 10,
 									"height": 10
@@ -3696,7 +3696,7 @@
 									},
 									"visible": false,
 									"font": "Arial;13;0",
-									"left": 104,
+									"left": 176,
 									"top": -248,
 									"width": 10,
 									"height": 10
@@ -3712,7 +3712,7 @@
 									},
 									"visible": false,
 									"font": "Arial;13;0",
-									"left": 104,
+									"left": 176,
 									"top": -248,
 									"width": 10,
 									"height": 10
@@ -3728,7 +3728,7 @@
 									},
 									"visible": false,
 									"font": "Arial;13;0",
-									"left": 104,
+									"left": 176,
 									"top": -248,
 									"width": 10,
 									"height": 10
@@ -3736,7 +3736,7 @@
 							],
 							"font": "Arial;13;0",
 							"containerChangeable": true,
-							"left": 888,
+							"left": 960,
 							"top": 712,
 							"width": 193,
 							"height": 35,
@@ -3782,8 +3782,8 @@
 									},
 									"visible": false,
 									"font": "Arial;13;0",
-									"left": 901,
-									"top": 731,
+									"left": 931,
+									"top": 738,
 									"height": 13,
 									"alpha": 1.5707963267948966,
 									"distance": 15,
@@ -3802,8 +3802,8 @@
 										"$ref": "AAAAAAF+C8ij1TnU8WM="
 									},
 									"font": "Arial;13;0",
-									"left": 889,
-									"top": 731,
+									"left": 904,
+									"top": 753,
 									"width": 55.65625,
 									"height": 13,
 									"alpha": 1.5707963267948966,
@@ -3825,8 +3825,8 @@
 									},
 									"visible": false,
 									"font": "Arial;13;0",
-									"left": 872,
-									"top": 732,
+									"left": 932,
+									"top": 708,
 									"height": 13,
 									"alpha": -1.5707963267948966,
 									"distance": 15,
@@ -3844,7 +3844,7 @@
 								"$ref": "AAAAAAF+C7vi7jQpWbE="
 							},
 							"lineStyle": 1,
-							"points": "887:729;887:747",
+							"points": "959:729;905:729",
 							"showVisibility": true,
 							"nameLabel": {
 								"$ref": "AAAAAAF+C8ij1jnXXQs="
@@ -8015,7 +8015,7 @@
 					"_parent": {
 						"$ref": "AAAAAAF+C068o9sieVo="
 					},
-					"name": "Show Co-workers Of Authors"
+					"name": "Show topics and author has worked on"
 				},
 				{
 					"_type": "UMLActor",

@@ -2856,7 +2856,7 @@
 											"top": 679,
 											"width": 703,
 											"height": 13,
-											"text": "Show Co-workers Of Authors"
+											"text": "Show authors with a given nationality"
 										},
 										{
 											"_type": "LabelView",
@@ -3605,7 +3605,7 @@
 											"top": 715.5,
 											"width": 126,
 											"height": 13,
-											"text": "Author Name"
+											"text": "Nationality"
 										},
 										{
 											"_type": "LabelView",
@@ -8015,7 +8015,7 @@
 					"_parent": {
 						"$ref": "AAAAAAF+C068o9sieVo="
 					},
-					"name": "Show Co-workers Of Authors"
+					"name": "Show authors with a given nationality"
 				},
 				{
 					"_type": "UMLActor",
@@ -8097,7 +8097,7 @@
 					"_parent": {
 						"$ref": "AAAAAAF+C068o9sieVo="
 					},
-					"name": "Author Name",
+					"name": "Nationality",
 					"ownedElements": [
 						{
 							"_type": "UMLInclude",

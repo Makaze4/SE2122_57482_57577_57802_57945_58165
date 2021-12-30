@@ -666,12 +666,23 @@ public class BibDatabase {
     // Articles published by an author about a certain topic in a time period
     public List<String> getAuthorArticlesTopicInPeriod(String author, String topic, int year1, int year2){
 
+        int firstYear, lastYear;
+
+        if(year1<=year2){
+            firstYear = year1;
+            lastYear = year2;
+        }
+        else{
+            firstYear = year2;
+            lastYear = year1;
+        }
+
         List<String> articles = new LinkedList<>();
 
         for(BibEntry entry: entries){
             Map<Field, String> map = entry.getFieldMap();
             int year = parseInt(map.get(StandardField.YEAR));
-            if(map.get(StandardField.AUTHOR).contains(author) && map.get(StandardField.TOPIC).equals(topic) && year >= year1 && year <= year2){
+            if(map.get(StandardField.AUTHOR).contains(author) && map.get(StandardField.TOPIC).equals(topic) && year >= firstYear && year <= lastYear){
                 articles.add(map.get(StandardField.TITLE));
             }
         }
@@ -750,7 +761,8 @@ public class BibDatabase {
 
         for(BibEntry entry: entries) {
             Map<Field, String> map = entry.getFieldMap();
-            if(map.get(StandardField.JOURNAL).equals(journal)) {
+            String journalName = map.get(StandardField.JOURNAL);
+            if(journalName != null && map.get(StandardField.NUMBERCITATIONS) != null && journalName.equals(journal)) {
                 articleList.add(new Pair(map.get(StandardField.TITLE), parseInt(map.get(StandardField.NUMBERCITATIONS))));
             }
         }

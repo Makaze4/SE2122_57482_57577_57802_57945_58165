@@ -91,7 +91,7 @@ public enum StandardField implements Field {
     MONTHFILED("monthfiled", FieldProperty.MONTH),
     NAMEADDON("nameaddon"),
     NATIONALITY("nationality"),
-    NUMBERCITATIONS("number of citations"),
+    NUMBERCITATIONS("number_of_citations"),
     NOTE("note"),
     NUMBER("number", FieldProperty.NUMERIC),
     ORGANIZATION("organization"),

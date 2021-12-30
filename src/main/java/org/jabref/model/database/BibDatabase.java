@@ -872,17 +872,20 @@ public class BibDatabase {
             if(map.get(StandardField.JOURNAL) != null){
                 if(map.get(StandardField.JOURNAL).equals(journal)){
                     String yearS = map.get(StandardField.YEAR);
-                    String decS = yearS.substring(0,3);
-                    decS = decS + 0;
-                    if (decada.contains(decS)){
-                        int i =decada.indexOf(decS);
-                        int rep = numberOfRepetitions.get(i);
-                        numberOfRepetitions.remove(i);
-                        numberOfRepetitions.add(i,rep+1);
-                    }
-                    else{
-                        decada.add(decS);
-                        numberOfRepetitions.add(1);
+
+                    if(yearS != null){
+                        String decS = yearS.substring(0,3);
+                        decS = decS + 0;
+                        if (decada.contains(decS)){
+                            int i =decada.indexOf(decS);
+                            int rep = numberOfRepetitions.get(i);
+                            numberOfRepetitions.remove(i);
+                            numberOfRepetitions.add(i,rep+1);
+                        }
+                        else{
+                            decada.add(decS);
+                            numberOfRepetitions.add(1);
+                        }
                     }
                 }
             }

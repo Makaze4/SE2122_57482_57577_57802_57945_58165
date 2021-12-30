@@ -1087,4 +1087,57 @@ public class BibDatabase {
     }
 
 
+    public Map<Integer, Pair<String, List<Integer>>> getRelations(){
+        List<Pair<Integer, String>> authorList = new LinkedList<>();
+
+        int i = 0;
+        for(BibEntry entry: entries){
+            for(EntryAuthor a: entry.getAuthors()){
+                if(!containsAuthor(authorList, a.getAuthorName())){
+                    authorList.add(new Pair<>(i++, a.getAuthorName()));
+                }
+            }
+        }
+
+        Map<Integer, Pair<String, List<Integer>>> authorMap = new HashMap<>();
+
+        for(Pair<Integer, String> p: authorList){
+            authorMap.put(p.getKey(), new Pair<>(p.getValue(), new LinkedList<>()));
+        }
+
+        for(Pair<Integer, String> p: authorList){
+            for(BibEntry entry: entries){
+                if(entry.getFieldMap().get(StandardField.AUTHOR).contains(p.getValue())){
+                    for(EntryAuthor a: entry.getAuthors()){
+                        if(a.getAuthorName().equals(p.getValue())){
+                            int index = getAuthorIndex(authorList, a.getAuthorName());
+                            authorMap.get(p.getKey()).getValue().add(index);
+                        }
+                    }
+                }
+            }
+        }
+
+        return authorMap;
+    }
+
+    private boolean containsAuthor(List<Pair<Integer, String>> authorList, String author){
+        for(Pair<Integer, String> p: authorList){
+            if(p.getValue().equals(author)){
+                return true;
+            }
+        }
+        return false;
+    }
+
+    private int getAuthorIndex(List<Pair<Integer, String>> authorList, String author){
+        for(Pair<Integer, String> p: authorList){
+            if(p.getValue().equals(author)){
+                return p.getKey();
+            }
+        }
+        return -1;
+    }
+
+
 }

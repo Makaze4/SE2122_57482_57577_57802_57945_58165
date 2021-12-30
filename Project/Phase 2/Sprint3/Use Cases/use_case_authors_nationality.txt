@@ -2,7 +2,7 @@ Use case diagram description for use case co-workers
 
 The description of the "Query Results - Geral" use case is done in other file in order to preventing repetitions. 
 
-User case: Query - Show authors with a given nationality
+Use case: Query - Show authors with a given nationality
 ID: 1
 Description: Button when clicked shows the co-workers of a given author
 Main actor: User

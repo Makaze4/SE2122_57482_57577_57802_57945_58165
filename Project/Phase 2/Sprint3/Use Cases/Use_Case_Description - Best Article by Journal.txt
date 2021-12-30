@@ -8,7 +8,7 @@ Secondary actors: None
 
 Use case: Verify if journal exists
 ID: 1
-Description: Verify if journal exists. If not, the Tab do no show up
+Description: Verify if journal exists. If not, the Tab do not show up
 Main actors: User
 Secondary actors: None
 

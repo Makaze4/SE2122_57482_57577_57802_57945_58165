@@ -2,7 +2,7 @@ Use case diagram description for use case Author With More Publications
 
 The description about the Geral tabs use case is already done in another file, preventing repetitions. 
 
-User case: Journal Information
+Use case: Journal Information
 ID: 1
 Description: Tab that shows all the information of the journal
 Main actor: User

@@ -1,0 +1,51 @@
+Use case diagram description for use case Geral
+
+This is description is useful for all the Query use cases, preventing repetitions. 
+
+User case: Query Results
+ID: 1
+Description: Button that show all queries.
+Main actor: User
+Secondary actors: None
+
+Use case: Query Results --- Query - % Of Author By Nation
+ID: 2
+Description: Button when clicked shows the percentage of the authors ordered by nationality
+Main actor: User
+Secondary actors: None
+
+Use case: Query Results --- Query - Show Co-workers Of Authors
+ID: 3
+Description: Button when clicked shows the co-workers of a given author
+Main actor: User
+Secondary actors: None
+
+Use case: Query Results --- Query - Most Active Author
+ID: 4
+Description: Button when clicked shows the author with most publications
+Main actor: User
+Secondary actors: None
+
+Use case: Query Results --- Query - Topic Rankings
+ID: 5
+Description: Button when clicked shows the topics of all articles ordered by the most used
+Main actor: User
+Secondary actors: None
+
+Use case: Query Results --- Query - Journals Related To Author
+ID: 6
+Description: Button when clicked shows the journals a given author has published
+Main actor: User
+Secondary actors: None
+
+Use case: Query Results --- Query - Nationalities An Author Has Worked With
+ID: 7
+Description: Button when clicked shows nationalities that a given actor has worked with
+Main actor: User
+Secondary actors: None
+
+Use case: Query Results --- Query - Author relations
+ID: 8
+Description: Button when clicked shows the relations between the authors
+Main actor: User
+Secondary actors: None

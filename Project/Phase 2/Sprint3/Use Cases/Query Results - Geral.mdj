@@ -1129,11 +1129,11 @@
 												"$ref": "AAAAAAF+C2aBpee2dBc="
 											},
 											"font": "Arial;13;1",
-											"left": 851,
+											"left": 853.5,
 											"top": 419.5,
-											"width": 133,
+											"width": 144,
 											"height": 13,
-											"text": "Query - Top Rankings"
+											"text": "Query - Topic Rankings"
 										},
 										{
 											"_type": "LabelView",
@@ -1164,9 +1164,9 @@
 										}
 									],
 									"font": "Arial;13;0",
-									"left": 846,
+									"left": 848.5,
 									"top": 412.5,
-									"width": 144.10693359375,
+									"width": 154.94873046875,
 									"height": 25,
 									"stereotypeLabel": {
 										"$ref": "AAAAAAF+C2aBpee3BLk="
@@ -1266,7 +1266,7 @@
 							"containerChangeable": true,
 							"left": 816,
 							"top": 408,
-							"width": 203,
+							"width": 219,
 							"height": 35,
 							"nameCompartment": {
 								"$ref": "AAAAAAF+C2aBpee2dBc="
@@ -2156,7 +2156,7 @@
 								"$ref": "AAAAAAF+C2aBpOe11yY="
 							},
 							"lineStyle": 1,
-							"points": "815:423;618:419",
+							"points": "815:423;618:418",
 							"showVisibility": true,
 							"nameLabel": {
 								"$ref": "AAAAAAF+C2qsDOoOrXM="
@@ -2943,7 +2943,7 @@
 					"_parent": {
 						"$ref": "AAAAAAF+C068o9sieVo="
 					},
-					"name": "Query - Top Rankings",
+					"name": "Query - Topic Rankings",
 					"ownedElements": [
 						{
 							"_type": "UMLGeneralization",

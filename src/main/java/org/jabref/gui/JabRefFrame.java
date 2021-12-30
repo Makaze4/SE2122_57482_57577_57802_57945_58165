@@ -900,7 +900,8 @@ public class JabRefFrame extends BorderPane {
         );
 
         querry.getItems().addAll(
-                factory.createMenuItem(StandardActions.QUERRY1, new QuerryAction(this::getCurrentLibraryTab))
+                factory.createMenuItem(StandardActions.QUERRY1, new QuerryAction(this::getCurrentLibraryTab)),
+                factory.createMenuItem(StandardActions.QUERRY2, new QuerryAction2(this::getCurrentLibraryTab))
         );
 
         // @formatter:on

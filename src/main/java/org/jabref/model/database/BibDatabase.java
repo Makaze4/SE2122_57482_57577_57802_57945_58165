@@ -228,7 +228,6 @@ public class BibDatabase {
      * @param toBeDeleted Entries to delete
      */
     public synchronized void removeEntries(List<BibEntry> toBeDeleted) {
-        System.out.println("TAS LENTINHO, VAIS DE CARRINHO");
         removeEntries(toBeDeleted, EntriesEventSource.LOCAL);
     }
 
@@ -240,7 +239,6 @@ public class BibDatabase {
      * @param eventSource Source the event is sent from
      */
     public synchronized void removeEntries(List<BibEntry> toBeDeleted, EntriesEventSource eventSource) {
-        System.out.println("TAS CA");
         Objects.requireNonNull(toBeDeleted);
 
         List<String> ids = new ArrayList<>();

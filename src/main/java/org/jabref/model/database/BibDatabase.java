@@ -1006,7 +1006,7 @@ public class BibDatabase {
         return biggest;
     }
 
-    public List<Pair<String, Integer>> pairSort(List<Pair<String, Integer>> nationalities) {
+    private List<Pair<String, Integer>> pairSort(List<Pair<String, Integer>> nationalities) {
         List<Pair<String, Integer>> aux = new LinkedList<>();
         while(nationalities.size() > 0) {
             Pair<String, Integer> biggest = getBiggest(nationalities);

@@ -2321,7 +2321,7 @@
 											"top": 679,
 											"width": 494,
 											"height": 13,
-											"text": "Most active decade"
+											"text": "Best Article"
 										},
 										{
 											"_type": "LabelView",
@@ -3074,7 +3074,7 @@
 											"top": 763.5,
 											"width": 118,
 											"height": 13,
-											"text": "Most active decade"
+											"text": "Best Article"
 										},
 										{
 											"_type": "LabelView",
@@ -3105,7 +3105,7 @@
 									"font": "Arial;13;0",
 									"left": 755,
 									"top": 756.5,
-									"width": 129.21533203125,
+									"width": 128,
 									"height": 25,
 									"stereotypeLabel": {
 										"$ref": "AAAAAAF+DDCg2+QYH9o="
@@ -4073,7 +4073,7 @@
 					"_parent": {
 						"$ref": "AAAAAAF+DB/CYKs1Z5k="
 					},
-					"name": "Most active decade"
+					"name": "Best Article"
 				},
 				{
 					"_type": "UMLUseCase",
@@ -4126,7 +4126,7 @@
 					"_parent": {
 						"$ref": "AAAAAAF+DB/CYKs1Z5k="
 					},
-					"name": "Most active decade",
+					"name": "Best Article",
 					"ownedElements": [
 						{
 							"_type": "UMLInclude",

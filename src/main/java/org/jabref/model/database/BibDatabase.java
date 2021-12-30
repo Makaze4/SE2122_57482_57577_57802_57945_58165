@@ -801,43 +801,40 @@ public class BibDatabase {
     //Journal user story methods
 
     public String getAuthorWithMorePublish(String journal) {
-        List<Pair<EntryAuthor, Integer>> allAuthors = new LinkedList<>();
-
-        if(entries.size() == 0)
-            return null;
-
-        for(BibEntry entry: entries){
+        Map<String, Integer> allAuthors = new HashMap<>();
+        if(entries.size() == 0) {
+            return "";
+        }
+        for(BibEntry entry : entries) {
             Map<Field, String> map = entry.getFieldMap();
 
-            String name = map.get(StandardField.JOURNAL);
-            if(name != null && name.equals(journal)){
-                List<EntryAuthor> authors = entry.getAuthors();
+            for(int i = 0; i < entry.getAuthors().size(); i++) {
+                if(map.get(StandardField.JOURNAL).equals(journal)){
+                    EntryAuthor a = entry.getAuthors().get(i);
 
-                for(EntryAuthor author: authors){
-                    int index = allAuthors.indexOf(author);
-
-                    if(index == -1)
-                        allAuthors.add(new Pair<>(author, 1));
-                    else
-                        allAuthors.set(index, new Pair<>(author, allAuthors.get(index).getValue() + 1));
+                    if(allAuthors.containsKey(a.getAuthorName())) {
+                        int value = allAuthors.get(a.getAuthorName());
+                        allAuthors.put(a.getAuthorName(), value+1);
+                    }
+                    else {
+                        allAuthors.put(a.getAuthorName(), 1);
+                    }
                 }
             }
         }
 
-        int heighstNumber = 0;
-        List<String> authors = new LinkedList<>();
-
-        for(Pair<EntryAuthor, Integer> author: allAuthors){
-            int number = author.getValue();
-            if(number > heighstNumber){
-                authors.removeAll(allAuthors);
-                authors.add(author.getKey().getAuthorName());
-                heighstNumber = number;
-            } else if(number == heighstNumber)
-                authors.add(author.getKey().getAuthorName());
+        List<Pair<String, Integer>> list = new LinkedList<>();
+        for(String key: allAuthors.keySet()) {
+            list.add(new Pair(key, allAuthors.get(key)));
         }
 
-        return authors.toString();
+        Pair<String, Integer> p = list.get(0);
+        for(int i = 0; i < list.size(); i++) {
+            if(list.get(i).getValue() > p.getValue()) {
+                p = list.get(i);
+            }
+        }
+        return p.getKey();
     }
 
     //get all the authors by nacionality

@@ -106,12 +106,16 @@ public class QuerryActionGraph extends SimpleCommand {
         frame.setVisible(true);
         frame.toFront();
 
+        JScrollPane pane = new JScrollPane(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS, JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);
+
+        frame.setContentPane(pane);
+
         Map<Integer, Pair<String, List<Integer>>> authorMap = currentLibraryTab.get().getDatabase().getRelations();
 
         for(int i = 1; i<authorMap.size()+1; i++){
             int j = i-1;
-            int x = (j % 8) +1;
-            int y = (j / 8) +1;
+            int x = (j % 10) +1;
+            int y = (j / 10) +1;
 
             x = x*150;
             y = y*150;
@@ -129,8 +133,5 @@ public class QuerryActionGraph extends SimpleCommand {
                 frame.addEdge(i-1,integer-1);
             }
         }
-
     }
-
-
 }

@@ -69,7 +69,6 @@ public class GraphDraw extends JComponent {
         int strHeight = rect.getBounds().height;
         int x = node.getPosition().posX;
         int y = node.getPosition().posY;
-        System.out.println(x + " " + y);
         g2d.drawString(node.getDisplayName(),
                 update(x + (width - strWidth) / 2),
                 update(y + (width + strHeight / 2) / 2));
@@ -123,7 +122,6 @@ public class GraphDraw extends JComponent {
         //draw weight on the line
         if (edge.isWeighted()) {
             float slop = edge.getSlope();
-            System.out.println("drawing weight");
             if (slop < 0)
                 g2d.drawString(edge.getWeight() + "",
                         update(cPos.posX - width / 2),

@@ -7,6 +7,3 @@ As a user I want to see the rankings of the most written topics because I want t
 As a user I want to see in a certain time period there were more articles written because I want to see at what time the journal articles are inserted.
 
 As a user I want to see the top best articles in the journal to know how important and well-built this journal is based on the amount of good articles.
-
-As a user I want to see a graph displaying all the authors that have worked with each other with different node colors depending on the author's nationality
-because I want to know the relations of the authors with authors of other nationalities.

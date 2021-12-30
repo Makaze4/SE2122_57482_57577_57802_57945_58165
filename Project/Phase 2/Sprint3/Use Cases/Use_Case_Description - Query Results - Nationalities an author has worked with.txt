@@ -54,11 +54,11 @@ Use case: Confirm --- Ok
 ID: 8
 Description: Button that confirm and close the window with the answer
 Main actor: User
-Secondary actors: Jabref
+Secondary actors: None
 
 Use case: Confirm --- Close
 ID: 9
 Description: Button that close the window with the answer
 Main actor: User
-Secondary actors: Jabref
+Secondary actors: None
 

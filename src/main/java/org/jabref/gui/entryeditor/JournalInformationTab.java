@@ -45,7 +45,6 @@ public class JournalInformationTab extends FieldsEditorTab2 {
     }
     @Override
     protected Set<Field> determineFieldsToShow(BibEntry entry) {
-        Optional<BibEntryType> entryType = entryTypesManager.enrich(entry.getType(), databaseContext.getMode());
         Set<Field> fields = new LinkedHashSet<>();
         Map<Field, String> mapaEntries = entry.getFieldMap();
 
@@ -60,8 +59,14 @@ public class JournalInformationTab extends FieldsEditorTab2 {
 
             BibDatabase bd = databaseContext.getDatabase();
             List<Pair<String, Integer>> nac = bd.getJournalNacionalitiesPercentages(s);
+            String totalNacionalities = "";
 
-            entry.setField(authorPercentages, nac);
+            for(int i = 0; i<nac.size();i++){
+                    totalNacionalities += nac.get(i).getKey() + ": " + nac.get(i).getValue().toString() + " %\n";
+            }
+
+
+            entry.setField(authorPercentages, totalNacionalities);
             fields.add(authorPercentages);
         }
 

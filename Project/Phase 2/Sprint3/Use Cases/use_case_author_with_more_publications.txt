@@ -1,0 +1,21 @@
+Use case diagram description for use case Author With More Publications
+
+This description is useful for all the use cases that implement this one, preventing repetitions. 
+
+User case: Journal Information
+ID: 1
+Description: Tab that shows all the information of the journal
+Main actor: User
+Secondary actors: None
+
+Use case: Verify if journal exist
+ID: 2
+Description: Verify if the given journal exists
+Main actor: User
+Secondary actors: None
+
+Use case: Author with more publications
+ID: 3
+Description: Textbox where will be display the name of the author with more publications
+Main actor: User
+Secondary actors: Jabref

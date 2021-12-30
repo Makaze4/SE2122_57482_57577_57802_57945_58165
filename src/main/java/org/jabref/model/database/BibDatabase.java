@@ -811,7 +811,9 @@ public class BibDatabase {
         for(BibEntry entry : entries) {
             Map<Field, String> map = entry.getFieldMap();
 
-            if(map.get(StandardField.JOURNAL).equals(journal)){
+            String name = map.get(StandardField.JOURNAL);
+
+            if(name != null && name.equals(journal)){
                 List<EntryAuthor> authors = entry.getAuthors();
 
                 for(EntryAuthor author: authors){

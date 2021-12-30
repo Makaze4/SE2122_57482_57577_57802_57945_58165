@@ -702,13 +702,20 @@ public class BibDatabase {
     public String getMostActiveAuthor(){
         List<Pair<String, Integer>> authorList = new LinkedList<>();
 
+        if(entries.size() == 0){
+            return "";
+        }
+
         for(BibEntry entry: entries){
             String[] entryAuthorList = entry.getFieldMap().get(StandardField.AUTHOR).split(" and ");
             for(String s: entryAuthorList){
                 boolean found = false;
                 for(Pair<String, Integer> p: authorList){
+                    found = false;
                     if(p.getKey().equals(s)){
+                        authorList.remove(p);
                         p = new Pair<>(p.getKey(), p.getValue()+1);
+                        authorList.add(p);
                         found = true;
                         break;
                     }
@@ -721,7 +728,7 @@ public class BibDatabase {
 
         int author = 0;
         for(int i = 1; i<authorList.size(); i++){
-            if(authorList.get(i).getValue() > authorList.get(0).getValue()){
+            if(authorList.get(i).getValue() > authorList.get(author).getValue()){
                 author = i;
             }
         }

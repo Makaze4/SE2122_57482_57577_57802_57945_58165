@@ -94,7 +94,7 @@ public class getMostActiveAuthorTest {
         entryList2.add(entry2);
         entryList2.add(entry4);
 
-        dataBase2 = new BibDatabase(entryList);
+        dataBase2 = new BibDatabase(entryList2);
 
         List<BibEntry> entryList3 = new LinkedList<>();
 
@@ -119,7 +119,7 @@ public class getMostActiveAuthorTest {
     @DisplayName("Test 1")
     void test1(){
         String sol = "Joao";
-        assertEquals(sol, dataBase2.getMostActiveAuthor(), "-----TEST FAILED----------TEST FAILED----------TEST FAILED-----");
+        assertEquals(sol, dataBase.getMostActiveAuthor(), "-----TEST FAILED----------TEST FAILED----------TEST FAILED-----");
     }
 
     @Test

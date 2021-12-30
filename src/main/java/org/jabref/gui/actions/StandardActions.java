@@ -182,7 +182,7 @@ public enum StandardActions implements Action {
     QUERRY7(Localization.lang("Query - Show Authors with a given nationality"), Localization.lang("Querry7")),
     QUERRY8(Localization.lang("Query - Topics by Author"), Localization.lang("Querry8")),
     QUERRY9(Localization.lang("Query - Articles by an author about a topic in a time period"), Localization.lang("Querry9")),
-    QUERRYGRAPH(Localization.lang("Query - Topics by Author"), Localization.lang("QuerryGraph")),
+    QUERRYGRAPH(Localization.lang("Query - Author's relation graph"), Localization.lang("QuerryGraph")),
 
 
     EDIT_LIST(Localization.lang("Edit"), IconTheme.JabRefIcons.EDIT),

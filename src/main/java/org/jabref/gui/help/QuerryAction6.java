@@ -14,11 +14,11 @@ import java.awt.*;
 import java.util.List;
 import java.util.Map;
 
-public class QuerryAction2 extends SimpleCommand {
+public class QuerryAction6 extends SimpleCommand {
 
     RebuildFulltextSearchIndexAction.GetCurrentLibraryTab currentLibraryTab;
 
-    public QuerryAction2(RebuildFulltextSearchIndexAction.GetCurrentLibraryTab aux) {
+    public QuerryAction6(RebuildFulltextSearchIndexAction.GetCurrentLibraryTab aux) {
         currentLibraryTab = aux;
     }
 
@@ -31,7 +31,7 @@ public class QuerryAction2 extends SimpleCommand {
         container.setLayout(null);
 
 
-        JLabel logo  = new JLabel("Query - Common Articles");
+        JLabel logo  = new JLabel("Query - Nationalities an author has worked with");
         logo.setBounds(10,5,400,50);
 
         JLabel author  = new JLabel("Author: Inserir");
@@ -52,9 +52,11 @@ public class QuerryAction2 extends SimpleCommand {
             @Override
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 String name = text.getText();
-
-                Map<String, List<String>> list = currentLibraryTab.get().getBibDatabaseContext().getDatabase().getCommonArticles(name);
-                String result = list.toString();
+                String result = "";
+                List<String> list = currentLibraryTab.get().getBibDatabaseContext().getDatabase().getNumberOfNationalities(name);
+                for(String st: list){
+                    result += "País: " + st + "\n";
+                }
                 JOptionPane.showMessageDialog(frame, result);
             }
         });
@@ -63,6 +65,5 @@ public class QuerryAction2 extends SimpleCommand {
         frame.toFront();
 
     }
-
-
 }
+

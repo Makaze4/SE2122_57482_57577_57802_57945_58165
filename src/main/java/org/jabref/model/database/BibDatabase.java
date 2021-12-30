@@ -763,7 +763,7 @@ public class BibDatabase {
     }
 
     //Get the number of different nationalities an author has worked with
-    public int getNumberOfNationalities(String author){
+    public List<String> getNumberOfNationalities(String author){
         List<String> natList = new LinkedList<>();
 
         for(BibEntry entry: entries){
@@ -779,7 +779,7 @@ public class BibDatabase {
                 }
             }
         }
-        return natList.size();
+        return natList;
     }
 
     //gets all the topics by author
@@ -800,7 +800,7 @@ public class BibDatabase {
 
     //Journal user story methods
 
-    public List<EntryAuthor> getAuthorWithMorePublish(String journal) {
+    public String getAuthorWithMorePublish(String journal) {
         List<Pair<EntryAuthor, Integer>> allAuthors = new LinkedList<>();
 
         if(entries.size() == 0)
@@ -809,7 +809,8 @@ public class BibDatabase {
         for(BibEntry entry: entries){
             Map<Field, String> map = entry.getFieldMap();
 
-            if(map.get(StandardField.JOURNAL).equals(journal)){
+            String name = map.get(StandardField.JOURNAL);
+            if(name != null && name.equals(journal)){
                 List<EntryAuthor> authors = entry.getAuthors();
 
                 for(EntryAuthor author: authors){
@@ -824,18 +825,19 @@ public class BibDatabase {
         }
 
         int heighstNumber = 0;
-        List<EntryAuthor> authors = new LinkedList<>();
+        List<String> authors = new LinkedList<>();
 
         for(Pair<EntryAuthor, Integer> author: allAuthors){
             int number = author.getValue();
             if(number > heighstNumber){
-                authors.clear();
-                authors.add(author.getKey());
+                authors.removeAll(allAuthors);
+                authors.add(author.getKey().getAuthorName());
+                heighstNumber = number;
             } else if(number == heighstNumber)
-                authors.add(author.getKey());
+                authors.add(author.getKey().getAuthorName());
         }
 
-        return authors;
+        return authors.toString();
     }
 
     //get all the authors by nacionality

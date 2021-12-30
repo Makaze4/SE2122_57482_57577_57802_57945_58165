@@ -4,7 +4,7 @@ The description of the "Query Results - Geral" use case is done in other file in
 
 Use case: Query - Articles
 ID: 0
-Description: Button that when is clicked shows a pop-up of all the Articles By a given Author in a Period if time
+Description: Button that when is clicked shows a pop-up of all the Articles By a given Author in a Period of time
 Main actors: User
 Secondary actors: None
 
@@ -64,7 +64,7 @@ Secondary actors: None
 
 Use case: Confirm --- Message
 ID: 10
-Description: New window that give the answer when the user used the use case(ID9)
+Description: New window that give the answer when the user used the use case (ID9)
 Main actor: User
 Secondary actors: Jabref
 
@@ -72,10 +72,10 @@ Use case: Confirm --- Ok
 ID: 11
 Description: Button that confirm and close the window with the answer
 Main actor: User
-Secondary actors: Jabref
+Secondary actors: None
 
 Use case: Confirm --- Close
 ID: 12
 Description: Button that close the window with the answer
 Main actor: User
-Secondary actors: Jabref
+Secondary actors: None

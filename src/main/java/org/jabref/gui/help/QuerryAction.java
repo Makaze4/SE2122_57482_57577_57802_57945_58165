@@ -51,6 +51,7 @@ public class QuerryAction extends SimpleCommand {
 
 
         frame.setVisible(true);
+        frame.toFront();
     }
 
 

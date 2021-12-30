@@ -60,6 +60,7 @@ public class QuerryAction2 extends SimpleCommand {
         });
 
         frame.setVisible(true);
+        frame.toFront();
 
     }
 

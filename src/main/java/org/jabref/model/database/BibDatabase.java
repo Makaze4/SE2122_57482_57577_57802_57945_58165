@@ -1100,7 +1100,7 @@ public class BibDatabase {
         int i = 1;
         for(BibEntry entry: entries){
             for(EntryAuthor a: entry.getAuthors()){
-                if(!containsAuthor(authorList, a.getAuthorName())){
+                if(!containsAuthor(authorList, a.getAuthorName()) && a.getAuthorName() != null){
                     authorList.add(new Triple<>(i++, a.getAuthorNationality(), a.getAuthorName()));
                 }
             }

@@ -20,9 +20,9 @@ Description: Tab that shows all the information of the author
 Main actor: User
 Secondary actors: None
 
-Use case: Tabs --- Author journal
+Use case: Tabs --- Jornal journal
 ID: 4
-Description: Tab that shows all the journal of the author
+Description: Tab that shows all the information of the journal
 Main actor: User
 Secondary actors: None
 

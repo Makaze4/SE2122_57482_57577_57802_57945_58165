@@ -33,7 +33,7 @@ public class QuerryAction7 extends SimpleCommand {
         container.setLayout(null);
 
 
-        JLabel logo  = new JLabel("Query - Common Articles");
+        JLabel logo  = new JLabel("Query - Show Authors with a given nationality");
         logo.setBounds(10,5,400,50);
 
         JLabel author  = new JLabel("Author: Inserir");

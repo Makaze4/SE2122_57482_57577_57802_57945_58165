@@ -2,6 +2,6 @@ Geral use cases were described in another file
 
 Use case: Get the topic rankings in the database
 ID: 0
-Description: Button that when is clicked shows a pop-up of the topic rankings in the database by order of the must used.
+Description: Button that when is clicked shows a pop-up of the topic rankings in the database by order of the must use.
 Main actors: User
 Secondary actors: JabRef

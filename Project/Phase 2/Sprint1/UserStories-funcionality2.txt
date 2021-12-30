@@ -4,20 +4,23 @@ because I want to see the percentages of authors by nationalities in the jabref 
 As a user I want to list the articles that the author has published about a certain topic during a time period
 because I want to see the evolution of the articles.
 
-As a user I want to list the editors the a specific author has worked with
+As a user I want to list the editors a specific author has worked with
 because I'm writing a biography about him.
 
 As a user I want to see the authors that a certain author has worked with and the articles that they have in common
 because I want to see the authors work circle.
 
-As a user I want to list the authors by number of articles to know who are the most active author.
+As a user I want to list the authors by number of articles to know the most active author.
 
-As a user I want to list the topics that the authors worked about beacause I want to know the author preferences.
+As a user I want to list the topics that the authors worked about because I want to know the author preferences.
 
 As a user I want to see with how many different nationalities the author has collaborated with
 because I want to know how well known the author is internationally.
 
-As a user I want to list all the authors that have a certain nationality beacause I want to know the authors of this
+As a user I want to list all the authors that have a certain nationality because I want to know the authors of this
 nationality
+
+As a user I want to see a graph displaying all the authors that have worked with each other with different node colours depending on the author's nationality
+because I want to know the relations of the authors with authors of other nationalities.
 
 

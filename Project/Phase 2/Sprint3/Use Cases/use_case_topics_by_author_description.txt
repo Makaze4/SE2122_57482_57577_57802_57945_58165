@@ -1,10 +1,10 @@
-Use case diagram description for use case co-workers
+Use case diagram description for use case show topic a user has worked on
 
 The description of the "Query Results - Geral" use case is done in other file in order to preventing repetitions. 
 
 User case: Query - Show topics and author has worked on
 ID: 1
-Description: Button when clicked shows the co-workers of a given author
+Description: Button when clicked shows the topics a user has worked on
 Main actor: User
 Secondary actors: None
 
@@ -17,7 +17,7 @@ Secondary actors: None
 Use case: Author Name --- Minimize
 ID: 3
 Description: Button when clicked minimizes the window
-Main actor: Userrepeticoes
+Main actor: User
 Secondary actors: None
 
 Use case: Author Name --- Expand
@@ -46,7 +46,7 @@ Secondary actors: None
 
 Use case: Confirm --- Message
 ID: 8
-Description: New window that give the answer when the user used the use case(ID7)
+Description: New window that give the answer when the user used the use case (ID7)
 Main actor: User
 Secondary actors: Jabref
 
@@ -54,10 +54,10 @@ Use case: Confirm --- Ok
 ID: 9
 Description: Button that confirm and close the window with the answer
 Main actor: User
-Secondary actors: Jabref
+Secondary actors: None
 
 Use case: Confirm --- Close
 ID: 10
 Description: Button that close the window with the answer
 Main actor: User
-Secondary actors: Jabref
+Secondary actors: None

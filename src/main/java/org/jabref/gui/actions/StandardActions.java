@@ -175,6 +175,7 @@ public enum StandardActions implements Action {
     ABOUT(Localization.lang("About JabRef"), Localization.lang("About JabRef")),
     QUERRY1(Localization.lang("Query - % Of Author By Nation"), Localization.lang("Querry1")),
     QUERRY2(Localization.lang("Query - Show Co-workers Of Author"), Localization.lang("Querry2")),
+    QUERRY3(Localization.lang("Query - Most Active Author"), Localization.lang("Querry3")),
 
     EDIT_LIST(Localization.lang("Edit"), IconTheme.JabRefIcons.EDIT),
     VIEW_LIST(Localization.lang("View"), IconTheme.JabRefIcons.FILE),

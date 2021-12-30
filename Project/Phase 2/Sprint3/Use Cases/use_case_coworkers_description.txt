@@ -1,6 +1,6 @@
 Use case diagram description for use case co-workers
 
-The description of the "Query Results - Geral" use case is done in other file in order to preventing repetitions. 
+The description of the "Query Results - Geral" use case is done in other file to prevent repetitions. 
 
 User case: Query - Show Co-workers Of Authors
 ID: 1
@@ -8,7 +8,7 @@ Description: Button when clicked shows the co-workers of a given author
 Main actor: User
 Secondary actors: None
 
-Use case: uery - Show Co-workers Of Authors --- Author Name
+Use case: Query - Show Co-workers Of Authors --- Author Name
 ID: 2
 Description: When the user uses the use case (ID1) a new window is open in order to give the name of the author
 Main actor: User

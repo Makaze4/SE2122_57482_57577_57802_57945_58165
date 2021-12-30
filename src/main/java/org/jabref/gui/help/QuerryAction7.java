@@ -37,7 +37,7 @@ public class QuerryAction7 extends SimpleCommand {
         logo.setBounds(10,5,400,50);
 
         JLabel author  = new JLabel("Nationality: Inserir");
-        author.setBounds(10,45,100,50);
+        author.setBounds(10,45,400,50);
 
         JTextField text = new JTextField("");
         text.setBounds(10,80,300,35);

@@ -923,7 +923,7 @@ public class BibDatabase {
                     break;
                 }
             }
-            if(!found){
+            if(!found && entry.getFieldMap().get(StandardField.TOPIC) != null){
                 topicList.add(new Pair<>(entry.getFieldMap().get(StandardField.TOPIC), 1));
             }
         }

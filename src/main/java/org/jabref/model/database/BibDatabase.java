@@ -655,7 +655,7 @@ public class BibDatabase {
         for(BibEntry entry: entries){
             Map<Field, String> mapa = entry.getFieldMap();
 
-            if(mapa.get(StandardField.AUTHOR).contains(author)){
+            if(mapa.get(StandardField.AUTHOR).contains(author) && !editors.contains(mapa.get(StandardField.JOURNAL))){
                 editors.add(mapa.get(StandardField.JOURNAL));
             }
         }
@@ -865,7 +865,7 @@ public class BibDatabase {
             for(int i = 0; i < entry.getAuthors().size(); i++) {
                 EntryAuthor a = entry.getAuthors().get(i);
 
-                if(a.getAuthorNationality().equals(nacionality)) {
+                if(a.getAuthorNationality().equals(nacionality) && !allAuthors.contains(a.getAuthorName())) {
                     allAuthors.add(a.getAuthorName());
                 }
             }

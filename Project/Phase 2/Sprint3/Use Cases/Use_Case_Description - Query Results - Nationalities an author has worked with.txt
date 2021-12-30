@@ -1,10 +1,10 @@
-Use case diagram description for use case Journals Related to Author
+Use case diagram description for use case Nationalities an author has worked with
 
 The description of the "Query Results - Geral" use case is done in other file in order to preventing repetitions.
 
-Use case: Query - Journal Related To Author
+Use case: Query - Nationalities an author has worked with
 ID: 0
-Description: Button that when is clicked shows a pop-up of all the journals related to a given author
+Description: Button that when is clicked shows a pop-up of all the Nationalities a given author has worked with
 Main actors: User
 Secondary actors: None
 

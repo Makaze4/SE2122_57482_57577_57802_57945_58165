@@ -58,7 +58,7 @@ public class QuerryAction8 extends SimpleCommand {
                 List<String> list = currentLibraryTab.get().getBibDatabaseContext().getDatabase().getTopicsByAuthor(name);
 
                 for(String st: list){
-                    result += "Author: " + st + "\n";
+                    result += "Topic: " + st + "\n";
                 }
                 JOptionPane.showMessageDialog(frame, result);
             }

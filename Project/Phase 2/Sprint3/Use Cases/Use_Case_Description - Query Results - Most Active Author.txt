@@ -3,6 +3,6 @@ Geral use cases were described in another file
 Use case: Get the most active author in the database
 ID: 0
 Description: Button that when is clicked shows a pop-up of the author with the most articles published
-in the database 
+in the database
 Main actors: User
-Secondary actors: BibDatabase
+Secondary actors: JabRef

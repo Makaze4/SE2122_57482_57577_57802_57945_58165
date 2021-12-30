@@ -223,6 +223,7 @@ public class BibDatabase {
      * @param toBeDeleted Entries to delete
      */
     public synchronized void removeEntries(List<BibEntry> toBeDeleted) {
+        System.out.println("TAS LENTINHO, VAIS DE CARRINHO");
         removeEntries(toBeDeleted, EntriesEventSource.LOCAL);
     }
 
@@ -234,6 +235,7 @@ public class BibDatabase {
      * @param eventSource Source the event is sent from
      */
     public synchronized void removeEntries(List<BibEntry> toBeDeleted, EntriesEventSource eventSource) {
+        System.out.println("TAS CA");
         Objects.requireNonNull(toBeDeleted);
 
         List<String> ids = new ArrayList<>();
@@ -797,49 +799,42 @@ public class BibDatabase {
 
     //Journal user story methods
 
-    public String getAuthorWithMorePublish(String journal) {
-        List<String> allAuthors = new LinkedList<>();
-        List<Integer> numberPublish = new LinkedList<>();
+    public List<EntryAuthor> getAuthorWithMorePublish(String journal) {
+        List<Pair<EntryAuthor, Integer>> allAuthors = new LinkedList<>();
+
+        if(entries.size() == 0)
+            return null;
 
         for(BibEntry entry: entries){
             Map<Field, String> map = entry.getFieldMap();
 
             if(map.get(StandardField.JOURNAL).equals(journal)){
-                String[] authors = map.get(StandardField.AUTHOR).split(" and ", 0);
+                List<EntryAuthor> authors = entry.getAuthors();
 
-                if(allAuthors.isEmpty()){
-                    for(String author: authors){
-                        allAuthors.add(author);
-                        numberPublish.add(1);
-                    }
-                } else {
-                    for(String author: authors){
-                        int index = allAuthors.indexOf(author);
+                for(EntryAuthor author: authors){
+                    int index = allAuthors.indexOf(author);
 
-                        if(index == -1){
-                            allAuthors.add(author);
-                            numberPublish.add(1);
-                        } else{
-                            numberPublish.set(index, numberPublish.get(index) + 1);
-                        }
-                    }
+                    if(index == -1)
+                        allAuthors.add(new Pair<>(author, 1));
+                    else
+                        allAuthors.set(index, new Pair<>(author, allAuthors.get(index).getValue() + 1));
                 }
             }
         }
 
         int heighstNumber = 0;
-        int index = 0;
+        List<EntryAuthor> authors = new LinkedList<>();
 
-        for(int i = 0; i < numberPublish.size(); i++){
-            int number = numberPublish.get(i);
+        for(Pair<EntryAuthor, Integer> author: allAuthors){
+            int number = author.getValue();
             if(number > heighstNumber){
-                heighstNumber = number;
-                index = i;
-            }
+                authors.clear();
+                authors.add(author.getKey());
+            } else if(number == heighstNumber)
+                authors.add(author.getKey());
         }
 
-        //Falta caso de empate
-        return allAuthors.get(index);
+        return authors;
     }
 
     //get all the authors by nacionality

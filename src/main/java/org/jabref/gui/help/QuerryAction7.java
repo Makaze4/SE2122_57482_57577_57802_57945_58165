@@ -36,7 +36,7 @@ public class QuerryAction7 extends SimpleCommand {
         JLabel logo  = new JLabel("Query - Show Authors with a given nationality");
         logo.setBounds(10,5,400,50);
 
-        JLabel author  = new JLabel("Author: Inserir");
+        JLabel author  = new JLabel("Nationality: Inserir");
         author.setBounds(10,45,100,50);
 
         JTextField text = new JTextField("");

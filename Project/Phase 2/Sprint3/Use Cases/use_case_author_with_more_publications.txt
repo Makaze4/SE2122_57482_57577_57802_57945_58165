@@ -1,6 +1,6 @@
 Use case diagram description for use case Author With More Publications
 
-This description is useful for all the use cases that implement this one, preventing repetitions. 
+The description about the Geral tabs use case is already done in another file, preventing repetitions. 
 
 User case: Journal Information
 ID: 1

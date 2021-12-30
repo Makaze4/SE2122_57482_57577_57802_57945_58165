@@ -16,6 +16,6 @@ Secondary actors: None
 
 Use case: Author with more publications
 ID: 3
-Description: Textbox where will be display the name of the author with more publications
+Description: Textbox where will be displayed the name of the author with more publications
 Main actor: User
 Secondary actors: Jabref

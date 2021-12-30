@@ -962,7 +962,9 @@ public class BibDatabase {
         for(BibEntry entry: entries) {
             for(int i = 0; i < entry.getAuthors().size(); i++) {
                 EntryAuthor a = entry.getAuthors().get(i);
-                authorList.add(a);
+                if(!a.getAuthorNationality().equals("") && a.getAuthorNationality() != null){
+                    authorList.add(a);
+                }
             }
         }
 

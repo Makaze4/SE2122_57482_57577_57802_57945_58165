@@ -1,6 +1,6 @@
 Use case diagram description for use case Geral
 
-This is description is useful for all the Query use cases, preventing repetitions. 
+This description is useful for all the Query use cases, preventing repetitions. 
 
 User case: Query Results
 ID: 1

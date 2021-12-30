@@ -1,0 +1,33 @@
+Use case diagram description for use case Geral Tabs
+
+This description is useful for all the use cases that implement this one, preventing repetitions. 
+
+User case: Entry
+ID: 1
+Description: The use choose what entry/article he want to check
+Main actor: User
+Secondary actors: None
+
+Use case: Tabs
+ID: 2
+Description: All the tabs that entry/article has that the user can choose
+Main actor: User
+Secondary actors: None
+
+Use case: Tabs --- Author Information
+ID: 3
+Description: Tab that shows all the information of the author
+Main actor: User
+Secondary actors: None
+
+Use case: Tabs --- Author journal
+ID: 4
+Description: Tab that shows all the journal of the author
+Main actor: User
+Secondary actors: None
+
+Use case: Tabs --- Article Information
+ID: 5
+Description: Tab that shows all the information of the article
+Main actor: User
+Secondary actors: None

@@ -8,12 +8,12 @@ import org.jabref.gui.search.RebuildFulltextSearchIndexAction;
 
 import javax.swing.*;
 import java.awt.*;
-import java.util.ArrayList;
+import java.util.*;
 import java.util.List;
-import java.util.Map;
-import java.util.Random;
 
 public class QuerryActionGraph extends SimpleCommand {
+
+    public static final int MAX_RGB = 2147483647;
 
     RebuildFulltextSearchIndexAction.GetCurrentLibraryTab currentLibraryTab;
 
@@ -27,12 +27,20 @@ public class QuerryActionGraph extends SimpleCommand {
         JFrame f = new JFrame();
         GraphDraw draw = new GraphDraw();
 
+        List<Color> colorList = new ArrayList<>();
+        colorList.add(new Color(0, 0, 100));
+        colorList.add(new Color(0, 100, 0));
+        colorList.add(new Color(100, 0, 0));
+        colorList.add(Color.black);
+
+
+
         Map<Integer, Triple<String, String, List<Integer>>> authorMap = currentLibraryTab.get().getDatabase().getRelations();
 
         for(int i = 1; i<authorMap.size()+1; i++){
             int j = i-1;
-            int x = (j % 10) +1;
-            int y = (j / 10) +1;
+            int x = (j % 10) ;
+            int y = (j / 10) ;
 
             Random r = new Random();
             int rX = r.nextInt(60)-30;
@@ -46,14 +54,16 @@ public class QuerryActionGraph extends SimpleCommand {
             n.setDisplayName(authorMap.get(i).b);
             Color c;
             if(!authorMap.get(i).a.equals("")){
-                c = new Color(authorMap.get(i).a.hashCode());//TODO verificar melhor
+                int colorRGB = authorMap.get(i).a.hashCode();
+                colorRGB = resizeColorRGB(colorRGB);
+                c = new Color(colorRGB);
             }
             else{
                 c = Color.black;
             }
 
             n.setColor(c);
-            n.setPosition(new Node.Position(x+rX, y+rY));
+            n.setPosition(new Node.Position(x+rX+50, y+rY+50));
             nList.add(n);
             draw.addNode(n);
         }
@@ -63,10 +73,12 @@ public class QuerryActionGraph extends SimpleCommand {
             for(Integer integer: authorMap.get(i).c){
 
                Edge e = new Edge(nList.get(i-1), nList.get(integer-1));
+               Random r = new Random();
+               int rC = r.nextInt(colorList.size());
+               e.setColor(colorList.get(rC));
                draw.addEdge(e);
             }
         }
-
 
         //displaying graph
         draw.setSize(1280, 720);
@@ -75,10 +87,13 @@ public class QuerryActionGraph extends SimpleCommand {
         f.setSize(1280, 720);
         f.setVisible(true);
         f.toFront();
-        //TODO titulo pagina e outras coisas
-        //f.setBackground(Color.black);
+        f.setTitle("Author's relations graph");
+    }
 
-        /*JScrollPane pane = new JScrollPane(JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED, JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);
-        f.setContentPane(pane);*/
+    private int resizeColorRGB(int colorRGB){
+        if(colorRGB>MAX_RGB){
+            return  resizeColorRGB(colorRGB/2);
+        }
+        return colorRGB;
     }
 }

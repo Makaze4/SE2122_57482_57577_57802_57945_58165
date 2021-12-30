@@ -27,6 +27,12 @@ public class getJournalNacionalitiesPercentagesTest {
     BibEntry entry8;
     BibEntry entry9;
     BibEntry entry10;
+    BibEntry entry11;
+    BibEntry entry12;
+    BibEntry entry13;
+    BibEntry entry14;
+    BibEntry entry15;
+    BibEntry entry16;
 
 
     @BeforeEach
@@ -102,6 +108,42 @@ public class getJournalNacionalitiesPercentagesTest {
         entry10.getAuthors().get(0).setNationality("Italia");
         entryList.add(entry10);
 
+        entry11 = new BibEntry();
+        entry11.setField(StandardField.AUTHOR, "Author1");
+        entry11.setField(StandardField.JOURNAL, "journal5");
+        entry11.getAuthors().get(0).setNationality("Italia");
+        entryList.add(entry11);
+
+        entry12 = new BibEntry();
+        entry12.setField(StandardField.AUTHOR, "Author2");
+        entry12.setField(StandardField.JOURNAL, "journal5");
+        entry12.getAuthors().get(0).setNationality("Italia");
+        entryList.add(entry12);
+
+        entry13 = new BibEntry();
+        entry13.setField(StandardField.AUTHOR, "Author3");
+        entry13.setField(StandardField.JOURNAL, "journal5");
+        entry13.getAuthors().get(0).setNationality("Italia");
+        entryList.add(entry13);
+
+        entry14 = new BibEntry();
+        entry14.setField(StandardField.AUTHOR, "Author4");
+        entry14.setField(StandardField.JOURNAL, "journal5");
+        entry14.getAuthors().get(0).setNationality("Quenia");
+        entryList.add(entry14);
+
+        entry15 = new BibEntry();
+        entry15.setField(StandardField.AUTHOR, "Author5");
+        entry15.setField(StandardField.JOURNAL, "journal5");
+        entry15.getAuthors().get(0).setNationality("Quenia");
+        entryList.add(entry15);
+
+        entry16 = new BibEntry();
+        entry16.setField(StandardField.AUTHOR, "Author6");
+        entry16.setField(StandardField.JOURNAL, "journal5");
+        entry16.getAuthors().get(0).setNationality("China");
+        entryList.add(entry16);
+
 
         dataBase = new BibDatabase(entryList);
     }
@@ -110,12 +152,12 @@ public class getJournalNacionalitiesPercentagesTest {
     @DisplayName("Test 1")
     void test1(){
         List<Pair<String, Integer>> sol = new LinkedList<>();
-        sol.add(new Pair("Franca", 16));
-        sol.add(new Pair("Brazil", 16));
-        sol.add(new Pair("Espanha", 16));
-        sol.add(new Pair("Italia", 16));
-        sol.add(new Pair("Portugal", 16));
-        sol.add(new Pair("Alemanha", 16));
+        sol.add(new Pair("espanha", 16));
+        sol.add(new Pair("italia", 16));
+        sol.add(new Pair("brazil", 16));
+        sol.add(new Pair("alemanha", 16));
+        sol.add(new Pair("franca", 16));
+        sol.add(new Pair("portugal", 16));
         assertEquals(sol, dataBase.getJournalNacionalitiesPercentages("journal1"), "-----TEST FAILED----------TEST FAILED----------TEST FAILED-----");
     }
 
@@ -123,9 +165,9 @@ public class getJournalNacionalitiesPercentagesTest {
     @DisplayName("Test 2")
     void test2(){
         List<Pair<String, Integer>> sol = new LinkedList<>();
-        sol.add(new Pair("Brazil", 33));
-        sol.add(new Pair("Italia", 33));
-        sol.add(new Pair("Alemanha", 33));
+        sol.add(new Pair("italia", 33));
+        sol.add(new Pair("brazil", 33));
+        sol.add(new Pair("alemanha", 33));
         assertEquals(sol, dataBase.getJournalNacionalitiesPercentages("journal2"), "-----TEST FAILED----------TEST FAILED----------TEST FAILED-----");
     }
 
@@ -133,7 +175,7 @@ public class getJournalNacionalitiesPercentagesTest {
     @DisplayName("Test 3")
     void test3(){
         List<Pair<String, Integer>> sol = new LinkedList<>();
-        sol.add(new Pair("Portugal", 100));
+        sol.add(new Pair("portugal", 100));
         assertEquals(sol, dataBase.getJournalNacionalitiesPercentages("journal3"), "-----TEST FAILED----------TEST FAILED----------TEST FAILED-----");
     }
 
@@ -141,11 +183,20 @@ public class getJournalNacionalitiesPercentagesTest {
     @DisplayName("Test 4")
     void test4(){
         List<Pair<String, Integer>> sol = new LinkedList<>();
-        sol.add(new Pair("Portugal", 60));
-        sol.add(new Pair("Italia", 20));
-        sol.add(new Pair("Alemanha", 20));
+        sol.add(new Pair("portugal", 60));
+        sol.add(new Pair("alemanha", 20));
+        sol.add(new Pair("italia", 20));
         assertEquals(sol, dataBase.getJournalNacionalitiesPercentages("journal4"), "-----TEST FAILED----------TEST FAILED----------TEST FAILED-----");
     }
 
+    @Test
+    @DisplayName("Test 5")
+    void test5(){
+        List<Pair<String, Integer>> sol = new LinkedList<>();
+        sol.add(new Pair("italia", 50));
+        sol.add(new Pair("quenia", 33));
+        sol.add(new Pair("china", 16));
+        assertEquals(sol, dataBase.getJournalNacionalitiesPercentages("journal5"), "-----TEST FAILED----------TEST FAILED----------TEST FAILED-----");
+    }
 
 }

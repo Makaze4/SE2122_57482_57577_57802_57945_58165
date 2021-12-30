@@ -907,11 +907,14 @@ public class BibDatabase {
         List<Pair<String, Integer>> topicList = new LinkedList<>();
 
         for(BibEntry entry: entries){
+
             boolean found = false;
             for(Pair<String, Integer> p: topicList){
-                if(p.getKey().equals(entry.getField(StandardField.TOPIC))){
+                if(p.getKey().equals(entry.getFieldMap().get(StandardField.TOPIC))){
                     found = true;
+                    topicList.remove(p);
                     p = new Pair<>(p.getKey(), p.getValue()+1);
+                    topicList.add(p);
                     break;
                 }
             }

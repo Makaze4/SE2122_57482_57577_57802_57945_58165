@@ -1090,7 +1090,7 @@ public class BibDatabase {
     public Map<Integer, Pair<String, List<Integer>>> getRelations(){
         List<Pair<Integer, String>> authorList = new LinkedList<>();
 
-        int i = 0;
+        int i = 1;
         for(BibEntry entry: entries){
             for(EntryAuthor a: entry.getAuthors()){
                 if(!containsAuthor(authorList, a.getAuthorName())){
@@ -1109,9 +1109,11 @@ public class BibDatabase {
             for(BibEntry entry: entries){
                 if(entry.getFieldMap().get(StandardField.AUTHOR).contains(p.getValue())){
                     for(EntryAuthor a: entry.getAuthors()){
-                        if(a.getAuthorName().equals(p.getValue())){
+                        if(!a.getAuthorName().equals(p.getValue())){
                             int index = getAuthorIndex(authorList, a.getAuthorName());
-                            authorMap.get(p.getKey()).getValue().add(index);
+                            if(!authorMap.get(p.getKey()).getValue().contains(index)){
+                                authorMap.get(p.getKey()).getValue().add(index);
+                            }
                         }
                     }
                 }

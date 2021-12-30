@@ -33,10 +33,7 @@ import org.jabref.logic.l10n.Localization;
 import org.jabref.logic.util.OS;
 import org.jabref.model.database.BibDatabase;
 import org.jabref.model.database.KeyCollisionException;
-import org.jabref.model.entry.BibEntry;
-import org.jabref.model.entry.BibEntryType;
-import org.jabref.model.entry.BibEntryTypesManager;
-import org.jabref.model.entry.BibtexString;
+import org.jabref.model.entry.*;
 import org.jabref.model.entry.field.Field;
 import org.jabref.model.entry.field.FieldFactory;
 import org.jabref.model.entry.field.FieldProperty;
@@ -596,6 +593,13 @@ public class BibtexParser implements Parser {
         consume('=');
         String content = parseFieldContent(field);
         if (!content.isEmpty()) {
+            if(field.getName().contains("nationality")){
+                for(EntryAuthor a: entry.getAuthors()){
+                    if(a.getAuthorName().equalsIgnoreCase(field.getName().substring(0, field.getName().lastIndexOf("_")))){
+                        a.setNationality(content);
+                    }
+                }
+            }
             if (entry.hasField(field)) {
                 // The following hack enables the parser to deal with multiple
                 // author or

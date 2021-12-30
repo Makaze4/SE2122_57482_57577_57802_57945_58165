@@ -110,12 +110,12 @@ public class getJournalNacionalitiesPercentagesTest {
     @DisplayName("Test 1")
     void test1(){
         List<Pair<String, Integer>> sol = new LinkedList<>();
-        sol.add(new Pair("Franca", 16));
-        sol.add(new Pair("Brazil", 16));
-        sol.add(new Pair("Espanha", 16));
-        sol.add(new Pair("Italia", 16));
-        sol.add(new Pair("Portugal", 16));
-        sol.add(new Pair("Alemanha", 16));
+        sol.add(new Pair("franca", 16));
+        sol.add(new Pair("brazil", 16));
+        sol.add(new Pair("espanha", 16));
+        sol.add(new Pair("italia", 16));
+        sol.add(new Pair("portugal", 16));
+        sol.add(new Pair("alemanha", 16));
         assertEquals(sol, dataBase.getJournalNacionalitiesPercentages("journal1"), "-----TEST FAILED----------TEST FAILED----------TEST FAILED-----");
     }
 
@@ -123,9 +123,9 @@ public class getJournalNacionalitiesPercentagesTest {
     @DisplayName("Test 2")
     void test2(){
         List<Pair<String, Integer>> sol = new LinkedList<>();
-        sol.add(new Pair("Brazil", 33));
-        sol.add(new Pair("Italia", 33));
-        sol.add(new Pair("Alemanha", 33));
+        sol.add(new Pair("brazil", 33));
+        sol.add(new Pair("italia", 33));
+        sol.add(new Pair("alemanha", 33));
         assertEquals(sol, dataBase.getJournalNacionalitiesPercentages("journal2"), "-----TEST FAILED----------TEST FAILED----------TEST FAILED-----");
     }
 
@@ -133,7 +133,7 @@ public class getJournalNacionalitiesPercentagesTest {
     @DisplayName("Test 3")
     void test3(){
         List<Pair<String, Integer>> sol = new LinkedList<>();
-        sol.add(new Pair("Portugal", 100));
+        sol.add(new Pair("portugal", 100));
         assertEquals(sol, dataBase.getJournalNacionalitiesPercentages("journal3"), "-----TEST FAILED----------TEST FAILED----------TEST FAILED-----");
     }
 
@@ -141,9 +141,9 @@ public class getJournalNacionalitiesPercentagesTest {
     @DisplayName("Test 4")
     void test4(){
         List<Pair<String, Integer>> sol = new LinkedList<>();
-        sol.add(new Pair("Portugal", 60));
-        sol.add(new Pair("Italia", 20));
-        sol.add(new Pair("Alemanha", 20));
+        sol.add(new Pair("portugal", 60));
+        sol.add(new Pair("italia", 20));
+        sol.add(new Pair("alemanha", 20));
         assertEquals(sol, dataBase.getJournalNacionalitiesPercentages("journal4"), "-----TEST FAILED----------TEST FAILED----------TEST FAILED-----");
     }
 

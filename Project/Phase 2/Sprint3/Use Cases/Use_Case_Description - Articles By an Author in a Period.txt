@@ -2,9 +2,9 @@ Use case diagram description for use case Articles By an Author in a Period
 
 The description of the "Query Results - Geral" use case is done in other file in order to preventing repetitions.
 
-Use case: Query - Articles Bay an author in a Period
+Use case: Query - Articles
 ID: 0
-Description: Button that when is clicked shows a pop-up of all the journals related to a given author
+Description: Button that when is clicked shows a pop-up of all the Articles By a given Author in a Period if time
 Main actors: User
 Secondary actors: None
 
@@ -14,51 +14,68 @@ Description: When the user uses the use case (ID0) a new window is open in order
 Main actor: User
 Secondary actors: None
 
-Use case: Author Name --- Minimize
+Use case: Query - Topic Name
 ID: 2
+Description: When the user uses the use case (ID0) a new window is open in order to give the name of the topic
+Main actor: User
+Secondary actors: None
+
+Use case: Query - First Year
+ID: 3
+Description: When the user uses the use case (ID0) a new window is open in order to give the first year
+Main actor: User
+Secondary actors: None
+
+Use case: Query - Last Year
+ID: 4
+Description: When the user uses the use case (ID0) a new window is open in order to give the last year
+Main actor: User
+Secondary actors: None
+
+Use case: Articles By an Author in a Period --- Minimize
+ID: 5
 Description: Button when clicked minimizes the window
 Main actor: User
 Secondary actors: None
 
-Use case: Author Name --- Expand
-ID: 3
+Use case: Articles By an Author in a Period --- Expand
+ID: 6
 Description: Button when clicked expands the window
 Main actor: User
 Secondary actors: None
 
-Use case: Author Name --- Close
-ID: 4
+Use case: Articles By an Author in a Period --- Close
+ID: 7
 Description: Button when clicked closes the window
 Main actor: User
 Secondary actors: None
 
-Use case: Author Name --- Insert Author name
-ID: 5
+Use case: Articles By an Author in a Period --- Insert Author name
+ID: 8
 Description: Textbox where the user can write the name of the author
 Main actor: User
 Secondary actors: None
 
-Use case: Author Name --- Confirm
-ID: 6
+Use case: Articles By an Author in a Period --- Confirm
+ID: 9
 Description: Button when clicked shows confirms the name of the author and open a new window with the answer
 Main actor: User
 Secondary actors: None
 
 Use case: Confirm --- Message
-ID: 7
-Description: New window that give the answer when the user used the use case(ID6)
+ID: 10
+Description: New window that give the answer when the user used the use case(ID9)
 Main actor: User
 Secondary actors: Jabref
 
 Use case: Confirm --- Ok
-ID: 8
+ID: 11
 Description: Button that confirm and close the window with the answer
 Main actor: User
 Secondary actors: Jabref
 
 Use case: Confirm --- Close
-ID: 9
+ID: 12
 Description: Button that close the window with the answer
 Main actor: User
 Secondary actors: Jabref
-

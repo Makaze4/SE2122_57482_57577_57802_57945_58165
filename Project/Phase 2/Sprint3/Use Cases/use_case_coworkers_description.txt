@@ -1,0 +1,63 @@
+Use case diagram description for use case co-workers
+
+The description of the "Query Results - Geral" use case is done in other file in order to preventing repetitions. 
+
+User case: Query - Show Co-workers Of Authors
+ID: 1
+Description: Button when clicked shows the co-workers of a given author
+Main actor: User
+Secondary actors: None
+
+Use case: uery - Show Co-workers Of Authors --- Author Name
+ID: 2
+Description: When the user uses the use case (ID1) a new window is open in order to give the name of the author
+Main actor: User
+Secondary actors: None
+
+Use case: Author Name --- Minimize
+ID: 3
+Description: Button when clicked minimizes the window
+Main actor: Userrepeticoes
+Secondary actors: None
+
+Use case: Author Name --- Expand
+ID: 4
+Description: Button when clicked expands the window
+Main actor: User
+Secondary actors: None
+
+Use case: Author Name --- Close
+ID: 5
+Description: Button when clicked closes the window
+Main actor: User
+Secondary actors: None
+
+Use case: Author Name --- Insert Author name
+ID: 6
+Description: Textbox where the user can write the name of the author
+Main actor: User
+Secondary actors: None
+
+Use case: Author Name --- Confirm
+ID: 7
+Description: Button when clicked shows confirms the name of the author and open a new window with the answer
+Main actor: User
+Secondary actors: None
+
+Use case: Confirm --- Message
+ID: 8
+Description: New window that give the answer when the user used the use case(ID7)
+Main actor: User
+Secondary actors: Jabref
+
+Use case: Confirm --- Ok
+ID: 9
+Description: Button that confirm and close the window with the answer
+Main actor: User
+Secondary actors: Jabref
+
+Use case: Confirm --- Close
+ID: 10
+Description: Button that close the window with the answer
+Main actor: User
+Secondary actors: Jabref

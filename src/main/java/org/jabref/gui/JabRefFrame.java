@@ -907,6 +907,7 @@ public class JabRefFrame extends BorderPane {
                 factory.createMenuItem(StandardActions.QUERRY4, new QuerryAction4(this::getCurrentLibraryTab)),
                 factory.createMenuItem(StandardActions.QUERRY5, new QuerryAction5(this::getCurrentLibraryTab)),
                 factory.createMenuItem(StandardActions.QUERRY6, new QuerryAction6(this::getCurrentLibraryTab)),
+                factory.createMenuItem(StandardActions.QUERRY7, new QuerryAction7(this::getCurrentLibraryTab)),
                 factory.createMenuItem(StandardActions.QUERRYGRAPH, new QuerryActionGraph(this::getCurrentLibraryTab))
         );
 

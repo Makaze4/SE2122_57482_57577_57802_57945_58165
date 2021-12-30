@@ -27,7 +27,7 @@ public class QuerryAction extends SimpleCommand {
 
         List<Pair<String, Integer>> list = currentLibraryTab.get().getBibDatabaseContext().getDatabase().getPercentageOfAuthorsByNationality();
 
-        frame.setBounds(200,200, 700,300);
+        frame.setBounds(200,200, 700,500);
         Container container = frame.getContentPane();
         container.setLayout(null);
 
